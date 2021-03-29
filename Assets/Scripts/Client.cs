@@ -6,7 +6,7 @@ using System.Net;
 using System;
 
 public class Client : MonoBehaviour
-{
+{//komentarz
     public static Client instance;
     public static int dataBufferSize = 4096;
 
