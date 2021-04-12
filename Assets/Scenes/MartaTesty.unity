@@ -196,15 +196,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2529560205999143728}
-  - {fileID: 6536888934720123247}
-  - {fileID: 1151561768128240097}
-  - {fileID: 3262596977621318122}
   - {fileID: 1631851079823293695}
-  - {fileID: 3471734049437014782}
-  - {fileID: 617560062}
-  - {fileID: 343975495}
-  - {fileID: 697560069}
   - {fileID: 954910811}
   - {fileID: 242496121}
   - {fileID: 1925473446}
@@ -212,6 +204,14 @@ Transform:
   - {fileID: 445455615}
   - {fileID: 744864629}
   - {fileID: 1174490169}
+  - {fileID: 6536888934720123247}
+  - {fileID: 3471734049437014782}
+  - {fileID: 343975495}
+  - {fileID: 3262596977621318122}
+  - {fileID: 1151561768128240097}
+  - {fileID: 2529560205999143728}
+  - {fileID: 617560062}
+  - {fileID: 697560069}
   m_Father: {fileID: 255476650}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 242496123}
   - component: {fileID: 242496122}
   m_Layer: 0
-  m_Name: Pawn (2)
+  m_Name: Pawn_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,7 +245,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 10
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &242496122
 MeshRenderer:
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 343975497}
   - component: {fileID: 343975496}
   m_Layer: 0
-  m_Name: Bishop (1)
+  m_Name: Bishop_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -358,7 +358,7 @@ Transform:
   m_LocalScale: {x: 12.48632, y: 12.48632, z: 12.48632}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &343975496
 MeshRenderer:
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 445455617}
   - component: {fileID: 445455616}
   m_Layer: 0
-  m_Name: Pawn (5)
+  m_Name: Pawn_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,7 +601,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 13
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &445455616
 MeshRenderer:
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 617560064}
   - component: {fileID: 617560063}
   m_Layer: 0
-  m_Name: Knight (1)
+  m_Name: Knight_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,7 +682,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 39.818554}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 6
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: -89.98, y: -90, z: 0}
 --- !u!23 &617560063
 MeshRenderer:
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 697560071}
   - component: {fileID: 697560070}
   m_Layer: 0
-  m_Name: Rook (1)
+  m_Name: Rook_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -763,7 +763,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 8
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &697560070
 MeshRenderer:
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 744864631}
   - component: {fileID: 744864630}
   m_Layer: 0
-  m_Name: Pawn (6)
+  m_Name: Pawn_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -844,7 +844,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 14
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &744864630
 MeshRenderer:
@@ -1162,7 +1162,7 @@ GameObject:
   - component: {fileID: 954910813}
   - component: {fileID: 954910812}
   m_Layer: 0
-  m_Name: Pawn (1)
+  m_Name: Pawn_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1180,7 +1180,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 9
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &954910812
 MeshRenderer:
@@ -1324,7 +1324,7 @@ GameObject:
   - component: {fileID: 1174490171}
   - component: {fileID: 1174490170}
   m_Layer: 0
-  m_Name: Pawn (7)
+  m_Name: Pawn_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1342,7 +1342,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 15
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1174490170
 MeshRenderer:
@@ -1648,7 +1648,7 @@ GameObject:
   - component: {fileID: 1500518041}
   - component: {fileID: 1500518040}
   m_Layer: 0
-  m_Name: Pawn (4)
+  m_Name: Pawn_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1666,7 +1666,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 12
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1500518040
 MeshRenderer:
@@ -1809,6 +1809,7 @@ GameObject:
   - component: {fileID: 1836179862}
   - component: {fileID: 1836179861}
   - component: {fileID: 1836179860}
+  - component: {fileID: 1836179863}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1833,7 +1834,7 @@ Camera:
   m_GameObject: {fileID: 1836179859}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1881,6 +1882,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+--- !u!114 &1836179863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836179859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84e48a0cff994c44bc7b97d62c15243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.05
+  scrollSpeed: 5
+  maxX: 0
+  minY: 27
+  maxY: 60
+  maxZ: 0
 --- !u!1 &1905539044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,7 +1993,7 @@ GameObject:
   - component: {fileID: 1925473448}
   - component: {fileID: 1925473447}
   m_Layer: 0
-  m_Name: Pawn (3)
+  m_Name: Pawn_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1992,7 +2011,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 11
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1925473447
 MeshRenderer:
@@ -2077,7 +2096,7 @@ GameObject:
   - component: {fileID: 7984622935544918767}
   - component: {fileID: 3001205640320412956}
   m_Layer: 0
-  m_Name: Rook
+  m_Name: Rook_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2091,11 +2110,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8158109994248032206}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -18.38416, y: 38.127235, z: 17.40709}
+  m_LocalPosition: {x: -20.52, y: 38.127235, z: 17.6}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 2
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1224158004829978391
 GameObject:
@@ -2109,7 +2128,7 @@ GameObject:
   - component: {fileID: 6723362939849705659}
   - component: {fileID: 7814627536429521687}
   m_Layer: 0
-  m_Name: Bishop
+  m_Name: Bishop_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2182,11 +2201,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4077739017693294587}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -11.888993, y: 37.127235, z: 19.51815}
+  m_LocalPosition: {x: -11.8, y: 37.127235, z: 19.75}
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1730029065203021866
 GameObject:
@@ -2403,7 +2422,7 @@ Transform:
   m_LocalScale: {x: 12.48632, y: 12.48632, z: 12.48632}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2677879506706875272
 GameObject:
@@ -2535,11 +2554,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3915040210791601124}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -20.525639, y: 37.127235, z: 17.541668}
+  m_LocalPosition: {x: -18.25, y: 37.127235, z: 17.541668}
   m_LocalScale: {x: 6.7387877, y: 6.7387877, z: 7.0397673}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 3
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &3312258489417817676
 MeshRenderer:
@@ -2594,7 +2613,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 39.818554}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -89.98, y: -90, z: 0}
 --- !u!33 &3564237792248256434
 MeshFilter:
@@ -2762,7 +2781,7 @@ GameObject:
   - component: {fileID: 5917452922059825212}
   - component: {fileID: 3127865661646686328}
   m_Layer: 0
-  m_Name: Pawn
+  m_Name: Pawn_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2776,7 +2795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5447021783567644865}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -20.525639, y: 37.127235, z: 32.932053}
+  m_LocalPosition: {x: -18.39, y: 37.127235, z: 32.932053}
   m_LocalScale: {x: 6.7387877, y: 6.7387877, z: 7.0397673}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -3160,7 +3179,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 1
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6723362939849705659
 MeshFilter:
@@ -3231,7 +3250,7 @@ GameObject:
   - component: {fileID: 1840137786052844336}
   - component: {fileID: 3886537250581691515}
   m_Layer: 0
-  m_Name: Knight
+  m_Name: Knight_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3445,7 +3464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7761463948025996039}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -18.38416, y: 38.127235, z: 32.96437}
+  m_LocalPosition: {x: -20.61, y: 38.127235, z: 32.96437}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 79740091}
