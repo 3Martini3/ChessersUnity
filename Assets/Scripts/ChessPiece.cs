@@ -26,6 +26,7 @@ public class ChessPiece : MonoBehaviour {
     {
         GetComponent<Renderer>().material = originalMaterial;
     }
+
     // Update is called once per frame
     /* void Update()
      {
