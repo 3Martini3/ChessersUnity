@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ChessPiece : MonoBehaviour {
 
-    public GameObject square;
-
+    public MeshRenderer square;
+    private float yPosition;
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(square.transform.position.x, square.transform.position.y, square.transform.position.z);
+        yPosition = transform.position.y;
+        transform.position = new Vector3(square.bounds.center.x, yPosition, square.bounds.center.z);
     }
 
     // Update is called once per frame
