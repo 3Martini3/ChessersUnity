@@ -45,15 +45,22 @@ public class CameraController : MonoBehaviour
             }
         }*/
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0)) //LMB
         {
-            
-            transform.RotateAround(cameraRef.transform.position,new Vector3(0,90,0),-Input.GetAxis("Mouse X") * 100*moveSpeed);
-           // transform.RotateAround(cameraRef.transform.position, new Vector3(0, 0, 90), -Input.GetAxis("Mouse Y") * 100 * moveSpeed);
+            transform.RotateAround( new Vector3(0,0,0),new Vector3(0,1,0),-Input.GetAxis("Mouse X") * 100*moveSpeed);
 
-            /*transform.RotateAround(cameraRef.transform.position,
-                                             transform.right,
-                                             -Input.GetAxis("Mouse Y") *100* moveSpeed);*/
+
+        }
+        if (Input.GetMouseButton(1)) //RMB
+        {
+            //relativeX is for relative coordinate of vector orthogonal to position vector and parallel to XY plane
+            //math beyond this magical thing is quite simple- assuming that our vector v is parallel to XY, and assuming that position vector is p:
+            //px*vx + py*vy + pz*vz = 0 (a dot product) ; where vy = 0
+            //px*vx + pz*vz = 0 ; may vz = 1 and equation becomes simple:
+            //vx = -pz/px 
+            //of course its not normalized, but it works
+            var relativeX = -transform.position.z / transform.position.x;
+            transform.RotateAround(transform.position, new Vector3(relativeX, 0, 1), -Input.GetAxis("Mouse Y") * 100 * moveSpeed);
         }
 
     }
