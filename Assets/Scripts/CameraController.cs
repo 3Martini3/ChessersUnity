@@ -44,14 +44,47 @@ public class CameraController : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, minY, transform.position.z);
             }
         }*/
-
-        if (Input.GetMouseButton(0)) //LMB
+          if (Input.GetKey(KeyCode.A))
         {
-            transform.RotateAround( new Vector3(0,0,0),new Vector3(0,1,0),-Input.GetAxis("Mouse X") * 100*moveSpeed);
-
+             transform.RotateAround( new Vector3(0,0,0),new Vector3(0,1,0),moveSpeed);
 
         }
-        if (Input.GetMouseButton(1)) //RMB
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0),-moveSpeed);
+
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            var relativeX = -transform.position.z / transform.position.x;
+            if (transform.position.x > 0)
+            {
+                transform.RotateAround(transform.position, new Vector3(relativeX, 0, 1), moveSpeed);
+            }
+            else
+            {
+                transform.RotateAround(transform.position, new Vector3(relativeX, 0, 1), -moveSpeed);
+            }
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            var relativeX = -transform.position.z / transform.position.x;
+            if (transform.position.x > 0)
+            {
+                transform.RotateAround(transform.position, new Vector3(relativeX, 0, 1), -moveSpeed);
+            }
+            else
+            {
+                transform.RotateAround(transform.position, new Vector3(relativeX, 0, 1), moveSpeed);
+            }
+        }
+        /* if (Input.GetMouseButton(0)) //LMB
+         {
+             transform.RotateAround( new Vector3(0,0,0),new Vector3(0,1,0),Input.GetAxis("Mouse X") * 100*moveSpeed);
+
+         }*/
+
+        /*if (Input.GetMouseButton(1)) //RMB
         {
             //relativeX is for relative coordinate of vector orthogonal to position vector and parallel to XY plane
             //math beyond this magical thing is quite simple- assuming that our vector v is parallel to XY, and assuming that position vector is p:
@@ -61,7 +94,7 @@ public class CameraController : MonoBehaviour
             //of course its not normalized, but it works
             var relativeX = -transform.position.z / transform.position.x;
             transform.RotateAround(transform.position, new Vector3(relativeX, 0, 1), -Input.GetAxis("Mouse Y") * 100 * moveSpeed);
-        }
+        }*/
 
     }
 }

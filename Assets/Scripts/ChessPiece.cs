@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChessPiece : MonoBehaviour {
 
-    public MeshRenderer square;
+   // public MeshRenderer square;
     public Material hoverMaterial;
     private float yPosition { get; set; }
     private Material originalMaterial { get; set; }
@@ -12,8 +12,6 @@ public class ChessPiece : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        yPosition = transform.position.y;
-        transform.position = new Vector3(square.bounds.center.x, yPosition, square.bounds.center.z);
         originalMaterial = GetComponent<Renderer>().material;
     }
 
@@ -25,6 +23,12 @@ public class ChessPiece : MonoBehaviour {
     private void OnMouseExit()
     {
         GetComponent<Renderer>().material = originalMaterial;
+    }
+
+    public void pinToPosition(Vector3 position3)
+    {
+        yPosition = transform.position.y;
+        transform.position = new Vector3(position3.x/*square.bounds.center.x*/, yPosition, /*square.bounds.center.z*/position3.z);
     }
 
     // Update is called once per frame

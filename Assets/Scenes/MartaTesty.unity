@@ -196,7 +196,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1631851079823293695}
   - {fileID: 6536888934720123247}
   - {fileID: 3471734049437014782}
   - {fileID: 343975495}
@@ -205,6 +204,7 @@ Transform:
   - {fileID: 2529560205999143728}
   - {fileID: 617560062}
   - {fileID: 697560069}
+  - {fileID: 1631851079823293695}
   - {fileID: 1047997335}
   - {fileID: 1999074999}
   - {fileID: 221915344}
@@ -229,6 +229,8 @@ GameObject:
   - component: {fileID: 221915346}
   - component: {fileID: 221915345}
   - component: {fileID: 221915349}
+  - component: {fileID: 221915351}
+  - component: {fileID: 221915350}
   m_Layer: 0
   m_Name: Pawn_1 (3)
   m_TagString: Untagged
@@ -244,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221915343}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -18.4, y: 36.816, z: 19.75}
+  m_LocalPosition: {x: -18.4, y: 36.816, z: 19.88}
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 145358355}
@@ -258,7 +260,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221915343}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -276,7 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 73530667169734881}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!23 &221915347
 MeshRenderer:
@@ -297,7 +298,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -339,6 +340,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &221915350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221915343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 1.14458834e-17, z: -0.004721205}
+--- !u!54 &221915351
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221915343}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &237331789
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 237331790}
+  - component: {fileID: 237331791}
   m_Layer: 0
   m_Name: PiecesBoard
   m_TagString: Untagged
@@ -366,14 +397,6 @@ Transform:
   m_LocalPosition: {x: 8.42, y: 0, z: 8.85}
   m_LocalScale: {x: 0.98480153, y: 1.0226529, z: 0.97153175}
   m_Children:
-  - {fileID: 7398647280701828249}
-  - {fileID: 3252568081954680795}
-  - {fileID: 5137357448425377026}
-  - {fileID: 6448107394091672987}
-  - {fileID: 5782216774859840466}
-  - {fileID: 5158808407788574807}
-  - {fileID: 3216033553432870403}
-  - {fileID: 1516886196564424433}
   - {fileID: 7984120354614450043}
   - {fileID: 3271575530347063912}
   - {fileID: 8739422307184884612}
@@ -422,17 +445,37 @@ Transform:
   - {fileID: 8637769701546226425}
   - {fileID: 3632021411205768241}
   - {fileID: 7303678947844245908}
-  - {fileID: 3350905272473517100}
-  - {fileID: 6247105204019119710}
-  - {fileID: 3655654507401512538}
+  - {fileID: 5782216774859840466}
   - {fileID: 1762576034458417845}
-  - {fileID: 7001631441954578660}
-  - {fileID: 8135095991547199721}
-  - {fileID: 3487361068716051546}
+  - {fileID: 5158808407788574807}
+  - {fileID: 3655654507401512538}
+  - {fileID: 3216033553432870403}
+  - {fileID: 6247105204019119710}
+  - {fileID: 1516886196564424433}
+  - {fileID: 3350905272473517100}
   - {fileID: 4713160178185977589}
+  - {fileID: 3252568081954680795}
+  - {fileID: 3487361068716051546}
+  - {fileID: 5137357448425377026}
+  - {fileID: 8135095991547199721}
+  - {fileID: 6448107394091672987}
+  - {fileID: 7001631441954578660}
+  - {fileID: 7398647280701828249}
   m_Father: {fileID: 837712481}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &237331791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237331789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39fc5b5d93365c4a9f3b0c7ec69a89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &255476649
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +522,8 @@ GameObject:
   - component: {fileID: 343975498}
   - component: {fileID: 343975499}
   - component: {fileID: 343975500}
+  - component: {fileID: 343975502}
+  - component: {fileID: 343975501}
   m_Layer: 0
   m_Name: Bishop_left
   m_TagString: Untagged
@@ -494,11 +539,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343975494}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -22.73, y: 36.785, z: 17.494095}
+  m_LocalPosition: {x: -22.73, y: 36.785, z: 17.674095}
   m_LocalScale: {x: 12.48632, y: 12.48632, z: 12.48632}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &343975496
 MeshRenderer:
@@ -519,7 +564,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -561,7 +606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 3287056205666918815}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!64 &343975499
 MeshCollider:
@@ -571,7 +615,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343975494}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -589,6 +633,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &343975501
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343975494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.3047747}
+  m_Center: {x: 0, y: 0, z: -0.01861102}
+--- !u!54 &343975502
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343975494}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &385424020
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +675,9 @@ GameObject:
   - component: {fileID: 385424022}
   - component: {fileID: 385424024}
   - component: {fileID: 385424025}
+  - component: {fileID: 385424026}
+  - component: {fileID: 385424028}
+  - component: {fileID: 385424027}
   m_Layer: 0
   m_Name: Pawn_5
   m_TagString: Untagged
@@ -617,7 +693,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385424020}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -20.65, y: 37.127235, z: 30.908533}
+  m_LocalPosition: {x: -20.65, y: 36.816, z: 30.908533}
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -642,7 +718,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -692,12 +768,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385424020}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3721955245594417878, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &385424026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385424020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &385424027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385424020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &385424028
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385424020}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &385438703
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +829,9 @@ GameObject:
   - component: {fileID: 385438705}
   - component: {fileID: 385438707}
   - component: {fileID: 385438708}
+  - component: {fileID: 385438709}
+  - component: {fileID: 385438711}
+  - component: {fileID: 385438710}
   m_Layer: 0
   m_Name: Bishop_right
   m_TagString: Untagged
@@ -726,7 +847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385438703}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -22.68, y: 37.069042, z: 32.884476}
+  m_LocalPosition: {x: -22.68, y: 36.785, z: 32.884476}
   m_LocalScale: {x: 12.48632, y: 12.48632, z: 12.48632}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -751,7 +872,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -801,12 +922,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385438703}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8948943218820673837, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &385438709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385438703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &385438710
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385438703}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.3047747}
+  m_Center: {x: 0, y: 0, z: -0.01861102}
+--- !u!54 &385438711
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385438703}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &617560061
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +984,8 @@ GameObject:
   - component: {fileID: 617560065}
   - component: {fileID: 617560066}
   - component: {fileID: 617560067}
+  - component: {fileID: 617560069}
+  - component: {fileID: 617560068}
   m_Layer: 0
   m_Name: Knight_right
   m_TagString: Untagged
@@ -836,11 +1001,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617560061}
   m_LocalRotation: {x: -0.49991274, y: -0.50008726, z: -0.49991274, w: 0.50008726}
-  m_LocalPosition: {x: -14.01, y: 37.14, z: 17.53626}
+  m_LocalPosition: {x: -14.01, y: 37.14, z: 17.71626}
   m_LocalScale: {x: 100, y: 100, z: 39.818554}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -89.98, y: -90, z: 0}
 --- !u!23 &617560063
 MeshRenderer:
@@ -861,7 +1026,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -903,7 +1068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 1285861153991679166}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!64 &617560066
 MeshCollider:
@@ -913,7 +1077,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617560061}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -931,6 +1095,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &617560068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617560061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.1}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &617560069
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617560061}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &697560068
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +1138,8 @@ GameObject:
   - component: {fileID: 697560072}
   - component: {fileID: 697560073}
   - component: {fileID: 697560074}
+  - component: {fileID: 697560076}
+  - component: {fileID: 697560075}
   m_Layer: 0
   m_Name: Rook_right
   m_TagString: Untagged
@@ -960,11 +1155,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697560068}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -11.89, y: 37.7, z: 17.6}
+  m_LocalPosition: {x: -11.89, y: 37.7, z: 17.78}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &697560070
 MeshRenderer:
@@ -985,7 +1180,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1027,7 +1222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 5109232014973031700}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!64 &697560073
 MeshCollider:
@@ -1037,7 +1231,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697560068}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -1055,6 +1249,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &697560075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697560068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.1}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &697560076
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697560068}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &763996319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,6 +1291,9 @@ GameObject:
   - component: {fileID: 763996321}
   - component: {fileID: 763996323}
   - component: {fileID: 763996324}
+  - component: {fileID: 763996325}
+  - component: {fileID: 763996327}
+  - component: {fileID: 763996326}
   m_Layer: 0
   m_Name: Pawn_4
   m_TagString: Untagged
@@ -1083,7 +1309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763996319}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -18.56, y: 37.127235, z: 30.908533}
+  m_LocalPosition: {x: -18.56, y: 36.816, z: 30.908533}
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -1108,7 +1334,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1158,12 +1384,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763996319}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3721955245594417878, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &763996325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763996319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &763996326
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763996319}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &763996327
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763996319}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &798589119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1538,9 @@ GameObject:
   - component: {fileID: 805351091}
   - component: {fileID: 805351093}
   - component: {fileID: 805351094}
+  - component: {fileID: 805351095}
+  - component: {fileID: 805351097}
+  - component: {fileID: 805351096}
   m_Layer: 0
   m_Name: Pawn_6
   m_TagString: Untagged
@@ -1285,7 +1556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805351089}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -22.75, y: 37.127235, z: 30.908533}
+  m_LocalPosition: {x: -22.75, y: 36.816, z: 30.908533}
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -1310,7 +1581,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1360,12 +1631,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805351089}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3721955245594417878, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &805351095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805351089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &805351096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805351089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &805351097
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805351089}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &837712480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,6 +1754,8 @@ GameObject:
   - component: {fileID: 956631016}
   - component: {fileID: 956631015}
   - component: {fileID: 956631019}
+  - component: {fileID: 956631021}
+  - component: {fileID: 956631020}
   m_Layer: 0
   m_Name: Pawn_1 (5)
   m_TagString: Untagged
@@ -1470,7 +1785,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956631013}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -1488,7 +1803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 186451593663589738}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!23 &956631017
 MeshRenderer:
@@ -1509,7 +1823,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1551,6 +1865,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &956631020
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956631013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &956631021
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956631013}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1047997334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1908,8 @@ GameObject:
   - component: {fileID: 1047997337}
   - component: {fileID: 1047997336}
   - component: {fileID: 1047997340}
+  - component: {fileID: 1047997342}
+  - component: {fileID: 1047997341}
   m_Layer: 0
   m_Name: Pawn_1 (1)
   m_TagString: Untagged
@@ -1594,7 +1939,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047997334}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -1612,7 +1957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 947717603017812745}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!23 &1047997338
 MeshRenderer:
@@ -1633,7 +1977,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1675,6 +2019,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1047997341
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047997334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &1047997342
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047997334}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1160101758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,6 +2061,9 @@ GameObject:
   - component: {fileID: 1160101760}
   - component: {fileID: 1160101762}
   - component: {fileID: 1160101763}
+  - component: {fileID: 1160101764}
+  - component: {fileID: 1160101766}
+  - component: {fileID: 1160101765}
   m_Layer: 0
   m_Name: Pawn_7
   m_TagString: Untagged
@@ -1703,7 +2079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160101758}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -24.83, y: 37.127235, z: 30.908533}
+  m_LocalPosition: {x: -24.83, y: 36.816, z: 30.908533}
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -1728,7 +2104,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1778,12 +2154,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160101758}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3721955245594417878, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &1160101764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160101758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &1160101765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160101758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &1160101766
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160101758}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1181211041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +2215,9 @@ GameObject:
   - component: {fileID: 1181211043}
   - component: {fileID: 1181211045}
   - component: {fileID: 1181211046}
+  - component: {fileID: 1181211047}
+  - component: {fileID: 1181211049}
+  - component: {fileID: 1181211048}
   m_Layer: 0
   m_Name: Pawn_2
   m_TagString: Untagged
@@ -1812,7 +2233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181211041}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -14.13, y: 37.127235, z: 30.908533}
+  m_LocalPosition: {x: -14.13, y: 36.816, z: 30.908533}
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -1837,7 +2258,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1887,12 +2308,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181211041}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3721955245594417878, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &1181211047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181211041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &1181211048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181211041}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &1181211049
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181211041}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1198995539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,6 +2369,9 @@ GameObject:
   - component: {fileID: 1198995541}
   - component: {fileID: 1198995543}
   - component: {fileID: 1198995544}
+  - component: {fileID: 1198995545}
+  - component: {fileID: 1198995547}
+  - component: {fileID: 1198995546}
   m_Layer: 0
   m_Name: Rook_left
   m_TagString: Untagged
@@ -1921,7 +2387,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198995539}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -11.79, y: 38.08766, z: 32.889984}
+  m_LocalPosition: {x: -11.79, y: 37.7, z: 32.889984}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -1946,7 +2412,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1996,12 +2462,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198995539}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6194387453348322274, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &1198995545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198995539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &1198995546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198995539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.1}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &1198995547
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198995539}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1219032470
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2524,8 @@ GameObject:
   - component: {fileID: 1219032473}
   - component: {fileID: 1219032472}
   - component: {fileID: 1219032476}
+  - component: {fileID: 1219032478}
+  - component: {fileID: 1219032477}
   m_Layer: 0
   m_Name: Pawn_1 (4)
   m_TagString: Untagged
@@ -2045,7 +2555,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219032470}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -2063,7 +2573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 6463683789823958728}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!23 &1219032474
 MeshRenderer:
@@ -2084,7 +2593,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2126,6 +2635,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1219032477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219032470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &1219032478
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219032470}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1264867572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,6 +2677,9 @@ GameObject:
   - component: {fileID: 1264867574}
   - component: {fileID: 1264867576}
   - component: {fileID: 1264867577}
+  - component: {fileID: 1264867578}
+  - component: {fileID: 1264867580}
+  - component: {fileID: 1264867579}
   m_Layer: 0
   m_Name: Pawn_8
   m_TagString: Untagged
@@ -2154,7 +2695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264867572}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -27.15, y: 37.127235, z: 30.908533}
+  m_LocalPosition: {x: -27.15, y: 36.816, z: 30.908533}
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -2179,7 +2720,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2229,12 +2770,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264867572}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3721955245594417878, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &1264867578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264867572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &1264867579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264867572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &1264867580
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264867572}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1273917899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2249,6 +2832,8 @@ GameObject:
   - component: {fileID: 1273917902}
   - component: {fileID: 1273917901}
   - component: {fileID: 1273917905}
+  - component: {fileID: 1273917907}
+  - component: {fileID: 1273917906}
   m_Layer: 0
   m_Name: Pawn_1 (6)
   m_TagString: Untagged
@@ -2278,7 +2863,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273917899}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -2296,7 +2881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 164387746608698177}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!23 &1273917903
 MeshRenderer:
@@ -2317,7 +2901,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2359,6 +2943,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1273917906
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273917899}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &1273917907
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273917899}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1570883282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2372,6 +2985,9 @@ GameObject:
   - component: {fileID: 1570883284}
   - component: {fileID: 1570883286}
   - component: {fileID: 1570883287}
+  - component: {fileID: 1570883288}
+  - component: {fileID: 1570883290}
+  - component: {fileID: 1570883289}
   m_Layer: 0
   m_Name: Knight_left
   m_TagString: Untagged
@@ -2387,7 +3003,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570883282}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -13.99, y: 37.514717, z: 32.926643}
+  m_LocalPosition: {x: -13.99, y: 37.14, z: 32.926643}
   m_LocalScale: {x: 100, y: 100, z: 39.818554}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -2412,7 +3028,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2462,12 +3078,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570883282}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5819096890585351371, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &1570883288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570883282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &1570883289
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570883282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.1}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &1570883290
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570883282}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1691703621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,6 +3140,8 @@ GameObject:
   - component: {fileID: 1691703624}
   - component: {fileID: 1691703623}
   - component: {fileID: 1691703627}
+  - component: {fileID: 1691703629}
+  - component: {fileID: 1691703628}
   m_Layer: 0
   m_Name: Pawn_1 (7)
   m_TagString: Untagged
@@ -2511,7 +3171,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691703621}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -2529,7 +3189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 6759492897186095599}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!23 &1691703625
 MeshRenderer:
@@ -2550,7 +3209,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2592,6 +3251,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1691703628
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691703621}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &1691703629
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691703621}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1836179859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,6 +3398,9 @@ GameObject:
   - component: {fileID: 1905539046}
   - component: {fileID: 1905539048}
   - component: {fileID: 1905539049}
+  - component: {fileID: 1905539050}
+  - component: {fileID: 1905539052}
+  - component: {fileID: 1905539051}
   m_Layer: 0
   m_Name: Pawn_3
   m_TagString: Untagged
@@ -2725,7 +3416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905539044}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -16.24, y: 37.127235, z: 30.908533}
+  m_LocalPosition: {x: -16.24, y: 36.816, z: 30.908533}
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -2750,7 +3441,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2800,12 +3491,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905539044}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3721955245594417878, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &1905539050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905539044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &1905539051
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905539044}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &1905539052
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905539044}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1999074998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2820,6 +3553,8 @@ GameObject:
   - component: {fileID: 1999075001}
   - component: {fileID: 1999075000}
   - component: {fileID: 1999075004}
+  - component: {fileID: 1999075006}
+  - component: {fileID: 1999075005}
   m_Layer: 0
   m_Name: Pawn_1 (2)
   m_TagString: Untagged
@@ -2849,7 +3584,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999074998}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -2867,7 +3602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 902784295856695749}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!23 &1999075002
 MeshRenderer:
@@ -2888,7 +3622,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2930,6 +3664,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1999075005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999074998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &1999075006
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999074998}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!23 &25044601271342826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2983,7 +3746,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 50
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &50307384001784230
 Transform:
@@ -2997,7 +3760,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 13
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &50830431662228270
 MeshFilter:
@@ -3165,13 +3928,42 @@ GameObject:
   - component: {fileID: 1156580586704262004}
   - component: {fileID: 3832138090223919782}
   - component: {fileID: 6397769937927280066}
+  - component: {fileID: 321599384482002881}
+  - component: {fileID: 321599384482002882}
   m_Layer: 0
   m_Name: B4
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &321599384482002881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321599384482002880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &321599384482002882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321599384482002880}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: 0.004999997, y: 0.025000012, z: 0.000000014901163}
 --- !u!4 &345208110546181871
 Transform:
   m_ObjectHideFlags: 0
@@ -3184,7 +3976,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 11
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &349574271222139838
 MeshRenderer:
@@ -3247,7 +4039,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 29
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &483151883738308409
 MeshRenderer:
@@ -3383,13 +4175,42 @@ GameObject:
   - component: {fileID: 3350905272473517100}
   - component: {fileID: 1490926054077001306}
   - component: {fileID: 6759492897186095599}
+  - component: {fileID: 596345575314151961}
+  - component: {fileID: 596345575314151962}
   m_Layer: 0
   m_Name: A2
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &596345575314151961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596345575314151960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &596345575314151962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596345575314151960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526515e-16}
+  m_Center: {x: 0.025, y: 0.035000015, z: 0.000000014901165}
 --- !u!33 &630826900077895589
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3409,13 +4230,42 @@ GameObject:
   - component: {fileID: 5782216774859840466}
   - component: {fileID: 4843545606127216763}
   - component: {fileID: 3001744186111198017}
+  - component: {fileID: 680244422047687606}
+  - component: {fileID: 680244422047687607}
   m_Layer: 0
   m_Name: H2
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &680244422047687606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680244422047687605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &680244422047687607
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680244422047687605}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.025, y: -0.03500001, z: 0.0000000149011585}
 --- !u!23 &737077270333769922
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3465,7 +4315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7827375242944481604}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -16.180967, y: 37.069042, z: 32.884476}
+  m_LocalPosition: {x: -16.180967, y: 36.785, z: 32.884476}
   m_LocalScale: {x: 12.48632, y: 12.48632, z: 12.48632}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -3534,6 +4384,8 @@ GameObject:
   - component: {fileID: 919852581349405732}
   - component: {fileID: 919852581349405733}
   - component: {fileID: 919852581349405734}
+  - component: {fileID: 919852581349405735}
+  - component: {fileID: 919852581349405736}
   m_Layer: 0
   m_Name: Rook_left
   m_TagString: Untagged
@@ -3553,7 +4405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 4143033262215820411}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!64 &919852581349405733
 MeshCollider:
@@ -3563,7 +4414,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919852581349405731}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -3581,6 +4432,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &919852581349405735
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919852581349405731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.1}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &919852581349405736
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919852581349405731}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &941983884195153559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,13 +4472,42 @@ GameObject:
   - component: {fileID: 1755034575844102985}
   - component: {fileID: 3904308108201291414}
   - component: {fileID: 5854766839871081182}
+  - component: {fileID: 941983884195153560}
+  - component: {fileID: 941983884195153561}
   m_Layer: 0
   m_Name: H8
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &941983884195153560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941983884195153559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &941983884195153561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941983884195153559}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.03500001, y: -0.03500001, z: 0.0000000149011585}
 --- !u!23 &947717603017812745
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3652,7 +4561,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 37
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &995558971766006553
 MeshFilter:
@@ -3681,13 +4590,42 @@ GameObject:
   - component: {fileID: 4041171855153893264}
   - component: {fileID: 5771722597120227767}
   - component: {fileID: 3501544586880280980}
+  - component: {fileID: 1026816898055135921}
+  - component: {fileID: 1026816898055135922}
   m_Layer: 0
   m_Name: B8
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1026816898055135921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026816898055135920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &1026816898055135922
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026816898055135920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: -0.03500001, y: 0.025000012, z: 0.000000014901163}
 --- !u!33 &1089747999307720148
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3704,11 +4642,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8158109994248032206}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -20.52, y: 37.744, z: 17.6}
+  m_LocalPosition: {x: -20.52, y: 37.744, z: 17.78}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1156580586704262004
 Transform:
@@ -3722,7 +4660,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 15
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &1201778670429021756
 MeshFilter:
@@ -3743,13 +4681,42 @@ GameObject:
   - component: {fileID: 1748667471019179215}
   - component: {fileID: 6521956095904246241}
   - component: {fileID: 7319532620036971533}
+  - component: {fileID: 1220150714084206651}
+  - component: {fileID: 1220150714084206652}
   m_Layer: 0
   m_Name: C8
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1220150714084206651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220150714084206650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &1220150714084206652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220150714084206650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: -0.03500001, y: 0.01500001, z: 0.000000014901163}
 --- !u!1 &1224158004829978391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,6 +4731,8 @@ GameObject:
   - component: {fileID: 1224158004829978392}
   - component: {fileID: 1224158004829978393}
   - component: {fileID: 1224158004829978394}
+  - component: {fileID: 1224158004829978396}
+  - component: {fileID: 1224158004829978395}
   m_Layer: 0
   m_Name: Bishop_right
   m_TagString: Untagged
@@ -3783,7 +4752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 8584743810302471121}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!64 &1224158004829978393
 MeshCollider:
@@ -3793,7 +4761,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224158004829978391}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -3811,6 +4779,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1224158004829978395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224158004829978391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.001, y: 0.001, z: 0.3047747}
+  m_Center: {x: 0, y: -1.4226425e-16, z: -0.01861102}
+--- !u!54 &1224158004829978396
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224158004829978391}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!23 &1285861153991679166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3904,13 +4901,42 @@ GameObject:
   - component: {fileID: 5150668454967190623}
   - component: {fileID: 7723709216552845857}
   - component: {fileID: 3729403347089116304}
+  - component: {fileID: 1364405098276527072}
+  - component: {fileID: 1364405098276527073}
   m_Layer: 0
   m_Name: G8
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1364405098276527072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364405098276527071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &1364405098276527073
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364405098276527071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.03500001, y: -0.025000004, z: 0.000000014901159}
 --- !u!1 &1417105104988118540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3948,7 +4974,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3990,7 +5016,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 30
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &1513993748496610662
 MeshRenderer:
@@ -4045,7 +5071,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 7
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &1567017833909598041
 Transform:
@@ -4059,7 +5085,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 17
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &1583140261705038299
 MeshFilter:
@@ -4122,7 +5148,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1653296086464879774
 Transform:
@@ -4136,7 +5162,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 40
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1673816466566826379
 GameObject:
@@ -4149,13 +5175,42 @@ GameObject:
   - component: {fileID: 7001631441954578660}
   - component: {fileID: 3871913638702462158}
   - component: {fileID: 3817277585346923165}
+  - component: {fileID: 1673816466566826380}
+  - component: {fileID: 1673816466566826381}
   m_Layer: 0
   m_Name: B1
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1673816466566826380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673816466566826379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &1673816466566826381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673816466566826379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: 0.035000004, y: 0.025000012, z: 0.000000014901163}
 --- !u!4 &1736019612742981885
 Transform:
   m_ObjectHideFlags: 0
@@ -4182,7 +5237,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 33
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &1755034575844102985
 Transform:
@@ -4196,7 +5251,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 28
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &1762576034458417845
 Transform:
@@ -4210,7 +5265,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 59
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &1763791786060110499
 Transform:
@@ -4237,13 +5292,42 @@ GameObject:
   - component: {fileID: 5030709235904257628}
   - component: {fileID: 50830431662228270}
   - component: {fileID: 1617135077511303229}
+  - component: {fileID: 1801045121431827173}
+  - component: {fileID: 1801045121431827174}
   m_Layer: 0
   m_Name: F7
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1801045121431827173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801045121431827172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &1801045121431827174
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801045121431827172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: -0.025000008, y: -0.015000002, z: 0.00000001490116}
 --- !u!4 &1812478054316215809
 Transform:
   m_ObjectHideFlags: 0
@@ -4256,7 +5340,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 34
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &1840137786052844336
 MeshFilter:
@@ -4360,7 +5444,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 44
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &1932940924182015860
 MeshRenderer:
@@ -4381,7 +5465,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4531,7 +5615,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 12
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &2165013528119097873
 MeshFilter:
@@ -4552,13 +5636,42 @@ GameObject:
   - component: {fileID: 7459172829338170805}
   - component: {fileID: 8528360989991944764}
   - component: {fileID: 349574271222139838}
+  - component: {fileID: 2174454219612406425}
+  - component: {fileID: 2174454219612406426}
   m_Layer: 0
   m_Name: E7
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2174454219612406425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174454219612406424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &2174454219612406426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174454219612406424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: -0.025000008, y: -0.004999999, z: 0.000000014901161}
 --- !u!33 &2192016457635458597
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4619,13 +5732,42 @@ GameObject:
   - component: {fileID: 9029121887481133221}
   - component: {fileID: 187688248764659543}
   - component: {fileID: 5346607468024538269}
+  - component: {fileID: 2261208727391031928}
+  - component: {fileID: 2261208727391031929}
   m_Layer: 0
   m_Name: B6
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2261208727391031928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2261208727391031927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &2261208727391031929
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2261208727391031927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: -0.015000008, y: 0.025000012, z: 0.000000014901163}
 --- !u!1 &2278770319544211385
 GameObject:
   m_ObjectHideFlags: 0
@@ -4637,13 +5779,42 @@ GameObject:
   - component: {fileID: 6453965511582274199}
   - component: {fileID: 995558971766006553}
   - component: {fileID: 5972345150399647766}
+  - component: {fileID: 2278770319544211386}
+  - component: {fileID: 2278770319544211387}
   m_Layer: 0
   m_Name: G6
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2278770319544211386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2278770319544211385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &2278770319544211387
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2278770319544211385}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.015000008, y: -0.025000004, z: 0.000000014901159}
 --- !u!1 &2376964517703555152
 GameObject:
   m_ObjectHideFlags: 0
@@ -4655,13 +5826,42 @@ GameObject:
   - component: {fileID: 345208110546181871}
   - component: {fileID: 1001860621479757003}
   - component: {fileID: 2004771344464917306}
+  - component: {fileID: 2376964517703555153}
+  - component: {fileID: 2376964517703555154}
   m_Layer: 0
   m_Name: A3
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2376964517703555153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2376964517703555152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &2376964517703555154
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2376964517703555152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526515e-16}
+  m_Center: {x: 0.014999999, y: 0.035000015, z: 0.000000014901165}
 --- !u!23 &2401461494463805803
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4681,7 +5881,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4719,11 +5919,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224158004829978391}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -16.180967, y: 36.785, z: 17.494095}
+  m_LocalPosition: {x: -16.180967, y: 36.785, z: 17.674095}
   m_LocalScale: {x: 12.48632, y: 12.48632, z: 12.48632}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2605366364730279665
 MeshFilter:
@@ -4849,7 +6049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5695823980579343072}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -24.862274, y: 37.514717, z: 32.926643}
+  m_LocalPosition: {x: -24.862274, y: 37.14, z: 32.926643}
   m_LocalScale: {x: 100, y: 100, z: 39.818554}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -4907,13 +6107,42 @@ GameObject:
   - component: {fileID: 6216275757014352781}
   - component: {fileID: 2504031520341522211}
   - component: {fileID: 7532217783377249812}
+  - component: {fileID: 2893571585204861251}
+  - component: {fileID: 2893571585204861252}
   m_Layer: 0
   m_Name: F6
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2893571585204861251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2893571585204861250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &2893571585204861252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2893571585204861250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: -0.015000008, y: -0.015000002, z: 0.00000001490116}
 --- !u!33 &2976512432165911074
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4934,7 +6163,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 18
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &3001205640320412956
 MeshRenderer:
@@ -4955,7 +6184,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5037,13 +6266,42 @@ GameObject:
   - component: {fileID: 4499941406914554844}
   - component: {fileID: 6831772153590285394}
   - component: {fileID: 1513993748496610662}
+  - component: {fileID: 3094216377762307864}
+  - component: {fileID: 3094216377762307865}
   m_Layer: 0
   m_Name: G4
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3094216377762307864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094216377762307863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &3094216377762307865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094216377762307863}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.004999997, y: -0.025000004, z: 0.000000014901159}
 --- !u!1 &3119697556413798925
 GameObject:
   m_ObjectHideFlags: 0
@@ -5055,13 +6313,42 @@ GameObject:
   - component: {fileID: 6448107394091672987}
   - component: {fileID: 8640011586597262713}
   - component: {fileID: 3287056205666918815}
+  - component: {fileID: 3119697556413798926}
+  - component: {fileID: 3119697556413798927}
   m_Layer: 0
   m_Name: C1
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3119697556413798926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3119697556413798925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &3119697556413798927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3119697556413798925}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: 0.035000004, y: 0.01500001, z: 0.000000014901163}
 --- !u!23 &3127865661646686328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5081,7 +6368,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5114,13 +6401,42 @@ GameObject:
   - component: {fileID: 42826968829165079}
   - component: {fileID: 4140684782453942823}
   - component: {fileID: 6511063180627873739}
+  - component: {fileID: 3149321199465957853}
+  - component: {fileID: 3149321199465957854}
   m_Layer: 0
   m_Name: E4
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3149321199465957853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3149321199465957852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &3149321199465957854
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3149321199465957852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: 0.004999997, y: -0.004999999, z: 0.000000014901161}
 --- !u!4 &3150895965950621095
 Transform:
   m_ObjectHideFlags: 0
@@ -5133,7 +6449,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 16
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &3216033553432870403
 Transform:
@@ -5147,7 +6463,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 6
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &3252568081954680795
 Transform:
@@ -5161,7 +6477,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 1
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &3255064058550684480
 GameObject:
@@ -5174,13 +6490,42 @@ GameObject:
   - component: {fileID: 4713160178185977589}
   - component: {fileID: 2036075532443240375}
   - component: {fileID: 5109232014973031700}
+  - component: {fileID: 3255064058550684481}
+  - component: {fileID: 3255064058550684482}
   m_Layer: 0
   m_Name: H1
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3255064058550684481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255064058550684480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &3255064058550684482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255064058550684480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.035000004, y: -0.03500001, z: 0.0000000149011585}
 --- !u!4 &3262596977621318122
 Transform:
   m_ObjectHideFlags: 0
@@ -5189,11 +6534,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3915040210791601124}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -18.48, y: 36.823, z: 17.67}
+  m_LocalPosition: {x: -18.48, y: 36.823, z: 17.85}
   m_LocalScale: {x: 6.7387877, y: 6.7387877, z: 7.0397673}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &3265680203229277620
 MeshRenderer:
@@ -5248,7 +6593,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 9
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &3287056205666918815
 MeshRenderer:
@@ -5303,7 +6648,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 19
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &3312258489417817676
 MeshRenderer:
@@ -5357,13 +6702,42 @@ GameObject:
   - component: {fileID: 9167861184575169078}
   - component: {fileID: 5633046018735864725}
   - component: {fileID: 4929240921598852491}
+  - component: {fileID: 3327571720560257311}
+  - component: {fileID: 3327571720560257312}
   m_Layer: 0
   m_Name: A8
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3327571720560257311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327571720560257310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &3327571720560257312
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327571720560257310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526515e-16}
+  m_Center: {x: -0.03500001, y: 0.035000015, z: 0.000000014901165}
 --- !u!4 &3350905272473517100
 Transform:
   m_ObjectHideFlags: 0
@@ -5376,7 +6750,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 56
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &3378586018956941332
 GameObject:
@@ -5389,13 +6763,42 @@ GameObject:
   - component: {fileID: 375016454077419671}
   - component: {fileID: 5196232575360458200}
   - component: {fileID: 3265680203229277620}
+  - component: {fileID: 3378586018956941333}
+  - component: {fileID: 3378586018956941334}
   m_Layer: 0
   m_Name: F8
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3378586018956941333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378586018956941332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &3378586018956941334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378586018956941332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: -0.03500001, y: -0.015000002, z: 0.00000001490116}
 --- !u!4 &3407400097918003026
 Transform:
   m_ObjectHideFlags: 0
@@ -5408,7 +6811,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 24
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &3442044149196739065
 MeshFilter:
@@ -5426,11 +6829,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6976735598416698762}
   m_LocalRotation: {x: -0.49991274, y: -0.50008726, z: -0.49991274, w: 0.50008726}
-  m_LocalPosition: {x: -24.862274, y: 37.14, z: 17.53626}
+  m_LocalPosition: {x: -24.862274, y: 37.14, z: 17.71626}
   m_LocalScale: {x: 100, y: 100, z: 39.818554}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -89.98, y: -90, z: 0}
 --- !u!4 &3487361068716051546
 Transform:
@@ -5444,7 +6847,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 62
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &3501544586880280980
 MeshRenderer:
@@ -5539,13 +6942,42 @@ GameObject:
   - component: {fileID: 3150895965950621095}
   - component: {fileID: 1583140261705038299}
   - component: {fileID: 6832359462800537656}
+  - component: {fileID: 3555574499263799074}
+  - component: {fileID: 3555574499263799075}
   m_Layer: 0
   m_Name: G5
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3555574499263799074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555574499263799073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &3555574499263799075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555574499263799073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.0050000055, y: -0.025000004, z: 0.000000014901159}
 --- !u!33 &3564237792248256434
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5608,6 +7040,9 @@ GameObject:
   - component: {fileID: 6323903889705808910}
   - component: {fileID: 3604036237398559109}
   - component: {fileID: 3604036237398559110}
+  - component: {fileID: 3604036237398559111}
+  - component: {fileID: 3604036237398559113}
+  - component: {fileID: 3604036237398559112}
   m_Layer: 0
   m_Name: Rook_right
   m_TagString: Untagged
@@ -5635,12 +7070,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3604036237398559108}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6194387453348322274, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &3604036237398559111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604036237398559108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &3604036237398559112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604036237398559108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.1}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &3604036237398559113
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604036237398559108}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!4 &3630689820570965634
 Transform:
   m_ObjectHideFlags: 0
@@ -5653,7 +7130,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 26
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &3632021411205768241
 Transform:
@@ -5667,7 +7144,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 54
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &3655654507401512538
 Transform:
@@ -5681,7 +7158,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 58
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &3689516859816987627
 Transform:
@@ -5716,7 +7193,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5798,13 +7275,42 @@ GameObject:
   - component: {fileID: 50307384001784230}
   - component: {fileID: 8045108249630902205}
   - component: {fileID: 2833720880133557906}
+  - component: {fileID: 3736922303032583183}
+  - component: {fileID: 3736922303032583184}
   m_Layer: 0
   m_Name: F4
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3736922303032583183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736922303032583182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &3736922303032583184
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736922303032583182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: 0.004999997, y: -0.015000002, z: 0.00000001490116}
 --- !u!23 &3767603084671309123
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5963,7 +7469,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5996,13 +7502,42 @@ GameObject:
   - component: {fileID: 1509936630996080608}
   - component: {fileID: 8040185719147537282}
   - component: {fileID: 737077270333769922}
+  - component: {fileID: 3887238493660313552}
+  - component: {fileID: 3887238493660313553}
   m_Layer: 0
   m_Name: D8
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3887238493660313552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887238493660313551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &3887238493660313553
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887238493660313551}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.03500001, y: 0.0050000045, z: 0.000000014901161}
 --- !u!33 &3904308108201291414
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6025,6 +7560,8 @@ GameObject:
   - component: {fileID: 3915040210791601125}
   - component: {fileID: 3915040210791601126}
   - component: {fileID: 3915040210791601127}
+  - component: {fileID: 3915040210791601129}
+  - component: {fileID: 3915040210791601128}
   m_Layer: 0
   m_Name: King
   m_TagString: Untagged
@@ -6044,7 +7581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 6471341919521141038}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!64 &3915040210791601126
 MeshCollider:
@@ -6054,7 +7590,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3915040210791601124}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -6072,6 +7608,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3915040210791601128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915040210791601124}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.5}
+  m_Center: {x: 0, y: 0, z: -0.1}
+--- !u!54 &3915040210791601129
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915040210791601124}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!23 &3931283860070589996
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6124,13 +7689,42 @@ GameObject:
   - component: {fileID: 985000790927569200}
   - component: {fileID: 6820081225441879925}
   - component: {fileID: 7764816392314637102}
+  - component: {fileID: 3989044285990260643}
+  - component: {fileID: 3989044285990260644}
   m_Layer: 0
   m_Name: D7
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3989044285990260643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989044285990260642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &3989044285990260644
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989044285990260642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.025000008, y: 0.0050000045, z: 0.000000014901161}
 --- !u!4 &4041171855153893264
 Transform:
   m_ObjectHideFlags: 0
@@ -6143,7 +7737,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 31
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &4077739017693294587
 GameObject:
@@ -6159,6 +7753,8 @@ GameObject:
   - component: {fileID: 4077739017693294588}
   - component: {fileID: 4077739017693294589}
   - component: {fileID: 4077739017693294590}
+  - component: {fileID: 4077739017693294592}
+  - component: {fileID: 4077739017693294591}
   m_Layer: 0
   m_Name: Pawn_1
   m_TagString: Untagged
@@ -6178,7 +7774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 3001744186111198017}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!64 &4077739017693294589
 MeshCollider:
@@ -6188,7 +7783,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4077739017693294587}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -6206,6 +7801,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4077739017693294591
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077739017693294587}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &4077739017693294592
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077739017693294587}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!33 &4140684782453942823
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6263,7 +7887,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5447021783567644865}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -18.39, y: 37.127235, z: 32.932053}
+  m_LocalPosition: {x: -18.39, y: 36.823, z: 32.932053}
   m_LocalScale: {x: 6.7387877, y: 6.7387877, z: 7.0397673}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -6280,13 +7904,42 @@ GameObject:
   - component: {fileID: 1881332335459029444}
   - component: {fileID: 9168939900385918343}
   - component: {fileID: 5545663581205533875}
+  - component: {fileID: 4240016617634794574}
+  - component: {fileID: 4240016617634794575}
   m_Layer: 0
   m_Name: B5
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4240016617634794574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4240016617634794573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &4240016617634794575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4240016617634794573}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: -0.0050000055, y: 0.025000012, z: 0.000000014901163}
 --- !u!33 &4306934091430902073
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6306,13 +7959,42 @@ GameObject:
   - component: {fileID: 6117229146533680221}
   - component: {fileID: 6209225406302982424}
   - component: {fileID: 3799383228293688675}
+  - component: {fileID: 4376737433905636071}
+  - component: {fileID: 4376737433905636072}
   m_Layer: 0
   m_Name: H5
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4376737433905636071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376737433905636070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &4376737433905636072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376737433905636070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.0050000055, y: -0.03500001, z: 0.0000000149011585}
 --- !u!33 &4443939632335256574
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6333,7 +8015,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 51
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &4501528553807166274
 MeshRenderer:
@@ -6396,7 +8078,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 52
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &4613312952757784185
 MeshFilter:
@@ -6418,7 +8100,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 39
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &4675303765027750652
 GameObject:
@@ -6431,13 +8113,42 @@ GameObject:
   - component: {fileID: 8186978799030909366}
   - component: {fileID: 7360692428226745779}
   - component: {fileID: 553858161585456801}
+  - component: {fileID: 4675303765027750653}
+  - component: {fileID: 4675303765027750654}
   m_Layer: 0
   m_Name: F5
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4675303765027750653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4675303765027750652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &4675303765027750654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4675303765027750652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: -0.0050000055, y: -0.015000002, z: 0.00000001490116}
 --- !u!33 &4695957315099045503
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6458,7 +8169,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 63
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &4727083491377419996
 GameObject:
@@ -6471,13 +8182,42 @@ GameObject:
   - component: {fileID: 7658383251270435824}
   - component: {fileID: 5232113043273196172}
   - component: {fileID: 3767603084671309123}
+  - component: {fileID: 4727083491377419997}
+  - component: {fileID: 4727083491377419998}
   m_Layer: 0
   m_Name: C4
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4727083491377419997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727083491377419996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &4727083491377419998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727083491377419996}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: 0.004999997, y: 0.01500001, z: 0.000000014901163}
 --- !u!4 &4771667829938493156
 Transform:
   m_ObjectHideFlags: 0
@@ -6490,7 +8230,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 41
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &4843545606127216763
 MeshFilter:
@@ -6527,13 +8267,42 @@ GameObject:
   - component: {fileID: 4626565945651568818}
   - component: {fileID: 8963944378159117542}
   - component: {fileID: 1846841099688181172}
+  - component: {fileID: 4885510985231261876}
+  - component: {fileID: 4885510985231261877}
   m_Layer: 0
   m_Name: H7
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4885510985231261876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885510985231261875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &4885510985231261877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885510985231261875}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.025000008, y: -0.03500001, z: 0.0000000149011585}
 --- !u!23 &4929240921598852491
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6586,13 +8355,42 @@ GameObject:
   - component: {fileID: 2097986173372119121}
   - component: {fileID: 6653296214874604229}
   - component: {fileID: 3538625739689857301}
+  - component: {fileID: 4983529016165414947}
+  - component: {fileID: 4983529016165414948}
   m_Layer: 0
   m_Name: H4
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4983529016165414947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983529016165414946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &4983529016165414948
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983529016165414946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.004999997, y: -0.03500001, z: 0.0000000149011585}
 --- !u!23 &4999300969504393145
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6695,7 +8493,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 38
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5076199445993437782
 MeshFilter:
@@ -6758,7 +8556,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 2
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5140977558347439046
 MeshFilter:
@@ -6780,7 +8578,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 35
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5156534671965480761
 MeshFilter:
@@ -6802,7 +8600,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 5
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &5185334234293811995
 GameObject:
@@ -6815,13 +8613,42 @@ GameObject:
   - component: {fileID: 3407400097918003026}
   - component: {fileID: 3442044149196739065}
   - component: {fileID: 6372292193487848810}
+  - component: {fileID: 5185334234293811996}
+  - component: {fileID: 5185334234293811997}
   m_Layer: 0
   m_Name: G7
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5185334234293811996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5185334234293811995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &5185334234293811997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5185334234293811995}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.025000008, y: -0.025000004, z: 0.000000014901159}
 --- !u!33 &5196232575360458200
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6910,13 +8737,42 @@ GameObject:
   - component: {fileID: 1812478054316215809}
   - component: {fileID: 8587612919125547282}
   - component: {fileID: 1348292621321172203}
+  - component: {fileID: 5379558942008603792}
+  - component: {fileID: 5379558942008603793}
   m_Layer: 0
   m_Name: E8
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5379558942008603792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5379558942008603791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &5379558942008603793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5379558942008603791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: -0.03500001, y: -0.004999999, z: 0.000000014901161}
 --- !u!1 &5447021783567644865
 GameObject:
   m_ObjectHideFlags: 0
@@ -6930,6 +8786,9 @@ GameObject:
   - component: {fileID: 6733634918977820585}
   - component: {fileID: 5447021783567644866}
   - component: {fileID: 5447021783567644867}
+  - component: {fileID: 5447021783567644868}
+  - component: {fileID: 5447021783567644870}
+  - component: {fileID: 5447021783567644869}
   m_Layer: 0
   m_Name: King
   m_TagString: Untagged
@@ -6957,12 +8816,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5447021783567644865}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8740183854838360457, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &5447021783567644868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447021783567644865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &5447021783567644869
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447021783567644865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.5}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &5447021783567644870
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447021783567644865}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &5452981095517506011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6974,13 +8875,42 @@ GameObject:
   - component: {fileID: 7156527746848520091}
   - component: {fileID: 8815979992734412493}
   - component: {fileID: 2205492242741245759}
+  - component: {fileID: 5452981095517506012}
+  - component: {fileID: 5452981095517506013}
   m_Layer: 0
   m_Name: D6
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5452981095517506012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452981095517506011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &5452981095517506013
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452981095517506011}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.015000008, y: 0.0050000045, z: 0.000000014901161}
 --- !u!33 &5504645780320783854
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7049,13 +8979,42 @@ GameObject:
   - component: {fileID: 2985706799853789634}
   - component: {fileID: 7527248723568223970}
   - component: {fileID: 6018220946071440752}
+  - component: {fileID: 5591362402426123945}
+  - component: {fileID: 5591362402426123946}
   m_Layer: 0
   m_Name: C5
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5591362402426123945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5591362402426123944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &5591362402426123946
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5591362402426123944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: -0.0050000055, y: 0.01500001, z: 0.000000014901163}
 --- !u!33 &5633046018735864725
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7077,6 +9036,9 @@ GameObject:
   - component: {fileID: 7637048229291551363}
   - component: {fileID: 5686926200489222167}
   - component: {fileID: 5686926200489222168}
+  - component: {fileID: 5686926200489222169}
+  - component: {fileID: 5686926200489222171}
+  - component: {fileID: 5686926200489222170}
   m_Layer: 0
   m_Name: Pawn_1
   m_TagString: Untagged
@@ -7104,12 +9066,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5686926200489222166}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3721955245594417878, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &5686926200489222169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5686926200489222166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &5686926200489222170
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5686926200489222166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.0416812}
+  m_Center: {x: 0, y: 0, z: -0.004721205}
+--- !u!54 &5686926200489222171
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5686926200489222166}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &5695823980579343072
 GameObject:
   m_ObjectHideFlags: 0
@@ -7123,6 +9127,9 @@ GameObject:
   - component: {fileID: 8823660413532606859}
   - component: {fileID: 5695823980579343073}
   - component: {fileID: 5695823980579343074}
+  - component: {fileID: 5695823980579343075}
+  - component: {fileID: 5695823980579343077}
+  - component: {fileID: 5695823980579343076}
   m_Layer: 0
   m_Name: Knight_right
   m_TagString: Untagged
@@ -7150,12 +9157,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5695823980579343072}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5819096890585351371, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &5695823980579343075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695823980579343072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &5695823980579343076
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695823980579343072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.1}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &5695823980579343077
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695823980579343072}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!4 &5703785734919754672
 Transform:
   m_ObjectHideFlags: 0
@@ -7230,13 +9279,42 @@ GameObject:
   - component: {fileID: 3630689820570965634}
   - component: {fileID: 5140977558347439046}
   - component: {fileID: 4501528553807166274}
+  - component: {fileID: 5773855606679250545}
+  - component: {fileID: 5773855606679250546}
   m_Layer: 0
   m_Name: C7
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5773855606679250545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5773855606679250544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &5773855606679250546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5773855606679250544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: -0.025000008, y: 0.01500001, z: 0.000000014901163}
 --- !u!4 &5782216774859840466
 Transform:
   m_ObjectHideFlags: 0
@@ -7249,7 +9327,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 4
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5802252541567694346
 MeshFilter:
@@ -7270,13 +9348,42 @@ GameObject:
   - component: {fileID: 5137357448425377026}
   - component: {fileID: 8838324649015012613}
   - component: {fileID: 6471341919521141038}
+  - component: {fileID: 5849090596889186480}
+  - component: {fileID: 5849090596889186481}
   m_Layer: 0
   m_Name: E1
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5849090596889186480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5849090596889186479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &5849090596889186481
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5849090596889186479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: 0.035000004, y: -0.004999999, z: 0.000000014901161}
 --- !u!23 &5854766839871081182
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7345,13 +9452,42 @@ GameObject:
   - component: {fileID: 9073627345386434770}
   - component: {fileID: 7469130330478336001}
   - component: {fileID: 9075386293211045226}
+  - component: {fileID: 5934424622609470638}
+  - component: {fileID: 5934424622609470639}
   m_Layer: 0
   m_Name: B7
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5934424622609470638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934424622609470637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &5934424622609470639
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934424622609470637}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: -0.025000008, y: 0.025000012, z: 0.000000014901163}
 --- !u!23 &5972345150399647766
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7404,13 +9540,42 @@ GameObject:
   - component: {fileID: 8532826595272208044}
   - component: {fileID: 8231837772547668168}
   - component: {fileID: 25044601271342826}
+  - component: {fileID: 5988034051745465564}
+  - component: {fileID: 5988034051745465565}
   m_Layer: 0
   m_Name: A7
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5988034051745465564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5988034051745465563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &5988034051745465565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5988034051745465563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526515e-16}
+  m_Center: {x: -0.025000008, y: 0.035000015, z: 0.000000014901165}
 --- !u!1 &5989094588167059659
 GameObject:
   m_ObjectHideFlags: 0
@@ -7422,13 +9587,42 @@ GameObject:
   - component: {fileID: 5158808407788574807}
   - component: {fileID: 5076199445993437782}
   - component: {fileID: 902784295856695749}
+  - component: {fileID: 5989094588167059660}
+  - component: {fileID: 5989094588167059661}
   m_Layer: 0
   m_Name: F2
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5989094588167059660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989094588167059659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &5989094588167059661
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989094588167059659}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: 0.025, y: -0.015000002, z: 0.00000001490116}
 --- !u!23 &6018220946071440752
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7481,13 +9675,42 @@ GameObject:
   - component: {fileID: 7398647280701828249}
   - component: {fileID: 7891370167878682813}
   - component: {fileID: 4143033262215820411}
+  - component: {fileID: 6042774657446671593}
+  - component: {fileID: 6042774657446671594}
   m_Layer: 0
   m_Name: A1
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6042774657446671593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042774657446671592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &6042774657446671594
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042774657446671592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526515e-16}
+  m_Center: {x: 0.035000004, y: 0.035000015, z: 0.000000014901165}
 --- !u!4 &6117229146533680221
 Transform:
   m_ObjectHideFlags: 0
@@ -7500,7 +9723,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 47
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &6194544011321540362
 MeshRenderer:
@@ -7563,7 +9786,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 21
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &6247105204019119710
 Transform:
@@ -7577,7 +9800,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 57
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &6323903889705808910
 MeshRenderer:
@@ -7598,7 +9821,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7796,7 +10019,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 3
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &6453965511582274199
 Transform:
@@ -7810,7 +10033,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 43
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &6463683789823958728
 MeshRenderer:
@@ -7951,11 +10174,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919852581349405731}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -26.989628, y: 38.08766, z: 17.499601}
+  m_LocalPosition: {x: -26.989628, y: 38.08766, z: 17.77}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 145358355}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6550092150198223530
 GameObject:
@@ -7968,13 +10191,42 @@ GameObject:
   - component: {fileID: 4771667829938493156}
   - component: {fileID: 630826900077895589}
   - component: {fileID: 7129793975929804054}
+  - component: {fileID: 6550092150198223531}
+  - component: {fileID: 6550092150198223532}
   m_Layer: 0
   m_Name: C6
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6550092150198223531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550092150198223530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &6550092150198223532
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550092150198223530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: -0.015000008, y: 0.01500001, z: 0.000000014901163}
 --- !u!33 &6653296214874604229
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7994,13 +10246,42 @@ GameObject:
   - component: {fileID: 8739422307184884612}
   - component: {fileID: 1089747999307720148}
   - component: {fileID: 3602926663386741093}
+  - component: {fileID: 6654739933680750952}
+  - component: {fileID: 6654739933680750953}
   m_Layer: 0
   m_Name: C3
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6654739933680750952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654739933680750951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &6654739933680750953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654739933680750951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: 0.014999999, y: 0.01500001, z: 0.000000014901163}
 --- !u!33 &6723362939849705659
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8028,7 +10309,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8167,13 +10448,42 @@ GameObject:
   - component: {fileID: 7984120354614450043}
   - component: {fileID: 1201778670429021756}
   - component: {fileID: 4999300969504393145}
+  - component: {fileID: 6903590866576056863}
+  - component: {fileID: 6903590866576056864}
   m_Layer: 0
   m_Name: G3
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6903590866576056863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6903590866576056862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &6903590866576056864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6903590866576056862}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.014999999, y: -0.025000004, z: 0.000000014901159}
 --- !u!1 &6974718326573952169
 GameObject:
   m_ObjectHideFlags: 0
@@ -8185,13 +10495,42 @@ GameObject:
   - component: {fileID: 3216033553432870403}
   - component: {fileID: 3695506813560959102}
   - component: {fileID: 6463683789823958728}
+  - component: {fileID: 6974718326573952170}
+  - component: {fileID: 6974718326573952171}
   m_Layer: 0
   m_Name: D2
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6974718326573952170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6974718326573952169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &6974718326573952171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6974718326573952169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.025, y: 0.0050000045, z: 0.000000014901161}
 --- !u!1 &6976735598416698762
 GameObject:
   m_ObjectHideFlags: 0
@@ -8206,6 +10545,8 @@ GameObject:
   - component: {fileID: 6976735598416698763}
   - component: {fileID: 6976735598416698764}
   - component: {fileID: 6976735598416698765}
+  - component: {fileID: 6976735598416698767}
+  - component: {fileID: 6976735598416698766}
   m_Layer: 0
   m_Name: Knight_left
   m_TagString: Untagged
@@ -8225,7 +10566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 3817277585346923165}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!64 &6976735598416698764
 MeshCollider:
@@ -8235,7 +10575,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6976735598416698762}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -8253,6 +10593,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6976735598416698766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976735598416698762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00001, y: 0.00001, z: 0.1}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &6976735598416698767
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976735598416698762}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!4 &6979378907083373811
 Transform:
   m_ObjectHideFlags: 0
@@ -8265,7 +10634,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 48
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &6995352388519152468
 MeshRenderer:
@@ -8320,7 +10689,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 60
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &7029167703000472680
 MeshRenderer:
@@ -8382,13 +10751,42 @@ GameObject:
   - component: {fileID: 3487361068716051546}
   - component: {fileID: 9036225801592138440}
   - component: {fileID: 8584743810302471121}
+  - component: {fileID: 7095570253716139075}
+  - component: {fileID: 7095570253716139076}
   m_Layer: 0
   m_Name: F1
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7095570253716139075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095570253716139074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &7095570253716139076
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095570253716139074}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: 0.035000004, y: -0.015000002, z: 0.00000001490116}
 --- !u!23 &7129793975929804054
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8450,7 +10848,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 22
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &7165481036779451053
 GameObject:
@@ -8463,13 +10861,42 @@ GameObject:
   - component: {fileID: 3271575530347063912}
   - component: {fileID: 374415817819966512}
   - component: {fileID: 7349319114480133020}
+  - component: {fileID: 7165481036779451054}
+  - component: {fileID: 7165481036779451055}
   m_Layer: 0
   m_Name: E3
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7165481036779451054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165481036779451053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &7165481036779451055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165481036779451053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: 0.014999999, y: -0.004999999, z: 0.000000014901161}
 --- !u!33 &7236935214284876568
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8489,13 +10916,42 @@ GameObject:
   - component: {fileID: 4583892920580842519}
   - component: {fileID: 2616994375728217304}
   - component: {fileID: 7029167703000472680}
+  - component: {fileID: 7246922727957701659}
+  - component: {fileID: 7246922727957701660}
   m_Layer: 0
   m_Name: B3
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7246922727957701659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246922727957701658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &7246922727957701660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246922727957701658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: 0.014999999, y: 0.025000012, z: 0.000000014901163}
 --- !u!1 &7277471026650222766
 GameObject:
   m_ObjectHideFlags: 0
@@ -8507,13 +10963,42 @@ GameObject:
   - component: {fileID: 1516886196564424433}
   - component: {fileID: 4695957315099045503}
   - component: {fileID: 164387746608698177}
+  - component: {fileID: 7277471026650222767}
+  - component: {fileID: 7277471026650222768}
   m_Layer: 0
   m_Name: B2
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7277471026650222767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277471026650222766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &7277471026650222768
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277471026650222766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: 0.025, y: 0.025000012, z: 0.000000014901163}
 --- !u!23 &7297822779648418456
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8567,7 +11052,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 55
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &7319532620036971533
 MeshRenderer:
@@ -8703,13 +11188,42 @@ GameObject:
   - component: {fileID: 8350313183877444027}
   - component: {fileID: 2605366364730279665}
   - component: {fileID: 3931283860070589996}
+  - component: {fileID: 7350814543215580807}
+  - component: {fileID: 7350814543215580808}
   m_Layer: 0
   m_Name: D5
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7350814543215580807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7350814543215580806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &7350814543215580808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7350814543215580806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.0050000055, y: 0.0050000045, z: 0.000000014901161}
 --- !u!33 &7360692428226745779
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8729,13 +11243,42 @@ GameObject:
   - component: {fileID: 8564514788041155625}
   - component: {fileID: 7236935214284876568}
   - component: {fileID: 6194544011321540362}
+  - component: {fileID: 7360786216266084085}
+  - component: {fileID: 7360786216266084086}
   m_Layer: 0
   m_Name: E6
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7360786216266084085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360786216266084084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &7360786216266084086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360786216266084084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: -0.015000008, y: -0.004999999, z: 0.000000014901161}
 --- !u!4 &7398647280701828249
 Transform:
   m_ObjectHideFlags: 0
@@ -8748,7 +11291,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 0
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &7452800512247326183
 GameObject:
@@ -8761,13 +11304,42 @@ GameObject:
   - component: {fileID: 8306360622515404062}
   - component: {fileID: 7147270556860609503}
   - component: {fileID: 483151883738308409}
+  - component: {fileID: 7452800512247326184}
+  - component: {fileID: 7452800512247326185}
   m_Layer: 0
   m_Name: H6
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7452800512247326184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7452800512247326183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &7452800512247326185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7452800512247326183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: -0.015000008, y: -0.03500001, z: 0.0000000149011585}
 --- !u!4 &7459172829338170805
 Transform:
   m_ObjectHideFlags: 0
@@ -8780,7 +11352,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 25
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &7469130330478336001
 MeshFilter:
@@ -8851,7 +11423,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 14
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &7637048229291551363
 MeshRenderer:
@@ -8872,7 +11444,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8947,7 +11519,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 49
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &7674358911516820323
 Transform:
@@ -8974,13 +11546,42 @@ GameObject:
   - component: {fileID: 1653296086464879774}
   - component: {fileID: 290401719481862537}
   - component: {fileID: 2050064449601561466}
+  - component: {fileID: 7686724949654423473}
+  - component: {fileID: 7686724949654423474}
   m_Layer: 0
   m_Name: A6
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7686724949654423473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686724949654423472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &7686724949654423474
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686724949654423472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526515e-16}
+  m_Center: {x: -0.015000008, y: 0.035000015, z: 0.000000014901165}
 --- !u!33 &7723709216552845857
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9018,13 +11619,42 @@ GameObject:
   - component: {fileID: 6979378907083373811}
   - component: {fileID: 7076522786461964696}
   - component: {fileID: 533387470589670658}
+  - component: {fileID: 7758854899887957072}
+  - component: {fileID: 7758854899887957073}
   m_Layer: 0
   m_Name: A4
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7758854899887957072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7758854899887957071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &7758854899887957073
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7758854899887957071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526515e-16}
+  m_Center: {x: 0.004999997, y: 0.035000015, z: 0.000000014901165}
 --- !u!1 &7761463948025996039
 GameObject:
   m_ObjectHideFlags: 0
@@ -9038,6 +11668,9 @@ GameObject:
   - component: {fileID: 1434169510158071234}
   - component: {fileID: 7761463948025996040}
   - component: {fileID: 7761463948025996041}
+  - component: {fileID: 7761463948025996042}
+  - component: {fileID: 7761463948025996044}
+  - component: {fileID: 7761463948025996043}
   m_Layer: 0
   m_Name: Queen
   m_TagString: Untagged
@@ -9065,12 +11698,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7761463948025996039}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1927467024359600289, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &7761463948025996042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7761463948025996039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &7761463948025996043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7761463948025996039}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.1}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &7761463948025996044
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7761463948025996039}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!23 &7764816392314637102
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9123,13 +11798,42 @@ GameObject:
   - component: {fileID: 7568236984356684831}
   - component: {fileID: 9098260923811154790}
   - component: {fileID: 6995352388519152468}
+  - component: {fileID: 7796860063707875385}
+  - component: {fileID: 7796860063707875386}
   m_Layer: 0
   m_Name: D4
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7796860063707875385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796860063707875384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &7796860063707875386
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796860063707875384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.004999997, y: 0.0050000045, z: 0.000000014901161}
 --- !u!23 &7814627536429521687
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9149,7 +11853,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: b08f3a83055091a4aa95200077a31894, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9184,6 +11888,9 @@ GameObject:
   - component: {fileID: 1932940924182015860}
   - component: {fileID: 7827375242944481605}
   - component: {fileID: 7827375242944481606}
+  - component: {fileID: 7827375242944481607}
+  - component: {fileID: 7827375242944481609}
+  - component: {fileID: 7827375242944481608}
   m_Layer: 0
   m_Name: Bishop_left
   m_TagString: Untagged
@@ -9211,12 +11918,54 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7827375242944481604}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8948943218820673837, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+--- !u!114 &7827375242944481607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7827375242944481604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+--- !u!65 &7827375242944481608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7827375242944481604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.3047747}
+  m_Center: {x: 0, y: 0, z: -0.01861102}
+--- !u!54 &7827375242944481609
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7827375242944481604}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &7863467367253752908
 GameObject:
   m_ObjectHideFlags: 0
@@ -9228,13 +11977,42 @@ GameObject:
   - component: {fileID: 6247105204019119710}
   - component: {fileID: 5504645780320783854}
   - component: {fileID: 186451593663589738}
+  - component: {fileID: 7863467367253752909}
+  - component: {fileID: 7863467367253752910}
   m_Layer: 0
   m_Name: C2
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7863467367253752909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863467367253752908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &7863467367253752910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863467367253752908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: 0.025, y: 0.01500001, z: 0.000000014901163}
 --- !u!33 &7891370167878682813
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9263,7 +12041,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &7984622935544918767
 MeshFilter:
@@ -9300,13 +12078,42 @@ GameObject:
   - component: {fileID: 3632021411205768241}
   - component: {fileID: 878507199789094025}
   - component: {fileID: 7655941098523020997}
+  - component: {fileID: 8095232958846527693}
+  - component: {fileID: 8095232958846527694}
   m_Layer: 0
   m_Name: F3
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8095232958846527693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095232958846527692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &8095232958846527694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095232958846527692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265126e-16}
+  m_Center: {x: 0.014999999, y: -0.015000002, z: 0.00000001490116}
 --- !u!4 &8135095991547199721
 Transform:
   m_ObjectHideFlags: 0
@@ -9319,7 +12126,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 61
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &8158109994248032206
 GameObject:
@@ -9335,6 +12142,8 @@ GameObject:
   - component: {fileID: 8158109994248032207}
   - component: {fileID: 8158109994248032208}
   - component: {fileID: 8158109994248032209}
+  - component: {fileID: 8158109994248032211}
+  - component: {fileID: 8158109994248032210}
   m_Layer: 0
   m_Name: Queen
   m_TagString: Untagged
@@ -9354,7 +12163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef7fea59d0f40a46b0769d6ccbd2768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 7324016364150297497}
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
 --- !u!64 &8158109994248032208
 MeshCollider:
@@ -9364,7 +12172,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8158109994248032206}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -9382,6 +12190,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7357700e62d164db206ebd6f9a9ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &8158109994248032210
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158109994248032206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001, z: 0.1}
+  m_Center: {x: 0, y: 0, z: -0.05}
+--- !u!54 &8158109994248032211
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158109994248032206}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!4 &8186978799030909366
 Transform:
   m_ObjectHideFlags: 0
@@ -9394,7 +12231,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 46
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &8231837772547668168
 MeshFilter:
@@ -9415,13 +12252,42 @@ GameObject:
   - component: {fileID: 1567017833909598041}
   - component: {fileID: 2192016457635458597}
   - component: {fileID: 5012103762421505632}
+  - component: {fileID: 8244733892326696247}
+  - component: {fileID: 8244733892326696248}
   m_Layer: 0
   m_Name: E5
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8244733892326696247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244733892326696246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &8244733892326696248
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244733892326696246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: -0.0050000055, y: -0.004999999, z: 0.000000014901161}
 --- !u!33 &8302931040078292459
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9442,7 +12308,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 20
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &8330448328371661749
 Transform:
@@ -9452,7 +12318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7761463948025996039}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -20.61, y: 38.127235, z: 32.96437}
+  m_LocalPosition: {x: -20.61, y: 37.744, z: 32.96437}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -9469,13 +12335,42 @@ GameObject:
   - component: {fileID: 8637769701546226425}
   - component: {fileID: 3092026500643811222}
   - component: {fileID: 2870932111953458011}
+  - component: {fileID: 8332062729713926092}
+  - component: {fileID: 8332062729713926093}
   m_Layer: 0
   m_Name: D3
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8332062729713926092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332062729713926091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &8332062729713926093
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332062729713926091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.014999999, y: 0.0050000045, z: 0.000000014901161}
 --- !u!4 &8350313183877444027
 Transform:
   m_ObjectHideFlags: 0
@@ -9488,7 +12383,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 45
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &8387522488717359757
 Transform:
@@ -9498,7 +12393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5686926200489222166}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -11.888993, y: 37.127235, z: 30.908533}
+  m_LocalPosition: {x: -11.888993, y: 36.816, z: 30.908533}
   m_LocalScale: {x: 100, y: 100, z: 89.61598}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -9515,13 +12410,42 @@ GameObject:
   - component: {fileID: 3311773438154782665}
   - component: {fileID: 1952088208129886263}
   - component: {fileID: 2789284936681843360}
+  - component: {fileID: 8409527108200775641}
+  - component: {fileID: 8409527108200775642}
   m_Layer: 0
   m_Name: A5
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8409527108200775641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8409527108200775640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &8409527108200775642
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8409527108200775640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526515e-16}
+  m_Center: {x: -0.0050000055, y: 0.035000015, z: 0.000000014901165}
 --- !u!4 &8437854810029589420
 Transform:
   m_ObjectHideFlags: 0
@@ -9530,7 +12454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3604036237398559108}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -26.989628, y: 38.08766, z: 32.889984}
+  m_LocalPosition: {x: -26.989628, y: 37.7, z: 32.889984}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 79740091}
@@ -9574,7 +12498,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 27
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &8536588712786060916
 GameObject:
@@ -9587,13 +12511,42 @@ GameObject:
   - component: {fileID: 7303678947844245908}
   - component: {fileID: 5156534671965480761}
   - component: {fileID: 7297822779648418456}
+  - component: {fileID: 8536588712786060917}
+  - component: {fileID: 8536588712786060918}
   m_Layer: 0
   m_Name: H3
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8536588712786060917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536588712786060916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &8536588712786060918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536588712786060916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.014999999, y: -0.03500001, z: 0.0000000149011585}
 --- !u!4 &8564514788041155625
 Transform:
   m_ObjectHideFlags: 0
@@ -9606,7 +12559,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 42
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &8584743810302471121
 MeshRenderer:
@@ -9669,7 +12622,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 53
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &8640011586597262713
 MeshFilter:
@@ -9699,7 +12652,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 10
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &8815979992734412493
 MeshFilter:
@@ -9728,7 +12681,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f3be6b80416168b4b9a499eed594adfb, type: 3}
+  - {fileID: 2100000, guid: 8035a345be660ea4aa84fba3ee7dc171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9761,13 +12714,42 @@ GameObject:
   - component: {fileID: 3252568081954680795}
   - component: {fileID: 4613312952757784185}
   - component: {fileID: 1285861153991679166}
+  - component: {fileID: 8833591357360473640}
+  - component: {fileID: 8833591357360473641}
   m_Layer: 0
   m_Name: G1
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8833591357360473640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833591357360473639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
+--- !u!65 &8833591357360473641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833591357360473639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.035000004, y: -0.025000004, z: 0.000000014901159}
 --- !u!33 &8838324649015012613
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9787,13 +12769,42 @@ GameObject:
   - component: {fileID: 1762576034458417845}
   - component: {fileID: 4510370982733936265}
   - component: {fileID: 947717603017812745}
+  - component: {fileID: 8914297286350204245}
+  - component: {fileID: 8914297286350204246}
   m_Layer: 0
   m_Name: G2
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8914297286350204245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8914297286350204244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &8914297286350204246
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8914297286350204244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.025, y: -0.025000004, z: 0.000000014901159}
 --- !u!33 &8963944378159117542
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9822,7 +12833,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 23
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &9036225801592138440
 MeshFilter:
@@ -9843,13 +12854,42 @@ GameObject:
   - component: {fileID: 8135095991547199721}
   - component: {fileID: 8662652544553274955}
   - component: {fileID: 7324016364150297497}
+  - component: {fileID: 9045546346189752461}
+  - component: {fileID: 9045546346189752462}
   m_Layer: 0
   m_Name: D1
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9045546346189752461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9045546346189752460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &9045546346189752462
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9045546346189752460}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.526513e-16}
+  m_Center: {x: 0.035000004, y: 0.0050000045, z: 0.000000014901161}
 --- !u!4 &9073627345386434770
 Transform:
   m_ObjectHideFlags: 0
@@ -9862,7 +12902,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 36
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &9074816383713321381
 GameObject:
@@ -9875,13 +12915,42 @@ GameObject:
   - component: {fileID: 3655654507401512538}
   - component: {fileID: 9026849297941223490}
   - component: {fileID: 73530667169734881}
+  - component: {fileID: 9074816383713321382}
+  - component: {fileID: 9074816383713321383}
   m_Layer: 0
   m_Name: E2
-  m_TagString: Untagged
+  m_TagString: Chess Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9074816383713321382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9074816383713321381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: 2100000, guid: a9a23d83e50db41478972de9d7547ebd, type: 2}
+--- !u!65 &9074816383713321383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9074816383713321381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 8.5265116e-16}
+  m_Center: {x: 0.025, y: -0.004999999, z: 0.000000014901161}
 --- !u!23 &9075386293211045226
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9943,7 +13012,7 @@ Transform:
   m_LocalScale: {x: 220, y: 219.99998, z: 100}
   m_Children: []
   m_Father: {fileID: 237331790}
-  m_RootOrder: 32
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &9168939900385918343
 MeshFilter:
