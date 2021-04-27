@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 702de17faf33f9645b1669f2fc220674
+  - enabled: 1
     path: Assets/Scenes/MartaTesty.unity
     guid: 7cc757adab3c18142a2c6b37f8e08013
   - enabled: 1
