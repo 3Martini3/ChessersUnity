@@ -9,6 +9,20 @@ public class UIManager : MonoBehaviour
 
     public GameObject startMenu;
     public InputField usernameField;
+    public Text connectionText;
+    public bool connectionCalled = false;
+
+    private void Update()
+    {
+        if (!connectionCalled)
+        {
+            connectionCalled = true;
+            connectionText.text = "Disconnected";
+            ConnectToServer();
+            Debug.Log("Connection called");
+            
+        }
+    }
 
     private void Awake()
     {
@@ -24,7 +38,7 @@ public class UIManager : MonoBehaviour
 
     public void ConnectToServer()
     {
-        startMenu.SetActive(false);
+        //startMenu.SetActive(false);
         usernameField.interactable = false;
         Client.instance.ConnectToServer();
     }
