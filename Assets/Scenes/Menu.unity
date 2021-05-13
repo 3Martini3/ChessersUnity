@@ -1961,8 +1961,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1578489775}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 1578489776}
+        m_TargetAssemblyTypeName: SettingsScript, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
@@ -5368,8 +5368,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1578489775}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 1578489776}
+        m_TargetAssemblyTypeName: SettingsScript, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 0
         m_Arguments:
@@ -5510,8 +5510,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1578489775}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 1578489776}
+        m_TargetAssemblyTypeName: SettingsScript, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:
@@ -5685,6 +5685,7 @@ GameObject:
   - component: {fileID: 1578489772}
   - component: {fileID: 1578489771}
   - component: {fileID: 1578489775}
+  - component: {fileID: 1578489776}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5789,8 +5790,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b0de4166c6d1743a46ea7d2f5caf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1578489776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578489770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fc28fd2bb3c124bbcbb8882ac85c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 60ffe296504666f4aa8f809ba3eeec24, type: 2}
   resolutionDropdown: {fileID: 685156734}
+  qualityDropdown: {fileID: 1486421604}
+  musicSlider: {fileID: 1487873905}
+  fullscreenToogle: {fileID: 1661534717}
 --- !u!1 &1647681930
 GameObject:
   m_ObjectHideFlags: 0
@@ -6010,8 +6026,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1578489775}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 1578489776}
+        m_TargetAssemblyTypeName: SettingsScript, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 0
         m_Arguments:
