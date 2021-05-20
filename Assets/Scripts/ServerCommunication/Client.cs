@@ -65,6 +65,7 @@ public class Client : MonoBehaviour
 
         private void ConnectCallback(IAsyncResult _result)
         {
+            Debug.Log(_result);
             socket.EndConnect(_result);
 
             if (!socket.Connected)

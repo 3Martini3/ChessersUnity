@@ -13,7 +13,8 @@ public enum ServerPackets
 /// <summary>Sent from client to server.</summary>
 public enum ClientPackets
 {
-    welcomeReceived = 1
+    welcomeReceived = 1,
+    messageSent = 2
 }
 
 public class Packet : IDisposable
