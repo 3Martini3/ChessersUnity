@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject cameraRef;
-    public float moveSpeed = 0.5f;
+    public float moveSpeed = 1f;
     public float scrollSpeed = 10f;
     public float minX = 0f;
     public float maxX = 0f;
@@ -11,6 +11,11 @@ public class CameraController : MonoBehaviour
     public float maxY = 0f;
     public float minZ = 0f;
     public float maxZ = 0f;
+
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
 
     void Update()
     {
