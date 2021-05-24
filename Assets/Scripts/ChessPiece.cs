@@ -6,7 +6,7 @@ public class ChessPiece : MonoBehaviour {
 
    // public MeshRenderer square;
     public Material hoverMaterial;
-    public Vector3 squarePosition { get; set; }
+    public ChessSquare square { get; set; }
     private float yPosition { get; set; }
     private Material originalMaterial { get; set; }
     private Color defaultColor { get; set; }
@@ -14,6 +14,10 @@ public class ChessPiece : MonoBehaviour {
     void Start()
     {
         originalMaterial = GetComponent<Renderer>().material;
+
+        square = FindClosestSquare().GetComponent<ChessSquare>();
+        pinToPosition(square.GetComponent<MeshRenderer>().bounds.center);
+        square.figure = this;
     }
 
     private void OnMouseOver()
@@ -25,7 +29,28 @@ public class ChessPiece : MonoBehaviour {
         GetComponent<Renderer>().material = originalMaterial;
     }
 
-   
+    private GameObject FindClosestSquare()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Chess Square");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = GetComponent<MeshRenderer>().bounds.center;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.GetComponent<MeshRenderer>().bounds.center - position;
+            float curDistance = diff.sqrMagnitude;
+            Debug.Log($"{position.x}, {curDistance}");
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
+
+
 
     public void pinToPosition(Vector3 position3)
     {
