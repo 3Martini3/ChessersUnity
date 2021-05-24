@@ -40,7 +40,6 @@ public class ChessPiece : MonoBehaviour {
         {
             Vector3 diff = go.GetComponent<MeshRenderer>().bounds.center - position;
             float curDistance = diff.sqrMagnitude;
-            Debug.Log($"{position.x}, {curDistance}");
             if (curDistance < distance)
             {
                 closest = go;
