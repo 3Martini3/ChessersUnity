@@ -7,13 +7,16 @@ public class ChessSquare : MonoBehaviour
 
     public ChessPiece figure = null;
     public Material hoverMaterial;
+    public bool availableMove = false;
     private Material originalMaterial { get; set; }
-    private bool hovered = false;
+    private bool hovered;
+    private bool setUp = false;
     // Start is called before the first frame update
     void Start()
     {
 
         originalMaterial = GetComponent<Renderer>().material;
+        
         if (figure != null)
         {
             figure.pinToPosition(GetComponent<MeshRenderer>().bounds.center);
@@ -35,14 +38,33 @@ public class ChessSquare : MonoBehaviour
         hovered = false;
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (setUp == false)
+        {
+            setUp = true;
+            figure = collision.gameObject.GetComponent<ChessPiece>();
+            figure.squarePosition = GetComponent<MeshRenderer>().bounds.center;
+            figure.pinToPosition(GetComponent<MeshRenderer>().bounds.center);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(hovered)
         {
             GetComponent<MeshRenderer>().material = originalMaterial;
             Debug.Log(collision.gameObject.name);
-            figure = collision.gameObject.GetComponent<ChessPiece>();
-            figure.pinToPosition(GetComponent<MeshRenderer>().bounds.center);
+            if (availableMove)
+            {
+                figure = collision.gameObject.GetComponent<ChessPiece>();
+                figure.squarePosition = GetComponent<MeshRenderer>().bounds.center;
+                figure.pinToPosition(GetComponent<MeshRenderer>().bounds.center);
+            }else
+            {
+                var obj = collision.gameObject.GetComponent<ChessPiece>();
+                obj.pinToPosition(obj.squarePosition);
+            }
             hovered = false;
         }
        
