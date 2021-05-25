@@ -9,6 +9,7 @@ class DragAndDrop : MonoBehaviour
     private float distance { get; set; }
     private float defaultYPosition { get; set; }
     private BoxCollider boxCollider { get; set; }
+    public float yChange;
 
     void Start()
     {
@@ -20,7 +21,7 @@ class DragAndDrop : MonoBehaviour
     void OnMouseDown()
     {
         distance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y + yChange, transform.position.z);
         dragging = true;
         boxCollider.enabled = true;
     }
@@ -36,7 +37,7 @@ class DragAndDrop : MonoBehaviour
     {
         if (dragging)
         {
-            distance = Vector3.Distance(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Camera.main.transform.position);
+            distance = Vector3.Distance(new Vector3(transform.position.x, transform.position.y + yChange, transform.position.z), Camera.main.transform.position);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 rayPoint = ray.GetPoint(distance);
             transform.position = new Vector3(rayPoint.x, transform.position.y, rayPoint.z);
