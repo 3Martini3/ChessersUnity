@@ -2311,9 +2311,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  scrollSpeed: 10
+  scrollSpeed: 0.1
   maxX: 75
   minX: 15
+  maxZoomOut: 40
+  minZoomOut: 15
+  currentZoomOut: 20
 --- !u!1 &659953803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,8 +2634,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: 3600
-  timerIsRunning: 0
-  timeText: 
 --- !u!4 &776582331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
