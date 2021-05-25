@@ -6,6 +6,9 @@ public class CameraControllerV2 : MonoBehaviour
     public float scrollSpeed;
     public float maxX;
     public float minX;
+    public float maxZoomOut;
+    public float minZoomOut;
+    public float currentZoomOut;
 
 
 
@@ -22,7 +25,7 @@ public class CameraControllerV2 : MonoBehaviour
         RotateHorizontal();
         //Debug.Log(transform.rotation.eulerAngles.ToString());
         RotateVertical();
-
+        ForwardAxisMove();
     }
 
     void RotateHorizontal()
@@ -52,6 +55,25 @@ public class CameraControllerV2 : MonoBehaviour
             transform.RotateAround(GameObject.FindWithTag("Center").transform.position, transform.right, -moveSpeed);
         }
 
+    }
+
+    void ForwardAxisMove()
+    {
+       if(Input.GetAxis("Mouse ScrollWheel") > 0 &&
+            currentZoomOut > minZoomOut)
+        {
+            //transform.Translate(transform.forward * 0.01f );
+            transform.position += transform.forward * scrollSpeed;
+            currentZoomOut--;
+
+        }
+       if(Input.GetAxis("Mouse ScrollWheel") < 0 &&
+            currentZoomOut < maxZoomOut)
+        {
+            //transform.Translate(transform.forward * 0.01f);
+            transform.position -= transform.forward * scrollSpeed;
+            currentZoomOut++;
+        }
     }
 
     void SetStartingCameraPosition()

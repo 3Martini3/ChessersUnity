@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class TimerCanvas : MonoBehaviour
 {
-    public float timeRemaining = 3600;
-    public bool timerIsRunning = false;
-    public string timeText;
+    public float timeRemaining;
+    private bool timerIsRunning;
+    private string timeText;
 
     private void Start()
     {

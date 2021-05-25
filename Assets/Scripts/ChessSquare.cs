@@ -46,7 +46,7 @@ public class ChessSquare : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("AAAA");
+        //Debug.Log("AAAA");
         if(hovered)
         {
             Debug.Log("hovered");
