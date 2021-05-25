@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2003931976}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -945,7 +945,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 67241a1e632ac7744b2e83776ef1ffa0, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67241a1e632ac7744b2e83776ef1ffa0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2089,7 +2089,7 @@ GameObject:
   - component: {fileID: 198183153}
   m_Layer: 0
   m_Name: ChessSquares
-  m_TagString: Untagged
+  m_TagString: Center
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5286,13 +5286,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646344181}
-  m_LocalRotation: {x: 0.2764333, y: -0.076556094, z: 0.022096736, w: 0.9577242}
-  m_LocalPosition: {x: 192.04, y: 6.106001, z: 216.31}
+  m_LocalRotation: {x: 0.32494333, y: 0.0827099, z: 0.05398619, w: 0.9405618}
+  m_LocalPosition: {x: 191.52, y: 6.106001, z: 216.226}
   m_LocalScale: {x: 1.0224003, y: 1.0224, z: 1.0224003}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 32.2, y: -9.14, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.037, y: 13.819, z: 11.219}
 --- !u!114 &646344185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5302,10 +5302,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 646344181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b84e48a0cff994c44bc7b97d62c15243, type: 3}
+  m_Script: {fileID: 11500000, guid: 35c18674e2c699c4da7cecfb709a197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRef: {fileID: 150564932}
   moveSpeed: 1
   scrollSpeed: 10
   minX: 0
@@ -8353,7 +8352,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: eb9756ac11957cf43a1bc42ae8796b7d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eb9756ac11957cf43a1bc42ae8796b7d, type: 3}
       propertyPath: m_LocalScale.x
@@ -13729,6 +13728,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: adf70593600e1e94783e18eb85a9a537, type: 3}
       propertyPath: m_Name
       value: table
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adf70593600e1e94783e18eb85a9a537, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf70593600e1e94783e18eb85a9a537, type: 3}
