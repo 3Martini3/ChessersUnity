@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraControllerV2 : MonoBehaviour
 {
-    public float moveSpeed = 3f;
-    public float scrollSpeed = 10f;
+    public float moveSpeed = 0.1f;
+    public float scrollSpeed = 1f;
     public float minX = 0f;
     public float maxX = 0f;
     public float minY = 0f;
@@ -18,7 +18,7 @@ public class CameraControllerV2 : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-        SetStartingCameraPosition();
+        //SetStartingCameraPosition();
     }
 
     // Update is called once per frame
@@ -33,13 +33,15 @@ public class CameraControllerV2 : MonoBehaviour
         
         if(Input.GetKey(KeyCode.A)) //left rotation
         {
-            transform.Translate(transform.right * -1 * moveSpeed);
-            transform.LookAt(GameObject.FindWithTag("Center").transform);
+            //transform.Translate(transform.right.normalized * -1 * moveSpeed);
+            //transform.LookAt(GameObject.FindWithTag("Center").transform);
+            transform.RotateAround(GameObject.FindWithTag("Center").transform.position, new Vector3(0, 1, 0), moveSpeed);
         }
         if (Input.GetKey(KeyCode.D)) //right rotation
         {
-            transform.Translate(transform.right * moveSpeed);
-            transform.LookAt(GameObject.FindWithTag("Center").transform);
+            //transform.Translate(transform.right.normalized * moveSpeed);
+            //transform.LookAt(GameObject.FindWithTag("Center").transform);
+            transform.RotateAround(GameObject.FindWithTag("Center").transform.position, new Vector3(0,1,0), -moveSpeed);
         }
 
     }
@@ -49,13 +51,15 @@ public class CameraControllerV2 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W)) //up rotation
         {
-            transform.Translate(transform.up *  moveSpeed);
-            transform.LookAt(GameObject.FindWithTag("Center").transform);
+            //transform.Translate(transform.up *  moveSpeed);
+            //transform.LookAt(GameObject.FindWithTag("Center").transform);
+            transform.RotateAround(GameObject.FindWithTag("Center").transform.position, transform.right, moveSpeed);
         }
         if (Input.GetKey(KeyCode.S)) //down rotation
         {
-            transform.Translate(transform.up * -1 * moveSpeed);
-            transform.LookAt(GameObject.FindWithTag("Center").transform);
+            //transform.Translate(transform.up * -1 * moveSpeed);
+            //transform.LookAt(GameObject.FindWithTag("Center").transform);
+            transform.RotateAround(GameObject.FindWithTag("Center").transform.position, transform.right, -moveSpeed);
         }
 
     }
