@@ -2312,8 +2312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   scrollSpeed: 10
-  maxX: 0
-  minX: 0
+  maxX: 75
+  minX: 15
 --- !u!1 &659953803
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CameraControllerV2 : MonoBehaviour
 {
-    public float moveSpeed = 0.1f;
-    public float scrollSpeed = 1f;
-    public float maxX = 75f;
-    public float minX = 12f;
+    public float moveSpeed;
+    public float scrollSpeed;
+    public float maxX;
+    public float minX;
 
 
 
@@ -21,9 +21,7 @@ public class CameraControllerV2 : MonoBehaviour
     {
         RotateHorizontal();
         //Debug.Log(transform.rotation.eulerAngles.ToString());
-         RotateVertical();
-        
-
+        RotateVertical();
 
     }
 
