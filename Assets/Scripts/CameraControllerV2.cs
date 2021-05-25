@@ -18,6 +18,7 @@ public class CameraControllerV2 : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+        SetStartingCameraPosition();
     }
 
     // Update is called once per frame
@@ -61,7 +62,7 @@ public class CameraControllerV2 : MonoBehaviour
 
     void SetStartingCameraPosition()
     {
-
+        transform.rotation = GameObject.FindWithTag("Center").transform.rotation;
     }
 }
 
