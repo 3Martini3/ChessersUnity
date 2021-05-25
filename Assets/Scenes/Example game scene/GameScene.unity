@@ -2252,12 +2252,12 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
+  m_projectionMatrixMode: 2
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 15
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2266,7 +2266,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 54.27354
+  field of view: 77.31962
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2292,7 +2292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646344181}
   m_LocalRotation: {x: 0.31761077, y: 0, z: 0, w: 0.9482212}
-  m_LocalPosition: {x: -3.9838257, y: 4.7278376, z: -0.97351074}
+  m_LocalPosition: {x: -3.9838257, y: 4.53, z: -0.712}
   m_LocalScale: {x: 1.0224003, y: 1.0224001, z: 1.0224003}
   m_Children: []
   m_Father: {fileID: 1345363657}
@@ -2312,12 +2312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   scrollSpeed: 10
-  minX: 0
-  maxX: 0
-  minY: 0
-  maxY: 0
-  minZ: 0
-  maxZ: 0
+  maxRotationX: 85
+  minRotationX: 10
 --- !u!1 &659953803
 GameObject:
   m_ObjectHideFlags: 0

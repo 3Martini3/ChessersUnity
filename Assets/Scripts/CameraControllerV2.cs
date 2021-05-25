@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraControllerV2 : MonoBehaviour
 {
     public float moveSpeed = 0.1f;
     public float scrollSpeed = 1f;
-    public float minX = 0f;
-    public float maxX = 0f;
-    public float minY = 0f;
-    public float maxY = 0f;
-    public float minZ = 0f;
-    public float maxZ = 0f;
+    public float maxX = 75f;
+    public float minX = 12f;
+
 
 
     // Start is called before the first frame update
@@ -25,40 +20,37 @@ public class CameraControllerV2 : MonoBehaviour
     void Update()
     {
         RotateHorizontal();
-        RotateVertical();
+        //Debug.Log(transform.rotation.eulerAngles.ToString());
+         RotateVertical();
+        
+
+
     }
 
     void RotateHorizontal()
     {
-        
-        if(Input.GetKey(KeyCode.A)) //left rotation
+
+        if (Input.GetKey(KeyCode.A)) //left rotation
         {
-            //transform.Translate(transform.right.normalized * -1 * moveSpeed);
-            //transform.LookAt(GameObject.FindWithTag("Center").transform);
             transform.RotateAround(GameObject.FindWithTag("Center").transform.position, new Vector3(0, 1, 0), moveSpeed);
         }
         if (Input.GetKey(KeyCode.D)) //right rotation
         {
-            //transform.Translate(transform.right.normalized * moveSpeed);
-            //transform.LookAt(GameObject.FindWithTag("Center").transform);
-            transform.RotateAround(GameObject.FindWithTag("Center").transform.position, new Vector3(0,1,0), -moveSpeed);
+            transform.RotateAround(GameObject.FindWithTag("Center").transform.position, new Vector3(0, 1, 0), -moveSpeed);
         }
 
     }
 
-    void RotateVertical() 
+    void RotateVertical()
     {
-
-        if (Input.GetKey(KeyCode.W)) //up rotation
+        if (Input.GetKey(KeyCode.W) &&
+            transform.rotation.eulerAngles.x < maxX) //up rotation
         {
-            //transform.Translate(transform.up *  moveSpeed);
-            //transform.LookAt(GameObject.FindWithTag("Center").transform);
             transform.RotateAround(GameObject.FindWithTag("Center").transform.position, transform.right, moveSpeed);
         }
-        if (Input.GetKey(KeyCode.S)) //down rotation
+        if (Input.GetKey(KeyCode.S) &&
+            transform.rotation.eulerAngles.x > minX) //down rotation
         {
-            //transform.Translate(transform.up * -1 * moveSpeed);
-            //transform.LookAt(GameObject.FindWithTag("Center").transform);
             transform.RotateAround(GameObject.FindWithTag("Center").transform.position, transform.right, -moveSpeed);
         }
 
@@ -68,5 +60,9 @@ public class CameraControllerV2 : MonoBehaviour
     {
         transform.rotation = GameObject.FindWithTag("Center").transform.rotation;
     }
+
+
+
+
 }
 
