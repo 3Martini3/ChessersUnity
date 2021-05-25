@@ -8,12 +8,12 @@ public class MenuScript : MonoBehaviour
 
     public void PlayChess()
     {
-        SceneManager.LoadScene("Scenes/MartaTesty");
+        SceneManager.LoadScene("Scenes/MainScene/GameScene");
     }
 
     public void PlayCheckers()
     {
-        SceneManager.LoadScene("Scenes/Main");
+        SceneManager.LoadScene("Scenes/MartaTesty");
     }
 
     public void Quit()
