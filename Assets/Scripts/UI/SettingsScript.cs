@@ -60,14 +60,14 @@ public class SettingsScript : MonoBehaviour
         }
 
         //ustawiam muzykê na po³owê lub wartoœæ zapiamiêtan¹ z innych scen / innych sesji
-        if(PlayerPrefs.HasKey("MusicVol"))
+        if(PlayerPrefs.HasKey("musicVolume"))
         {
-            audioMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
-            musicSlider.value = PlayerPrefs.GetFloat("MusicVol");
+            audioMixer.SetFloat("musicVolume", PlayerPrefs.GetFloat("musicVolume"));
+            musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
         }
         else
         {
-            audioMixer.SetFloat("MusicVol", -40);
+            audioMixer.SetFloat("musicVolume", -40);
             musicSlider.value = -40;
         }
 
@@ -92,8 +92,8 @@ public class SettingsScript : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("MusicVol", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("MusicVol", Mathf.Log10(volume) * 20);
+        audioMixer.SetFloat("musicVolume", volume);
+        PlayerPrefs.SetFloat("musicVolume", volume);
     }
 
     public void SetQuality(int level)

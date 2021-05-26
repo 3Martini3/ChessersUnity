@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+
     public void PlayChess()
     {
         SceneManager.LoadScene("Scenes/MainScene/GameScene");
