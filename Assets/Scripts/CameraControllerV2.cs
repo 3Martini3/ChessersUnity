@@ -7,8 +7,8 @@ public class CameraControllerV2 : MonoBehaviour
     public float maxX;
     public float minX;
     public float maxZoomOut;
-    public float minZoomOut;
-    public float currentZoomOut;
+    public float maxZoomIn;
+    public float currentZoomValue;
 
 
 
@@ -60,19 +60,19 @@ public class CameraControllerV2 : MonoBehaviour
     void ForwardAxisMove()
     {
        if(Input.GetAxis("Mouse ScrollWheel") > 0 &&
-            currentZoomOut > minZoomOut)
+            currentZoomValue > maxZoomIn)
         {
             //transform.Translate(transform.forward * 0.01f );
             transform.position += transform.forward * scrollSpeed;
-            currentZoomOut--;
+            currentZoomValue--;
 
         }
        if(Input.GetAxis("Mouse ScrollWheel") < 0 &&
-            currentZoomOut < maxZoomOut)
+            currentZoomValue < maxZoomOut)
         {
             //transform.Translate(transform.forward * 0.01f);
             transform.position -= transform.forward * scrollSpeed;
-            currentZoomOut++;
+            currentZoomValue++;
         }
     }
 
