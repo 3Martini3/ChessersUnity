@@ -6,9 +6,9 @@ public class CameraControllerV2 : MonoBehaviour
     public float scrollSpeed;
     public float maxX;
     public float minX;
-    public float maxZoomOut = 40;
-    public float maxZoomIn = 8;
-    public float currentZoomValue = 20;
+    public float maxZoomOut;
+    public float maxZoomIn;
+    public float currentZoomValue;
 
 
 
@@ -16,8 +16,11 @@ public class CameraControllerV2 : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-        //SetStartingCameraPosition();
-    }
+        currentZoomValue = 20;
+        maxZoomOut = 40;
+        maxZoomIn = 8;
+    //SetStartingCameraPosition();
+}
 
     // Update is called once per frame
     void Update()
