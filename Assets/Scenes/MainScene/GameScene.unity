@@ -2493,8 +2493,8 @@ MonoBehaviour:
   maxX: 75
   minX: 15
   maxZoomOut: 40
-  minZoomOut: 8
-  currentZoomOut: 20
+  maxZoomIn: 8
+  currentZoomValue: 20
 --- !u!1 &659953803
 GameObject:
   m_ObjectHideFlags: 0
