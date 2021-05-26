@@ -6,9 +6,9 @@ public class CameraControllerV2 : MonoBehaviour
     public float scrollSpeed;
     public float maxX;
     public float minX;
-    public float maxZoomOut;
-    public float maxZoomIn;
-    public float currentZoomValue;
+    public float maxZoomOut = 40;
+    public float maxZoomIn = 8;
+    public float currentZoomValue = 20;
 
 
 
