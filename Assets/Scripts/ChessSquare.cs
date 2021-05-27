@@ -37,9 +37,9 @@ public class ChessSquare : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(hovered)
+        if (hovered)
         {
-            GetComponent<MeshRenderer>().material.color = Color.blue;
+            GetComponent<MeshRenderer>().material.color = Color.white;
             Debug.Log(collision.gameObject.name);
             if (availableMove)
             {

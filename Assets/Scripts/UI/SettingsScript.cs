@@ -16,7 +16,6 @@ public class SettingsScript : MonoBehaviour
 
     void Start()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
@@ -83,6 +82,7 @@ public class SettingsScript : MonoBehaviour
             Screen.fullScreen = false;
             fullscreenToogle.isOn = false;
         }
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
     }
 
     // Update is called once per frame
