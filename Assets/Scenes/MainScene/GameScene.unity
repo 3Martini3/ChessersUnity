@@ -288,6 +288,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &54751885
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -337,6 +340,105 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54751878}
   m_Mesh: {fileID: 5293309705621980511, guid: 6ba2b2b293fb1594abecf75c8d0abc54, type: 3}
+--- !u!1 &60160295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60160296}
+  - component: {fileID: 60160299}
+  - component: {fileID: 60160298}
+  - component: {fileID: 60160297}
+  m_Layer: 0
+  m_Name: Collider3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &60160296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60160295}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.202, y: 10.958, z: -9.218}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 339419109}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &60160297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60160295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868521ab0cac46d43bfa643d5f1f4a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!23 &60160298
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60160295}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &60160299
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60160295}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1991272, y: 0.16478443, z: 2.2009888}
+  m_Center: {x: -0.110961914, y: -0.6926069, z: 0.2631073}
 --- !u!1 &141717771
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +545,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &141717778
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -704,6 +809,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &186310230
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -895,6 +1003,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!114 &326039900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,6 +1068,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326039894}
   m_Mesh: {fileID: -7718649920641929877, guid: a0ef67b0e2fa773439c71489d52b03e5, type: 3}
+--- !u!1 &339419108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339419109}
+  m_Layer: 0
+  m_Name: OffBoardCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &339419109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339419108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 191.45743, y: -5.6602774, z: 226.23834}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 667914609}
+  - {fileID: 1122232427}
+  - {fileID: 60160296}
+  - {fileID: 1768488088}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &342748549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
@@ -1318,6 +1463,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &430884713
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1546,6 +1694,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!64 &495509810
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1647,7 +1798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fd2181bb73ea8824bb12c11a7d60e62e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 185.8
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fd2181bb73ea8824bb12c11a7d60e62e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1655,7 +1806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fd2181bb73ea8824bb12c11a7d60e62e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 219.03
+      value: 219.76
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fd2181bb73ea8824bb12c11a7d60e62e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1899,6 +2050,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &542707104
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2041,6 +2195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!114 &548130358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2209,6 +2366,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &549504857
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2356,23 +2516,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f8f820bf25c22448aa208a2c29b824c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.6634434
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f8f820bf25c22448aa208a2c29b824c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.66344357
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f8f820bf25c22448aa208a2c29b824c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.24462779
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f8f820bf25c22448aa208a2c29b824c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.24462777
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f8f820bf25c22448aa208a2c29b824c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f8f820bf25c22448aa208a2c29b824c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2380,7 +2540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f8f820bf25c22448aa208a2c29b824c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 40.48
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 8f8f820bf25c22448aa208a2c29b824c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2513,7 +2673,7 @@ GameObject:
   - component: {fileID: 659953805}
   m_Layer: 0
   m_Name: Krol_Black (1)
-  m_TagString: Untagged
+  m_TagString: Chess Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2545,6 +2705,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!65 &659953806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2650,6 +2813,105 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659953803}
   m_Mesh: {fileID: 8740183854838360457, guid: 67241a1e632ac7744b2e83776ef1ffa0, type: 3}
+--- !u!1 &667914608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 667914609}
+  - component: {fileID: 667914610}
+  - component: {fileID: 667914612}
+  - component: {fileID: 667914611}
+  m_Layer: 0
+  m_Name: Collider1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &667914609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667914608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.806, y: 10.958, z: -8.404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 339419109}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &667914610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667914608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1991272, y: 0.16478443, z: 2.2009888}
+  m_Center: {x: -0.110961914, y: -0.6926069, z: 0.2631073}
+--- !u!114 &667914611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667914608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868521ab0cac46d43bfa643d5f1f4a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!23 &667914612
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667914608}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &763089204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
@@ -3020,6 +3282,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &925765170
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3232,6 +3497,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &947069357
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3529,6 +3797,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1027661028
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3684,6 +3955,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1037119040
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3738,6 +4012,105 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
   m_PrefabInstance: {fileID: 43025617}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1122232426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1122232427}
+  - component: {fileID: 1122232430}
+  - component: {fileID: 1122232429}
+  - component: {fileID: 1122232428}
+  m_Layer: 0
+  m_Name: Collider2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1122232427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122232426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.164, y: 10.958, z: -8.404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 339419109}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1122232428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122232426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868521ab0cac46d43bfa643d5f1f4a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!23 &1122232429
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122232426}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1122232430
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122232426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1991272, y: 0.16478443, z: 2.2009888}
+  m_Center: {x: -0.110961914, y: -0.6926069, z: 0.2631073}
 --- !u!1 &1124755493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3844,6 +4217,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1124755500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3999,6 +4375,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1136735089
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4233,6 +4612,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1280294892
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4361,6 +4743,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!64 &1293709478
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4543,6 +4928,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1300999598
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4698,6 +5086,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1340109722
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4885,6 +5276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1355224280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5085,6 +5479,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1429457851
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5322,6 +5719,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!114 &1599535275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5397,15 +5797,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91e4778cdfb185d4d9bfe81556dc4333, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 193.578
+      value: 193.57
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91e4778cdfb185d4d9bfe81556dc4333, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.09
+      value: 4.171
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91e4778cdfb185d4d9bfe81556dc4333, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 217.834
+      value: 218.161
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91e4778cdfb185d4d9bfe81556dc4333, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5551,6 +5951,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1719261117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5706,6 +6109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1758282035
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5755,6 +6161,105 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758282028}
   m_Mesh: {fileID: 5293309705621980511, guid: 6ba2b2b293fb1594abecf75c8d0abc54, type: 3}
+--- !u!1 &1768488087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1768488088}
+  - component: {fileID: 1768488091}
+  - component: {fileID: 1768488090}
+  - component: {fileID: 1768488089}
+  m_Layer: 0
+  m_Name: Collider3 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1768488088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768488087}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.202, y: 10.958, z: -7.237}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 339419109}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1768488089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768488087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868521ab0cac46d43bfa643d5f1f4a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!23 &1768488090
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768488087}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1768488091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768488087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1991272, y: 0.16478443, z: 2.2009888}
+  m_Center: {x: -0.110961914, y: -0.6926069, z: 0.2631073}
 --- !u!1 &1793818506
 GameObject:
   m_ObjectHideFlags: 0
@@ -5861,6 +6366,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1793818513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6016,6 +6524,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1810991514
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6158,6 +6669,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!114 &1899329767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6344,7 +6858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 255.4
+      value: 186.07
       objectReference: {fileID: 0}
     - target: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6352,7 +6866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 140
+      value: 170.21
       objectReference: {fileID: 0}
     - target: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6528,6 +7042,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1983981664
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6743,6 +7260,95 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf70593600e1e94783e18eb85a9a537, type: 3}
+--- !u!1 &2053773809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2053773811}
+  - component: {fileID: 2053773810}
+  - component: {fileID: 2053773812}
+  m_Layer: 0
+  m_Name: InvinitySquare
+  m_TagString: InvinitySquare
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2053773810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053773809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231d8777f89adb247b342e4e82d2d229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figure: {fileID: 0}
+  hoverMaterial: {fileID: -8499701361930146817, guid: a2e546d7d9c06c5438e2982ef4737ce3, type: 3}
+  availableMove: 0
+  center: {x: 0, y: 0, z: 0}
+--- !u!4 &2053773811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053773809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 163.27284, y: -22.913282, z: 89.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &2053773812
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053773809}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -8499701361930146817, guid: 5ae8ff9eadf8f554688979fee65f0aef, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &2075207863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
@@ -6854,6 +7460,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &2103035338
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7009,6 +7618,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: d35633c50662545438c334d52f6b513f, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &2115593513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7114,6 +7726,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &117672026997315729
 GameObject:
   m_ObjectHideFlags: 0
@@ -7162,6 +7775,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &209460779827164134
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7330,6 +7944,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &429038804129140781
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7419,6 +8034,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653641698985
 Transform:
   m_ObjectHideFlags: 0
@@ -7752,6 +8368,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &919132149120250899
 GameObject:
   m_ObjectHideFlags: 0
@@ -7770,7 +8387,7 @@ GameObject:
   - component: {fileID: 919132149120250904}
   m_Layer: 0
   m_Name: Krol_Black
-  m_TagString: Untagged
+  m_TagString: Chess Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7844,6 +8461,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
+  square: {fileID: 0}
+  hoverSquareName: 
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &924661190584054445
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8089,6 +8709,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &1191652912012224621
 Transform:
   m_ObjectHideFlags: 0
@@ -8423,6 +9044,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &1679113888082816157
 GameObject:
   m_ObjectHideFlags: 0
@@ -8471,6 +9093,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &1707943962122971475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8519,6 +9142,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1711813855712875974
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8608,6 +9232,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &1765177898209844504
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8719,6 +9344,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &1901821249766281167
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8962,6 +9588,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &2376405962383131238
 GameObject:
   m_ObjectHideFlags: 0
@@ -9010,6 +9637,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &2412503099722414181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9113,6 +9741,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &2466755570633069746
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9169,6 +9798,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &2551433812249251459
 Transform:
   m_ObjectHideFlags: 0
@@ -9231,6 +9861,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &2626475843444098343
 Transform:
   m_ObjectHideFlags: 0
@@ -9417,6 +10048,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &2752155334754476848
 GameObject:
   m_ObjectHideFlags: 0
@@ -9465,6 +10097,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &2761399470070384392
 Transform:
   m_ObjectHideFlags: 0
@@ -9527,6 +10160,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &2816474135669926621
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9597,6 +10231,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &3031665552623750151
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9863,6 +10498,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &3662680866079098648
 GameObject:
   m_ObjectHideFlags: 0
@@ -9874,6 +10510,8 @@ GameObject:
   - component: {fileID: 1492552973532117274}
   - component: {fileID: 6933420910312647192}
   - component: {fileID: 1114153607207912109}
+  - component: {fileID: 3662680866079098650}
+  - component: {fileID: 3662680866079098649}
   m_Layer: 0
   m_Name: szachownica
   m_TagString: Center
@@ -9881,6 +10519,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &3662680866079098649
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662680866079098648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1004825059664801234, guid: c8154e889098b4649bfd532bce32531a, type: 3}
+--- !u!64 &3662680866079098650
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662680866079098648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1004825059664801234, guid: c8154e889098b4649bfd532bce32531a, type: 3}
 --- !u!1 &3778505960119769538
 GameObject:
   m_ObjectHideFlags: 0
@@ -9929,6 +10595,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &3784846289220667744
 GameObject:
   m_ObjectHideFlags: 0
@@ -10125,6 +10792,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &4163861512173103665
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10297,6 +10965,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &4256807863799609268
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10517,6 +11186,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &4425196029140439018
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10630,6 +11300,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &4597516651754443738
 Transform:
   m_ObjectHideFlags: 0
@@ -10773,6 +11444,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &4818939069582450617
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10862,6 +11534,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &4910224326561148823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10959,6 +11632,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &5115562670335377585
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11015,6 +11689,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &5248803628615808349
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11085,6 +11760,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &5312623111457310161
 Transform:
   m_ObjectHideFlags: 0
@@ -11169,6 +11845,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &5468781404393755487
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11362,6 +12039,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &5635441114497314352
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11459,6 +12137,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &5712108374610568051
 Transform:
   m_ObjectHideFlags: 0
@@ -11757,6 +12436,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &5931271653826482885
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11862,6 +12542,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &6132832169450969803
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12008,6 +12689,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &6398488862133912211
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12078,6 +12760,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &6454493674422907386
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12167,6 +12850,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &6498888747342506802
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12256,6 +12940,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &6561330345666170828
 GameObject:
   m_ObjectHideFlags: 0
@@ -12304,6 +12989,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &6581936878614509140
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12393,6 +13079,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &6615560720582067183
 GameObject:
   m_ObjectHideFlags: 0
@@ -12441,6 +13128,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &6644634472060120953
 Transform:
   m_ObjectHideFlags: 0
@@ -12651,6 +13339,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &7105187465312188628
 Transform:
   m_ObjectHideFlags: 0
@@ -12795,6 +13484,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &7197482534210386181
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12850,7 +13540,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
-  availableMove: 1
+  availableMove: 0
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &7300757191625880473
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12907,6 +13598,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &7358868108523187295
 Transform:
   m_ObjectHideFlags: 0
@@ -12999,6 +13691,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!23 &7592548283370104652
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13184,6 +13877,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &7702953461024744124
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13254,6 +13948,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &7773929922022852859
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13310,6 +14005,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &7800381288592219966
 GameObject:
   m_ObjectHideFlags: 0
@@ -13358,6 +14054,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &7835272259673264188
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13606,6 +14303,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &7995152367695336912
 GameObject:
   m_ObjectHideFlags: 0
@@ -13654,6 +14352,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &7995250966241210007
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13732,6 +14431,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &8135000870724072815
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13802,6 +14502,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &8249101207472526881
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13866,6 +14567,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &8409605117320597442
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13963,6 +14665,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &8446861021334490102
 Transform:
   m_ObjectHideFlags: 0
@@ -14025,6 +14728,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &8473372320776217446
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14147,6 +14851,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &8741281749933163154
 Transform:
   m_ObjectHideFlags: 0
@@ -14209,6 +14914,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!33 &8858550163374048236
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14279,6 +14985,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &8904925282669528634
 Transform:
   m_ObjectHideFlags: 0
@@ -14341,6 +15048,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &9082067706357669645
 Transform:
   m_ObjectHideFlags: 0
@@ -14411,6 +15119,7 @@ MonoBehaviour:
   figure: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
+  center: {x: 0, y: 0, z: 0}
 --- !u!4 &9131057260511860104
 Transform:
   m_ObjectHideFlags: 0
