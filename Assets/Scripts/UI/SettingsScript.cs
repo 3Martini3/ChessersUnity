@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class SettingsScript : MonoBehaviour
 {
-    public AudioMixer audioMixer;
+    public AudioMixer MasterMixer;
     public Resolution[] resolutions;
     public TMPro.TMP_Dropdown resolutionDropdown;
     public TMPro.TMP_Dropdown qualityDropdown;
@@ -16,6 +16,7 @@ public class SettingsScript : MonoBehaviour
 
     void Start()
     {
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
@@ -62,12 +63,12 @@ public class SettingsScript : MonoBehaviour
         //ustawiam muzykê na po³owê lub wartoœæ zapiamiêtan¹ z innych scen / innych sesji
         if(PlayerPrefs.HasKey("musicVolume"))
         {
-            audioMixer.SetFloat("musicVolume", PlayerPrefs.GetFloat("musicVolume"));
+            MasterMixer.SetFloat("musicVolume", PlayerPrefs.GetFloat("musicVolume"));
             musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
         }
         else
         {
-            audioMixer.SetFloat("musicVolume", -40);
+            MasterMixer.SetFloat("musicVolume", -40);
             musicSlider.value = -40;
         }
 
@@ -92,8 +93,8 @@ public class SettingsScript : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("musicVolume", volume);
-        PlayerPrefs.SetFloat("musicVolume", volume);
+        MasterMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
     }
 
     public void SetQuality(int level)
