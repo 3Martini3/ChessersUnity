@@ -4544,7 +4544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82fc28fd2bb3c124bbcbb8882ac85c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 60ffe296504666f4aa8f809ba3eeec24, type: 2}
+  MasterMixer: {fileID: 24100000, guid: bb3145f4658c7b849884da01f67f2f84, type: 2}
   resolutionDropdown: {fileID: 1752098496}
   qualityDropdown: {fileID: 1968257261}
   musicSlider: {fileID: 1292613185}
