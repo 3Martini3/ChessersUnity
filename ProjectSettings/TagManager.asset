@@ -9,6 +9,8 @@ TagManager:
   - Center
   - Canvas
   - InvinitySquare
+  - Timers
+  - Chess Board
   layers:
   - Default
   - TransparentFX

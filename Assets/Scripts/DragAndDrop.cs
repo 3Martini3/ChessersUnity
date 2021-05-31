@@ -24,8 +24,7 @@ class DragAndDrop : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y + yChange, transform.position.z);
         dragging = true;
         boxCollider.enabled = true;
-        GetComponent<ChessPiece>().hoverSquareName = "InvinitySquare";
-
+        GetComponent<PossibleMoves>().FindPossibleMoves();
     }
 
     void OnMouseUp()
