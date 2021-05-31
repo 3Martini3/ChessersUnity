@@ -13,7 +13,7 @@ public class MenuScript : MonoBehaviour
 
     public void PlayCheckers()
     {
-        SceneManager.LoadScene("Scenes/MartaTesty");
+        SceneManager.LoadScene("Scenes/CheckersScene/GameSceneCheckers");
     }
 
     public void Quit()
