@@ -43,6 +43,6 @@ public class TimerCanvas : MonoBehaviour
 
         timeText = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        GameObject.FindWithTag("Timers").GetComponent<Text>().text = timeText;
+        GameObject.FindWithTag("Timers").GetComponent<TMPro.TextMeshProUGUI>().text = timeText;
     }
 }
