@@ -11,6 +11,8 @@ TagManager:
   - InvinitySquare
   - Timers
   - Chess Board
+  - LoginInput
+  - PasswordInput
   layers:
   - Default
   - TransparentFX
