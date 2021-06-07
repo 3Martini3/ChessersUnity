@@ -8,12 +8,12 @@ public class UnityChessBoard : MonoBehaviour
     void Start()
     {
         squares = new GameObject[8, 8];
-        Debug.Log($"there is started{name}");
+        //Debug.Log($"there is started{name}");
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Chess Square");
         foreach( var item in objects)
         {
             string name = item.name;
-          //  Debug.Log($"({name}) ({name[0] - 65}) ({name[1]- 49})\n");
+          //  //Debug.Log($"({name}) ({name[0] - 65}) ({name[1]- 49})\n");
             squares[name[1] - '1', name[0] - 'A'] = item;
             
         }
@@ -26,7 +26,7 @@ public class UnityChessBoard : MonoBehaviour
             }
             tab += "\n";
         }
-        Debug.Log(tab);*/
+        //Debug.Log(tab);*/
 
     }
 
@@ -41,7 +41,7 @@ public class UnityChessBoard : MonoBehaviour
                 squares[i, j].GetComponent<MeshRenderer>().material.color = Color.white;
             }
         }
-        Debug.Log("Cleared");
+        //Debug.Log("Cleared");
     }
     
 }

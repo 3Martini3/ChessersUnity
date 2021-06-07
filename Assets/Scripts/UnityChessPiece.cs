@@ -12,6 +12,7 @@ public class UnityChessPiece : MonoBehaviour {
     public Figure figure;
     public float yPosition;
     private ChessEnum.Color defaultColor { get; set; }
+    public bool didMove;
     public Vector3 center;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class UnityChessPiece : MonoBehaviour {
     private void Update()
     {
         if (hoverSquareName != "")
-            //Debug.Log($"{hoverSquareName}, {yPosition},{transform.position.y}");
+            ////Debug.Log($"{hoverSquareName}, {yPosition},{transform.position.y}");
             if (yPosition == transform.position.y && hoverSquareName != "")
             {
                 if (hoverSquareName == "Border")
@@ -35,7 +36,7 @@ public class UnityChessPiece : MonoBehaviour {
                 }
                 else
                 {
-                    // Debug.Log("Hi");
+                    // //Debug.Log("Hi");
                     var hoverSquare = GameObject.Find(hoverSquareName).GetComponent<MeshRenderer>().bounds.center;
                     if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(hoverSquare.x, hoverSquare.z)) > 0.5f)
                     {
@@ -48,7 +49,7 @@ public class UnityChessPiece : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-       // Debug.Log("Coool");
+       // //Debug.Log("Coool");
        if(other.tag=="Chess Square")
         {
             hoverSquareName = other.name;

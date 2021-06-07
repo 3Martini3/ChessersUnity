@@ -16,72 +16,71 @@ public class PossibleMoves : MonoBehaviour
         ChessPiece[,] board = new ChessPiece[8, 8];
         var sq = unityBoard.gameObject.GetComponent<UnityChessBoard>().squares;
         var currentSquare = GetComponent<UnityChessPiece>().square.name;
-        Debug.Log("this is square"+GetComponent<UnityChessPiece>().square.name);
-        var currentPos = new Position(currentSquare[0]-'A',currentSquare[1]-'1');
-        Debug.Log($"this is position: {currentPos.row},{currentPos.column}");
+        //Debug.Log("this is square"+GetComponent<UnityChessPiece>().square.name);
+        var currentPos = new Position(currentSquare[0] - 'A', currentSquare[1] - '1');
+        //Debug.Log($"this is position: {currentPos.row},{currentPos.column}");
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
                 var localFigure = sq[i, j].GetComponent<ChessSquare>().figure;
-                if (localFigure!=null)
+                if (localFigure != null)
                 {
-                    
+
                     var color = ChessEnum.Color.Black;
-                    //Debug.Log($"name is {localFigure.name}");
+                    ////Debug.Log($"name is {localFigure.name}");
                     if (localFigure.name.Contains("White"))
                     {
                         color = ChessEnum.Color.White;
                     }
-                    board[i,j] = new ChessPiece(localFigure.figure, color);
-                   // Debug.Log($"({i},{j})={board[i, j].figure},{color}");
+                    board[i, j] = new ChessPiece(localFigure.figure, color);
+                    // //Debug.Log($"({i},{j})={board[i, j].figure},{color}");
                 }
                 else
                 {
-                    board[i,j] = null;
-                    //Debug.Log($"({i},{j})=null");
+                    board[i, j] = null;
+                    ////Debug.Log($"({i},{j})=null");
                 }
-               
+
             }
-            
+
         }
 
-        Debug.Log($"{currentPos.column},{currentPos.row}, {board[currentPos.column, currentPos.row]?.figure}");
+        //Debug.Log($"{currentPos.column},{currentPos.row}, {board[currentPos.column, currentPos.row]?.figure}");
         switch (figure)
         {
             case Figure.Pawn:
-                Debug.Log("this is Pawn"); HighlightSquares(PossibleMovesPawn(new ChessBoard(board), currentPos),sq); break;
+                HighlightSquares(PossibleMovesPawn(new ChessBoard(board), currentPos), sq); break;
             case Figure.King:
-                Debug.Log("King"); HighlightSquares(PossibleMovesKing(new ChessBoard(board), currentPos),sq); break;
+                HighlightSquares(PossibleMovesKing(new ChessBoard(board), currentPos), sq); break;
             case Figure.Queen:
-                Debug.Log("Queen"); HighlightSquares(PossibleMovesQueen(new ChessBoard(board), currentPos), sq); break;//return PossibleMovesQueen(board, pos);
+                HighlightSquares(PossibleMovesQueen(new ChessBoard(board), currentPos), sq); break;
             case Figure.Rook:
-                Debug.Log("Rook"); HighlightSquares(PossibleMovesRook(new ChessBoard(board), currentPos), sq); break;//return PossibleMovesRook(board, pos);
+                HighlightSquares(PossibleMovesRook(new ChessBoard(board), currentPos), sq); break;
             case Figure.Bishop:
-                Debug.Log("Bishop"); HighlightSquares(PossibleMovesBishop(new ChessBoard(board), currentPos), sq); break;//return PossibleMovesBishop(board, pos);
+                HighlightSquares(PossibleMovesBishop(new ChessBoard(board), currentPos), sq); break;
             case Figure.Knight:
-                Debug.Log("Knight"); HighlightSquares(PossibleMovesKnight(new ChessBoard(board), currentPos), sq); break;//return PossibleMovesKnight(board, pos);
+                HighlightSquares(PossibleMovesKnight(new ChessBoard(board), currentPos), sq); break;
             default:
                 Debug.Log("Wtf"); break;
                 break;
-                //return new Position[0];
         }
     }
 
-    private void HighlightSquares(Position[] positions,GameObject[,] board)
+    private void HighlightSquares(Position[] positions, GameObject[,] board)
     {
-        Debug.Log($"found {positions.Length} moves");
-        foreach( var position in positions)
+        //Debug.Log($"found {positions.Length} moves");
+        foreach (var position in positions)
         {
-            Debug.Log("one");
-            Debug.Log(board[position.column, position.row].name);
+            //Debug.Log("one");
+            //Debug.Log(board[position.column, position.row].name);
             board[position.column, position.row].GetComponent<MeshRenderer>().material.color = activeColor;
         }
     }
 
     private static Position[] PossibleMovesPawn(ChessBoard board, Position pos)
     {
-        Debug.Log($"current position -{pos.column},{pos.row}");
+        //Debug.Log($"current position -{pos.column},{pos.row}");
         ChessPiece piece = board.GetPieceFromPosition(pos);
         List<Position> listPossibleMoves;
 
@@ -480,39 +479,17 @@ public class PossibleMoves : MonoBehaviour
     }
     private static List<Position> Castling(ChessBoard board, Position kingPosition)
     {
-
-
         List<Position> listPossibleMoves = new List<Position>();
-        ChessPiece king = board.GetPieceFromPosition(kingPosition);
-        if (king.color == ChessEnum.Color.Black)
-        {
 
-            ChessPiece rook = new ChessPiece(Figure.Rook, ChessEnum.Color.Black);
 
-            if (board.IsSquareEmpty(new Position("E8")) || !(board.GetPieceFromPosition(new Position("E8")).Equals(king)))
-            {
-                king.isCastlingPossibleEast = false;
-                king.isCastlingPossibleWest = false;
-            }
-            else if (board.IsSquareEmpty(new Position("H8")) || !(board.GetPieceFromPosition(new Position("H8")).Equals(rook)))
-                king.isCastlingPossibleEast = false;
-            else if (board.IsSquareEmpty(new Position("A8")) || !(board.GetPieceFromPosition(new Position("A8")).Equals(rook)))
-                king.isCastlingPossibleWest = false;
-        }
-        else
-        {
-            ChessPiece rook = new ChessPiece(Figure.Rook, ChessEnum.Color.White);
+        listPossibleMoves.Add(new Position(kingPosition.row, 1));
+        listPossibleMoves.Add(new Position(kingPosition.row, 5));
+                
 
-            if (board.IsSquareEmpty(new Position("E1")) || !(board.GetPieceFromPosition(new Position("E1")).Equals(king)))
-            {
-                king.isCastlingPossibleEast = false;
-                king.isCastlingPossibleWest = false;
-            }
-            else if (board.IsSquareEmpty(new Position("H1")) || !(board.GetPieceFromPosition(new Position("H1")).Equals(rook)))
-                king.isCastlingPossibleEast = false;
-            else if (board.IsSquareEmpty(new Position("A1")) || !(board.GetPieceFromPosition(new Position("A1")).Equals(rook)))
-                king.isCastlingPossibleWest = false;
-        }
+        /*ChessPiece king = board.GetPieceFromPosition(kingPosition);
+
+        king.isCastlingPossibleEast = true;
+        king.isCastlingPossibleWest = true;
 
         board[kingPosition] = null;
 
@@ -556,7 +533,7 @@ public class PossibleMoves : MonoBehaviour
             Position[] kingPath =
             {
                     new Position(kingPosition.row, 5),
-                    new Position(kingPosition.row, 6)
+                    new Position(kingPosition.row, 6),
                 };
 
             bool castlingPossible = true;
@@ -585,7 +562,7 @@ public class PossibleMoves : MonoBehaviour
             }
         }
 
-        board.SetPieceOnPosition(kingPosition, king);
+        board.SetPieceOnPosition(kingPosition, king);*/
         return listPossibleMoves;
     }
     private static List<Position> DeleteMoveWhenCheckExistAfterMove(ChessBoard board, Position piecePosition, List<Position> possibleMoves)

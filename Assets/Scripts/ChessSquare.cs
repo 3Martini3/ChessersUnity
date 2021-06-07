@@ -21,7 +21,7 @@ public class ChessSquare : MonoBehaviour
     {
         if(hoverMaterial!=null)
         {
-            //Debug.Log("trigger");
+            ////Debug.Log("trigger");
           //  GetComponent<MeshRenderer>().material.color = Color.blue;
             hovered = true;
         }
@@ -40,7 +40,7 @@ public class ChessSquare : MonoBehaviour
         if (hovered)
         {
             GetComponent<MeshRenderer>().material.color = Color.white;
-            //Debug.Log(collision.gameObject.name);
+            ////Debug.Log(collision.gameObject.name);
             if (availableMove)
             {
                 figure = collision.gameObject.GetComponent<UnityChessPiece>();
