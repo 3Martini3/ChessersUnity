@@ -10,6 +10,8 @@ public class ChessSquare : MonoBehaviour
     public bool availableMove = false;
     private bool hovered;
     public Vector3 center;
+    public bool enPassantOnStep;
+    public bool enPassantPossible;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +50,19 @@ public class ChessSquare : MonoBehaviour
                 {
                     figure.square.figure = null;
                     figure.square = this;
+                    if(enPassantOnStep)
+                    {
+                        enPassantPossible = true;
+                        enPassantOnStep = false;
+                    }
+                    if (!figure.didmove)
+                    {
+                        figure.didmove = true;
+                    }
                 }
                 figure.pinToPosition(center);
-                
-            }else
+            }
+            else
             {
                 var obj = collision.gameObject.GetComponent<UnityChessPiece>();
                 obj.pinToPosition(obj.square.GetComponent<MeshRenderer>().bounds.center);

@@ -9,13 +9,17 @@ public class PossibleMoves : MonoBehaviour
     public Figure figure;
     public UnityChessBoard unityBoard;
     public UnityEngine.Color activeColor;
+    public bool didMove;
+    public bool enPassauntPossible;
 
 
     public void FindPossibleMoves()
     {
         ChessPiece[,] board = new ChessPiece[8, 8];
         var sq = unityBoard.gameObject.GetComponent<UnityChessBoard>().squares;
-        var currentSquare = GetComponent<UnityChessPiece>().square.name;
+        var currentPiece = GetComponent<UnityChessPiece>();
+        var currentSquare = currentPiece.square.name;
+        didMove = currentPiece.didmove;
         //Debug.Log("this is square"+GetComponent<UnityChessPiece>().square.name);
         var currentPos = new Position(currentSquare[0] - 'A', currentSquare[1] - '1');
         //Debug.Log($"this is position: {currentPos.row},{currentPos.column}");
@@ -23,7 +27,8 @@ public class PossibleMoves : MonoBehaviour
         {
             for (int j = 0; j < 8; j++)
             {
-                var localFigure = sq[i, j].GetComponent<ChessSquare>().figure;
+                var localSquare = sq[i, j].GetComponent<ChessSquare>();
+                var localFigure = localSquare.figure;
                 if (localFigure != null)
                 {
 
@@ -33,7 +38,7 @@ public class PossibleMoves : MonoBehaviour
                     {
                         color = ChessEnum.Color.White;
                     }
-                    board[i, j] = new ChessPiece(localFigure.figure, color);
+                    board[i, j] = new ChessPiece(localFigure.figure, color, localFigure.didmove, localSquare.enPassantPossible);
                     // //Debug.Log($"({i},{j})={board[i, j].figure},{color}");
                 }
                 else
@@ -41,26 +46,23 @@ public class PossibleMoves : MonoBehaviour
                     board[i, j] = null;
                     ////Debug.Log($"({i},{j})=null");
                 }
-
             }
-
         }
-
         //Debug.Log($"{currentPos.column},{currentPos.row}, {board[currentPos.column, currentPos.row]?.figure}");
         switch (figure)
         {
             case Figure.Pawn:
-                HighlightSquares(PossibleMovesPawn(new ChessBoard(board), currentPos), sq); break;
+                HighlightSquares(PossibleMovesPawn(new ChessBoard(board), currentPos, didMove), sq); break;
             case Figure.King:
-                HighlightSquares(PossibleMovesKing(new ChessBoard(board), currentPos), sq); break;
+                HighlightSquares(PossibleMovesKing(new ChessBoard(board), currentPos, didMove), sq); break;
             case Figure.Queen:
-                HighlightSquares(PossibleMovesQueen(new ChessBoard(board), currentPos), sq); break;
+                HighlightSquares(PossibleMovesQueen(new ChessBoard(board), currentPos, didMove), sq); break;
             case Figure.Rook:
-                HighlightSquares(PossibleMovesRook(new ChessBoard(board), currentPos), sq); break;
+                HighlightSquares(PossibleMovesRook(new ChessBoard(board), currentPos, didMove), sq); break;
             case Figure.Bishop:
-                HighlightSquares(PossibleMovesBishop(new ChessBoard(board), currentPos), sq); break;
+                HighlightSquares(PossibleMovesBishop(new ChessBoard(board), currentPos, didMove), sq); break;
             case Figure.Knight:
-                HighlightSquares(PossibleMovesKnight(new ChessBoard(board), currentPos), sq); break;
+                HighlightSquares(PossibleMovesKnight(new ChessBoard(board), currentPos, didMove), sq); break;
             default:
                 Debug.Log("Wtf"); break;
                 break;
@@ -75,15 +77,15 @@ public class PossibleMoves : MonoBehaviour
             //Debug.Log("one");
             //Debug.Log(board[position.column, position.row].name);
             board[position.column, position.row].GetComponent<MeshRenderer>().material.color = activeColor;
+            board[position.column, position.row].GetComponent<ChessSquare>().enPassantOnStep = position.enPassantPossible;
         }
     }
 
-    private static Position[] PossibleMovesPawn(ChessBoard board, Position pos)
+    private static Position[] PossibleMovesPawn(ChessBoard board, Position pos, bool didMove)
     {
         //Debug.Log($"current position -{pos.column},{pos.row}");
         ChessPiece piece = board.GetPieceFromPosition(pos);
         List<Position> listPossibleMoves;
-
         if (piece.color == ChessEnum.Color.White)
             listPossibleMoves = ExploreWhitePawn(board, pos);
         else
@@ -93,14 +95,14 @@ public class PossibleMoves : MonoBehaviour
 
         // en passant
 
-        if (piece.color == ChessEnum.Color.White)
+        if (piece?.color == ChessEnum.Color.White)
             return listPossibleMoves.Concat(EnPassantWhite(board, pos)).ToArray();
         else
             return listPossibleMoves.Concat(EnPassantBlack(board, pos)).ToArray();
 
 
     }
-    private static Position[] PossibleMovesKing(ChessBoard board, Position pos)
+    private static Position[] PossibleMovesKing(ChessBoard board, Position pos, bool didMove)
     {
         List<Position> listPossiblePos;
 
@@ -109,11 +111,11 @@ public class PossibleMoves : MonoBehaviour
         listPossiblePos = DeleteMoveWhenCheckExistAfterMove(board, pos, listPossiblePos);
 
         // castling
-        return listPossiblePos.Concat(Castling(board, pos)).ToArray();
+        return listPossiblePos.Concat(Castling(board, pos, didMove)).ToArray();
 
 
     }
-    private static Position[] PossibleMovesQueen(ChessBoard board, Position pos)
+    private static Position[] PossibleMovesQueen(ChessBoard board, Position pos, bool didMove)
     {
         List<Position> listPossiblePos;
 
@@ -123,7 +125,7 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossiblePos.ToArray();
     }
-    private static Position[] PossibleMovesRook(ChessBoard board, Position pos)
+    private static Position[] PossibleMovesRook(ChessBoard board, Position pos, bool didMove)
     {
         List<Position> listPossiblePos;
 
@@ -133,7 +135,7 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossiblePos.ToArray();
     }
-    private static Position[] PossibleMovesBishop(ChessBoard board, Position pos)
+    private static Position[] PossibleMovesBishop(ChessBoard board, Position pos, bool didMove)
     {
         List<Position> listPossiblePos;
 
@@ -144,7 +146,7 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossiblePos.ToArray();
     }
-    private static Position[] PossibleMovesKnight(ChessBoard board, Position pos)
+    private static Position[] PossibleMovesKnight(ChessBoard board, Position pos, bool didMove)
     {
         List<Position> listPossiblePos;
 
@@ -163,7 +165,7 @@ public class PossibleMoves : MonoBehaviour
         var possiblePos = new Dictionary<string, Position>
         {
             ["normal"] = new Position(pos.row + 1, pos.column),
-            ["start"] = new Position(pos.row + 2, pos.column),
+            ["start"] = new Position(pos.row + 2, pos.column, true),
             ["northWest"] = new Position(pos.row + 1, pos.column - 1),
             ["northEast"] = new Position(pos.row + 1, pos.column + 1),
 
@@ -192,7 +194,7 @@ public class PossibleMoves : MonoBehaviour
         var possiblePos = new Dictionary<string, Position>
         {
             ["normal"] = new Position(pos.row - 1, pos.column),
-            ["start"] = new Position(pos.row - 2, pos.column),
+            ["start"] = new Position(pos.row - 2, pos.column, true),
             ["northWest"] = new Position(pos.row - 1, pos.column - 1),
             ["northEast"] = new Position(pos.row - 1, pos.column + 1),
 
@@ -381,9 +383,28 @@ public class PossibleMoves : MonoBehaviour
             ["northEast"] = new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column + 1),
         };
 
-        Position capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1);
+        //Position capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1);
 
-        if (piece.isEnPassantPossibleWest && enPassantPossibleMoves["northWest"].IsPositionOnTheBoard() && board.IsBlackPieceOnSquare(capturedPiecePosition))
+
+        Debug.Log($"Position: col{capturingPiecePosition.column}, row{capturingPiecePosition.row}");
+
+        if (capturingPiecePosition.column < 7 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)]?.possibleEnPassant == true)
+        {
+            // Debug.Log("There is it");
+            // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
+            listPossibleMoves.Add(new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column + 1));
+        }
+        if (capturingPiecePosition.column > 0 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1)]?.possibleEnPassant == true)
+        {
+            //Debug.Log("There is it");
+            // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
+            listPossibleMoves.Add(new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column - 1));
+        }
+
+
+
+
+        /*if (piece.isEnPassantPossibleWest && enPassantPossibleMoves["northWest"].IsPositionOnTheBoard() && board.IsBlackPieceOnSquare(capturedPiecePosition))
         {
 
             board[capturingPiecePosition] = null;
@@ -419,7 +440,7 @@ public class PossibleMoves : MonoBehaviour
             board.SetPieceOnPosition(capturingPiecePosition, piece);
             board[enPassantPossibleMoves["northEast"]] = null;
             board.SetPieceOnPosition(capturedPiecePosition, capturedPiece);
-        }
+        }*/
 
 
         return listPossibleMoves;
@@ -477,14 +498,22 @@ public class PossibleMoves : MonoBehaviour
         return listPossibleMoves;
 
     }
-    private static List<Position> Castling(ChessBoard board, Position kingPosition)
+    private static List<Position> Castling(ChessBoard board, Position kingPosition, bool didMove)
     {
         List<Position> listPossibleMoves = new List<Position>();
 
+        if (!didMove)
+        {
+            if (board[new Position(kingPosition.row, 0)]?.didmove == false && board[new Position(kingPosition.row, 1)] == null && board[new Position(kingPosition.row, 2)] == null)
+            {
+                listPossibleMoves.Add(new Position(kingPosition.row, 1));
+            }
+            if (board[new Position(kingPosition.row, 7)]?.didmove == false && board[new Position(kingPosition.row, 6)] == null && board[new Position(kingPosition.row, 5)] == null && board[new Position(kingPosition.row, 4)] == null)
+            {
+                listPossibleMoves.Add(new Position(kingPosition.row, 5));
+            }
+        }
 
-        listPossibleMoves.Add(new Position(kingPosition.row, 1));
-        listPossibleMoves.Add(new Position(kingPosition.row, 5));
-                
 
         /*ChessPiece king = board.GetPieceFromPosition(kingPosition);
 

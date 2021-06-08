@@ -12,8 +12,8 @@ public class UnityChessPiece : MonoBehaviour {
     public Figure figure;
     public float yPosition;
     private ChessEnum.Color defaultColor { get; set; }
-    public bool didMove;
     public Vector3 center;
+    public bool didmove;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +92,7 @@ public class UnityChessPiece : MonoBehaviour {
         yPosition = transform.position.y;
         transform.position = new Vector3(position3.x/*square.bounds.center.x*/, yPosition, /*square.bounds.center.z*/position3.z);
         center = GetComponent<MeshRenderer>().bounds.center;
+       
     }
 
     public void goBackToSquare()
