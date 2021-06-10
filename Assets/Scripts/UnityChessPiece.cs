@@ -8,6 +8,7 @@ public class UnityChessPiece : MonoBehaviour {
    // public MeshRenderer square;
     public Material hoverMaterial;
     public ChessSquare square;
+    public ChessEnum.Color color;
     public string hoverSquareName;
     public Figure figure;
     public float yPosition;
@@ -101,5 +102,27 @@ public class UnityChessPiece : MonoBehaviour {
     public void goBackToSquare()
     {
         pinToPosition(square.center);
+    }
+
+    public void beat()
+    {
+        
+        var beatenStack = GameObject.Find($"Beaten Pieces {color.ToString()}");
+        var stacks = beatenStack.GetComponent<Beat>().stacks;
+        for (int i=0;i<15;i++)
+        {
+            var stack = stacks[i];
+            if (stack.isEmpty)
+            {
+                square = null;
+                pinToPosition(stack.transform.position);
+                stack.isEmpty = false;
+                transform.position = new Vector3(transform.position.x, transform.position.y - 0.1111f, transform.position.z);
+                tag = "Untagged";
+                break;
+            }
+            
+        }
+        Debug.Log("Beat boi!");
     }
 }

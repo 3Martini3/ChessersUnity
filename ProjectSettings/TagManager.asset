@@ -12,6 +12,8 @@ TagManager:
   - Timers
   - Chess Board
   - EnPassant Pawn
+  - WhiteStack
+  - BlackStack
   layers:
   - Default
   - TransparentFX

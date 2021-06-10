@@ -528,7 +528,7 @@ public class PossibleMoves : MonoBehaviour
                     return pos;
             }
         }
-        return new Position(-1, -1);
+        return null;
     }
 
 
