@@ -80,6 +80,7 @@ public class PossibleMoves : MonoBehaviour
             var sq = board[position.column, position.row].GetComponent<ChessSquare>();
             sq.enPassantOnStep = position.enPassantPossible;
             sq.availableMove = true;
+            sq.castling = position.castling;
         }
     }
 
@@ -398,49 +399,6 @@ public class PossibleMoves : MonoBehaviour
             // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
             listPossibleMoves.Add(new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column - 1));
         }
-
-
-
-
-        /*if (piece.isEnPassantPossibleWest && enPassantPossibleMoves["northWest"].IsPositionOnTheBoard() && board.IsBlackPieceOnSquare(capturedPiecePosition))
-        {
-
-            board[capturingPiecePosition] = null;
-            board.SetPieceOnPosition(enPassantPossibleMoves["northWest"], piece);
-            ChessPiece capturedPiece = board.GetPieceFromPosition(capturedPiecePosition);
-            board[capturedPiecePosition] = null;
-
-            if (!DoesCheckExist(board, FindKing(board, ChessEnum.Color.White)))
-            {
-                enPassantPossibleMoves["northWest"].SetMoveOnThisPositionEnPassant(true);
-                listPossibleMoves.Add(enPassantPossibleMoves["northWest"]);
-            }
-
-            board.SetPieceOnPosition(capturingPiecePosition, piece);
-            board[enPassantPossibleMoves["northWest"]] = null;
-            board.SetPieceOnPosition(capturedPiecePosition, capturedPiece);
-        }
-
-        capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1);
-        if (piece.isEnPassantPossibleEast && enPassantPossibleMoves["northEast"].IsPositionOnTheBoard() && board.IsBlackPieceOnSquare(capturedPiecePosition))
-        {
-            board[capturingPiecePosition] = null;
-            board.SetPieceOnPosition(enPassantPossibleMoves["northEast"], piece);
-            ChessPiece capturedPiece = board.GetPieceFromPosition(capturedPiecePosition);
-            board[capturedPiecePosition] = null;
-
-            if (!DoesCheckExist(board, FindKing(board, ChessEnum.Color.White)))
-            {
-                enPassantPossibleMoves["northEast"].SetMoveOnThisPositionEnPassant(true);
-                listPossibleMoves.Add(enPassantPossibleMoves["northEast"]);
-            }
-
-            board.SetPieceOnPosition(capturingPiecePosition, piece);
-            board[enPassantPossibleMoves["northEast"]] = null;
-            board.SetPieceOnPosition(capturedPiecePosition, capturedPiece);
-        }*/
-
-
         return listPossibleMoves;
 
     }
@@ -468,54 +426,6 @@ public class PossibleMoves : MonoBehaviour
             // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
             listPossibleMoves.Add(new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column + 1));
         }
-
-        /*List<Position> listPossibleMoves = new List<Position>();
-        ChessPiece piece = board.GetPieceFromPosition(capturingPiecePosition);
-
-        var enPassantPossibleMoves = new Dictionary<string, Position>
-        {
-            ["southWest"] = new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column - 1),
-            ["southEast"] = new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column + 1),
-        };
-
-        Position capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1);
-        if (piece.isEnPassantPossibleWest && enPassantPossibleMoves["southWest"].IsPositionOnTheBoard() && board.IsWhitePieceOnSquare(capturedPiecePosition))
-        {
-            board[capturingPiecePosition] = null;
-            board.SetPieceOnPosition(enPassantPossibleMoves["southWest"], piece);
-            ChessPiece capturedPiece = board.GetPieceFromPosition(capturedPiecePosition);
-            board[capturedPiecePosition] = null;
-
-            if (!DoesCheckExist(board, FindKing(board, ChessEnum.Color.Black)))
-            {
-                enPassantPossibleMoves["southWest"].SetMoveOnThisPositionEnPassant(true);
-                listPossibleMoves.Add(enPassantPossibleMoves["southWest"]);
-            }
-
-            board.SetPieceOnPosition(capturingPiecePosition, piece);
-            board[enPassantPossibleMoves["southWest"]] = null;
-            board.SetPieceOnPosition(capturedPiecePosition, capturedPiece);
-        }
-
-        capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1);
-        if (piece.isEnPassantPossibleEast && enPassantPossibleMoves["southEast"].IsPositionOnTheBoard() && board.IsWhitePieceOnSquare(capturedPiecePosition))
-        {
-            board[capturingPiecePosition] = null;
-            board.SetPieceOnPosition(enPassantPossibleMoves["southEast"], piece);
-            ChessPiece capturedPiece = board.GetPieceFromPosition(capturedPiecePosition);
-            board[capturedPiecePosition] = null;
-
-            if (!DoesCheckExist(board, FindKing(board, ChessEnum.Color.Black)))
-            {
-                enPassantPossibleMoves["southEast"].SetMoveOnThisPositionEnPassant(true);
-                listPossibleMoves.Add(enPassantPossibleMoves["southEast"]);
-            }
-
-            board.SetPieceOnPosition(capturingPiecePosition, piece);
-            board[enPassantPossibleMoves["southEast"]] = null;
-            board.SetPieceOnPosition(capturedPiecePosition, capturedPiece);
-        }*/
-
         return listPossibleMoves;
 
     }
@@ -527,92 +437,13 @@ public class PossibleMoves : MonoBehaviour
         {
             if (board[new Position(kingPosition.row, 0)]?.didmove == false && board[new Position(kingPosition.row, 1)] == null && board[new Position(kingPosition.row, 2)] == null)
             {
-                listPossibleMoves.Add(new Position(kingPosition.row, 1));
+                listPossibleMoves.Add(new Position(kingPosition.row, 1,castling:-1));
             }
             if (board[new Position(kingPosition.row, 7)]?.didmove == false && board[new Position(kingPosition.row, 6)] == null && board[new Position(kingPosition.row, 5)] == null && board[new Position(kingPosition.row, 4)] == null)
             {
-                listPossibleMoves.Add(new Position(kingPosition.row, 5));
+                listPossibleMoves.Add(new Position(kingPosition.row, 5, castling: 1));
             }
         }
-
-
-        /*ChessPiece king = board.GetPieceFromPosition(kingPosition);
-
-        king.isCastlingPossibleEast = true;
-        king.isCastlingPossibleWest = true;
-
-        board[kingPosition] = null;
-
-        if (king.isCastlingPossibleWest)
-        {
-
-            Position[] kingPath =
-            {
-                    new Position(kingPosition.row, 2),
-                    new Position(kingPosition.row, 3)
-                };
-
-            bool castlingPossible = true;
-
-
-            foreach (Position pos in kingPath)
-            {
-                ChessPiece pieceOnPos = board.GetPieceFromPosition(pos);
-                board.SetPieceOnPosition(pos, king);
-                if (pieceOnPos != null || DoesCheckExist(board, pos))
-                {
-                    castlingPossible = false;
-                    board.SetPieceOnPosition(pos, pieceOnPos);
-                    break;
-                }
-
-                board.SetPieceOnPosition(pos, pieceOnPos);
-            }
-
-            if (castlingPossible && board.IsSquareEmpty(new Position(kingPosition.row, 1)))
-            {
-                Position possibleMove = new Position(kingPosition.row, 2);
-                possibleMove.SetMoveOnThisPositionCastling(true);
-                listPossibleMoves.Add(possibleMove);
-            }
-        }
-
-        if (king.isCastlingPossibleEast)
-        {
-
-            Position[] kingPath =
-            {
-                    new Position(kingPosition.row, 5),
-                    new Position(kingPosition.row, 6),
-                };
-
-            bool castlingPossible = true;
-
-
-            foreach (Position pos in kingPath)
-            {
-
-                ChessPiece pieceOnPos = board.GetPieceFromPosition(pos);
-                board.SetPieceOnPosition(pos, king);
-                if (pieceOnPos != null || DoesCheckExist(board, pos))
-                {
-                    castlingPossible = false;
-                    board.SetPieceOnPosition(pos, pieceOnPos);
-                    break;
-                }
-                board.SetPieceOnPosition(pos, pieceOnPos);
-            }
-
-            if (castlingPossible)
-            {
-
-                Position possibleMove = new Position(kingPosition.row, 6);
-                possibleMove.SetMoveOnThisPositionCastling(true);
-                listPossibleMoves.Add(possibleMove);
-            }
-        }
-
-        board.SetPieceOnPosition(kingPosition, king);*/
         return listPossibleMoves;
     }
     private static List<Position> DeleteMoveWhenCheckExistAfterMove(ChessBoard board, Position piecePosition, List<Position> possibleMoves)

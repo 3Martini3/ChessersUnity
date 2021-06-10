@@ -14,6 +14,7 @@ public class UnityChessPiece : MonoBehaviour {
     private ChessEnum.Color defaultColor { get; set; }
     public Vector3 center;
     public bool didmove;
+    public ActivePiece activePiece;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +50,6 @@ public class UnityChessPiece : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-       // //Debug.Log("Coool");
        if(other.tag=="Chess Square")
         {
             hoverSquareName = other.name;
@@ -58,7 +58,10 @@ public class UnityChessPiece : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        GetComponent<Renderer>().material.color = UnityEngine.Color.blue;
+        if(!activePiece.isPieceDragged)
+        {
+            GetComponent<Renderer>().material.color = UnityEngine.Color.blue;
+        }
     }
     private void OnMouseExit()
     {

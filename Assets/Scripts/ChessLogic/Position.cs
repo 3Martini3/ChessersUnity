@@ -5,6 +5,12 @@ public class Position
     public int row { get; set; }
     public int column { get; set; }
     public bool enPassantPossible { get; set; }
+    /// <summary>
+    /// 0 - if not,
+    /// 1 - if left
+    /// 2- if right
+    /// </summary>
+    public int castling { get; set; }
 
     private bool isMoveOnThisPossitionEnPassant;
     private bool isMoveOnThisPossitionCastling;
@@ -24,13 +30,14 @@ public class Position
         enPassantPossible = false;
 
     }
-    public Position(int row, int column, bool enpassant = false)
+    public Position(int row, int column, bool enpassant = false,int castling = 0)
     {
         this.row = row;
         this.column = column;
         isMoveOnThisPossitionCastling = false;
         isMoveOnThisPossitionEnPassant = false;
         enPassantPossible = enpassant;
+        this.castling = castling;
     }
 
     public bool IsPositionOnTheBoard()
