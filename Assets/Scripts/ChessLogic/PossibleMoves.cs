@@ -77,7 +77,9 @@ public class PossibleMoves : MonoBehaviour
             //Debug.Log("one");
             //Debug.Log(board[position.column, position.row].name);
             board[position.column, position.row].GetComponent<MeshRenderer>().material.color = activeColor;
-            board[position.column, position.row].GetComponent<ChessSquare>().enPassantOnStep = position.enPassantPossible;
+            var sq = board[position.column, position.row].GetComponent<ChessSquare>();
+            sq.enPassantOnStep = position.enPassantPossible;
+            sq.availableMove = true;
         }
     }
 
@@ -377,11 +379,7 @@ public class PossibleMoves : MonoBehaviour
         List<Position> listPossibleMoves = new List<Position>();
         ChessPiece piece = board.GetPieceFromPosition(capturingPiecePosition);
 
-        var enPassantPossibleMoves = new Dictionary<string, Position>
-        {
-            ["northWest"] = new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column - 1),
-            ["northEast"] = new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column + 1),
-        };
+       
 
         //Position capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1);
 
@@ -451,6 +449,29 @@ public class PossibleMoves : MonoBehaviour
         List<Position> listPossibleMoves = new List<Position>();
         ChessPiece piece = board.GetPieceFromPosition(capturingPiecePosition);
 
+       
+
+        //Position capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1);
+
+
+        Debug.Log($"Position: col{capturingPiecePosition.column}, row{capturingPiecePosition.row}");
+
+        if (capturingPiecePosition.column >0 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1)]?.possibleEnPassant == true)
+        {
+            // Debug.Log("There is it");
+            // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
+            listPossibleMoves.Add(new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column - 1));
+        }
+        if (capturingPiecePosition.column <7 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)]?.possibleEnPassant == true)
+        {
+            //Debug.Log("There is it");
+            // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
+            listPossibleMoves.Add(new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column + 1));
+        }
+
+        /*List<Position> listPossibleMoves = new List<Position>();
+        ChessPiece piece = board.GetPieceFromPosition(capturingPiecePosition);
+
         var enPassantPossibleMoves = new Dictionary<string, Position>
         {
             ["southWest"] = new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column - 1),
@@ -493,7 +514,7 @@ public class PossibleMoves : MonoBehaviour
             board.SetPieceOnPosition(capturingPiecePosition, piece);
             board[enPassantPossibleMoves["southEast"]] = null;
             board.SetPieceOnPosition(capturedPiecePosition, capturedPiece);
-        }
+        }*/
 
         return listPossibleMoves;
 

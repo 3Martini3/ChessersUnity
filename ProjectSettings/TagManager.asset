@@ -11,6 +11,7 @@ TagManager:
   - InvinitySquare
   - Timers
   - Chess Board
+  - EnPassant Pawn
   layers:
   - Default
   - TransparentFX

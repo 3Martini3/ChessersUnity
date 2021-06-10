@@ -48,12 +48,24 @@ public class ChessSquare : MonoBehaviour
                 figure = collision.gameObject.GetComponent<UnityChessPiece>();
                 if(figure.square.name!=this.name)
                 {
+                    var squares = GameObject.FindGameObjectsWithTag("Chess Square");
+                    foreach (var square in squares)
+                    {
+                        if (square.name != this.name)
+                        {
+                            var sq = square.GetComponent<ChessSquare>();
+                            sq.enPassantPossible = false;
+                            sq.availableMove = false;
+                        }
+                    }
+
                     figure.square.figure = null;
                     figure.square = this;
-                    if(enPassantOnStep)
+                    if (enPassantOnStep)
                     {
                         enPassantPossible = true;
                         enPassantOnStep = false;
+                       
                     }
                     if (!figure.didmove)
                     {
