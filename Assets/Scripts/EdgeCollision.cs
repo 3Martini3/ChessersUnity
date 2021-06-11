@@ -6,7 +6,7 @@ public class EdgeCollision : MonoBehaviour
 {
     private void OnCollisionStay(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
 
 
         if(collision.gameObject.tag=="Chess Piece")

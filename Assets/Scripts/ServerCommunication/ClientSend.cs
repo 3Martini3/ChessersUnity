@@ -17,7 +17,7 @@ public class ClientSend : MonoBehaviour
         using (Packet _packet = new Packet((int)ClientPackets.welcomeReceived))
         {
             _packet.Write(Client.instance.myId);
-            Debug.Log($"{Client.instance.myId}, {UIManager.instance.usernameField.text}");
+            //Debug.Log($"{Client.instance.myId}, {UIManager.instance.usernameField.text}");
             _packet.Write(UIManager.instance.usernameField.text);
 
 
@@ -30,7 +30,7 @@ public class ClientSend : MonoBehaviour
         using (Packet _packet = new Packet((int)ClientPackets.messageSent))
         {
             _packet.Write(Client.instance.myId);
-            Debug.Log($"{Client.instance.myId}, {UIManager.instance.usernameField.text}");
+            //Debug.Log($"{Client.instance.myId}, {UIManager.instance.usernameField.text}");
             _packet.Write("{\"type\":\"login\",\"username\":\"myuser\",\"password\":\"password\"}");
             BuildMessage();
 

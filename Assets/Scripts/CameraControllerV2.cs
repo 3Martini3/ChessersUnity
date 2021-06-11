@@ -26,7 +26,7 @@ public class CameraControllerV2 : MonoBehaviour
     void Update()
     {
         RotateHorizontal();
-        //Debug.Log(transform.rotation.eulerAngles.ToString());
+        ////Debug.Log(transform.rotation.eulerAngles.ToString());
         RotateVertical();
         ForwardAxisMove();
     }

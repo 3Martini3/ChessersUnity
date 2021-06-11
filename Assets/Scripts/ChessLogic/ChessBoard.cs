@@ -19,7 +19,7 @@ public class ChessBoard
     }
 
     public ChessPiece GetPieceFromPosition(Position position)
-    {
+    {   
         return board[position.column, position.row];
     }
 

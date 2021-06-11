@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
             connectionCalled = true;
             connectionText.text = "Disconnected";
             ConnectToServer();
-            Debug.Log("Connection called");
+            //Debug.Log("Connection called");
             
         }
     }
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
             instance = this;
         }else if (instance != this)
         {
-            Debug.Log("Instance already exists, destroing object!");
+            //Debug.Log("Instance already exists, destroing object!");
             Destroy(this);
         }
     }

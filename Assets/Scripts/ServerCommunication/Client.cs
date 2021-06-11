@@ -26,7 +26,7 @@ public class Client : MonoBehaviour
         }
         else if (instance != this)
         {
-            Debug.Log("Instance already exists, destroying object!");
+            //Debug.Log("Instance already exists, destroying object!");
             Destroy(this);
         }
     }
@@ -65,7 +65,7 @@ public class Client : MonoBehaviour
 
         private void ConnectCallback(IAsyncResult _result)
         {
-            Debug.Log(_result);
+            //Debug.Log(_result);
             socket.EndConnect(_result);
 
             if (!socket.Connected)
@@ -91,7 +91,7 @@ public class Client : MonoBehaviour
             }
             catch (Exception _ex)
             {
-                Debug.Log($"Error sending data to server via TCP: {_ex}");
+                //Debug.Log($"Error sending data to server via TCP: {_ex}");
             }
         }
 
@@ -171,6 +171,6 @@ public class Client : MonoBehaviour
         {
             { (int)ServerPackets.welcome, ClientHandle.Welcome }
         };
-        Debug.Log("Initialized packets.");
+        //Debug.Log("Initialized packets.");
     }
 }
