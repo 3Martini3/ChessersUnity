@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2003931976}
-  m_IndirectSpecularColor: {r: 0.43956196, g: 0.4879368, b: 0.56816876, a: 1}
+  m_IndirectSpecularColor: {r: 0.43956175, g: 0.4879362, b: 0.5681677, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -437,10 +437,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &24830316
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -763,6 +766,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &51879051
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -875,6 +881,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &53063886
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1086,6 +1095,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &78495916
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1215,10 +1227,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &80610651
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1489,10 +1504,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &84727290
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1632,6 +1650,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &90082353
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1744,6 +1765,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &123559803
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1945,10 +1969,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &180853857
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2197,6 +2224,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &194044646
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2384,6 +2414,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &204025719
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2496,6 +2529,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &206526527
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2885,10 +2921,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &265021205
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3028,6 +3067,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &285196442
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3077,6 +3119,138 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285196438}
   m_Mesh: {fileID: 5142248946930414845, guid: c8154e889098b4649bfd532bce32531a, type: 3}
+--- !u!1 &295538521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 295538523}
+  - component: {fileID: 295538522}
+  m_Layer: 5
+  m_Name: ButtonClickSoundEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &295538522
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295538521}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1960620303702016274, guid: bb3145f4658c7b849884da01f67f2f84, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 83ad3900fa6d4534ab8389d9424a5f17, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!224 &295538523
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295538521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1392192073}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &303790574
 GameObject:
   m_ObjectHideFlags: 0
@@ -3360,6 +3534,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &361593236
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3582,10 +3759,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &392771355
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3757,6 +3937,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 295538522}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &393308156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3907,6 +4099,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &414812849
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4299,6 +4494,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &453121060
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4411,6 +4609,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &456136182
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4707,10 +4908,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &472817895
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5001,10 +5205,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &495509810
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5144,6 +5351,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &496399502
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5361,6 +5571,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &520130313
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5539,6 +5752,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &538638896
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5860,6 +6076,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &570925245
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6332,6 +6551,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &633443714
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6444,6 +6666,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &640310740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6556,6 +6781,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &643273607
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6771,6 +6999,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &646655072
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6883,6 +7114,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &654099839
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7342,6 +7576,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &696281237
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7467,6 +7704,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 295538522}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!224 &702245136
 RectTransform:
@@ -7552,6 +7801,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &720613261
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7664,6 +7916,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &723723652
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7793,10 +8048,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &732216931
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8087,10 +8345,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &760785271
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8252,10 +8513,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &763529606
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8570,10 +8834,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &776146936
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8913,6 +9180,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &798779280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9042,10 +9312,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &806929384
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9190,6 +9463,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &820474961
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9319,10 +9595,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &881257845
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9462,6 +9741,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &883147557
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9826,6 +10108,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &921489318
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10012,10 +10297,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &934799138
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10172,10 +10460,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &946254429
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10315,6 +10606,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &950304798
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10427,6 +10721,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &961288579
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10756,6 +11053,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &980862333
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11019,10 +11319,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1001121710
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11249,6 +11552,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1054811445
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11382,13 +11688,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1079329463}
   m_HandleRect: {fileID: 199076888}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1392192068}
+        m_TargetAssemblyTypeName: SettingsScript, Assembly-CSharp
+        m_MethodName: SetSFXVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1062562930
 GameObject:
   m_ObjectHideFlags: 0
@@ -11471,7 +11789,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1062562933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 295538522}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1062562933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11740,10 +12070,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1085505888
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11883,6 +12216,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1102889879
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11995,6 +12331,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1110394563
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12211,6 +12550,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1151072237
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12340,10 +12682,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1156350814
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12483,6 +12828,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1165779536
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12595,6 +12943,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1165959247
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12707,6 +13058,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1173335742
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12888,6 +13242,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1186021529
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13036,6 +13393,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1259445508
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13148,6 +13508,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1270285786
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13306,6 +13669,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1288922195
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13441,6 +13807,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1392192069}
         m_TargetAssemblyTypeName: PauseMenuScript, Assembly-CSharp
         m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 295538522}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13702,10 +14080,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1319230057
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13952,6 +14333,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1351397249
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14119,6 +14503,7 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 1635168327}
   qualityDropdown: {fileID: 1468054629}
   musicSlider: {fileID: 1548419572}
+  SFXSlider: {fileID: 1056203158}
   fullscreenToogle: {fileID: 702245135}
 --- !u!114 &1392192069
 MonoBehaviour:
@@ -14208,6 +14593,7 @@ RectTransform:
   m_Children:
   - {fileID: 670964105}
   - {fileID: 1741664493}
+  - {fileID: 295538523}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14279,6 +14665,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1423379534
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14444,10 +14833,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1456104101
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14587,6 +14979,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1460255525
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14787,6 +15182,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 295538522}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &1468335422
 GameObject:
@@ -14943,10 +15350,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1483395174
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15103,10 +15513,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1494186207
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15358,10 +15771,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1539532269
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15522,10 +15938,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1084886214}
   m_HandleRect: {fileID: 1950900925}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -15604,6 +16020,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1589694107
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15716,6 +16135,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1595419236
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15828,6 +16250,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1625926949
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16028,6 +16453,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 295538522}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &1642664742
 GameObject:
@@ -16092,6 +16529,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1642664746
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16329,10 +16769,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1672922527
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16472,6 +16915,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1680356839
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16718,6 +17164,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1724223936
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16830,6 +17279,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1736551055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16983,6 +17435,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1749408227
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17112,10 +17567,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1761627256
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17371,10 +17829,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1778689368
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17697,6 +18158,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1809239743
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17845,6 +18309,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1867893151
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17957,6 +18424,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1870176192
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18086,10 +18556,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1873884476
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18336,6 +18809,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 295538522}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1908250142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18437,6 +18922,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1920116894
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18566,10 +19054,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &1933211796
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18728,7 +19219,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1935084670}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 295538522}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1935084670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19236,6 +19739,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &2005108125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19421,6 +19927,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &2015803358
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19533,6 +20042,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &2034333409
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19750,6 +20262,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: -8499701361930146817, guid: a2e546d7d9c06c5438e2982ef4737ce3, type: 3}
   availableMove: 0
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &2053773811
 Transform:
   m_ObjectHideFlags: 0
@@ -19868,6 +20383,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &2058397482
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19980,6 +20498,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &2064563265
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20114,10 +20635,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &2088204924
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20274,10 +20798,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &2094406767
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20542,10 +21069,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7b4a670339f813f4e9cc4434b0cf27dc, type: 2}
   square: {fileID: 0}
+  color: 0
   hoverSquareName: 
   figure: 0
   yPosition: 0
   center: {x: 0, y: 0, z: 0}
+  didmove: 0
+  activePiece: {fileID: 0}
 --- !u!64 &2103453963
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20685,6 +21215,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &2111541771
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21067,6 +21600,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &117672026997315729
 GameObject:
   m_ObjectHideFlags: 0
@@ -21116,6 +21652,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &143007369498036243
 GameObject:
   m_ObjectHideFlags: 0
@@ -21317,6 +21856,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &429038804129140781
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21407,6 +21949,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &543450652133204539
 Transform:
   m_ObjectHideFlags: 0
@@ -21805,6 +22350,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &919132148482111617
 GameObject:
   m_ObjectHideFlags: 0
@@ -22083,6 +22631,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &1191652912012224621
 Transform:
   m_ObjectHideFlags: 0
@@ -22496,6 +23047,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &1679113888082816157
 GameObject:
   m_ObjectHideFlags: 0
@@ -22545,6 +23099,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &1707943962122971475
 GameObject:
   m_ObjectHideFlags: 0
@@ -22594,6 +23151,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &1730809742919616094
 GameObject:
   m_ObjectHideFlags: 0
@@ -22659,6 +23219,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &1765177898209844504
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22786,6 +23349,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &1901821249766281167
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23045,6 +23611,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &2355000877349926387
 GameObject:
   m_ObjectHideFlags: 0
@@ -23126,6 +23695,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &2412503099722414181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23230,6 +23802,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &2466755570633069746
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23287,6 +23862,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &2551433812249251459
 Transform:
   m_ObjectHideFlags: 0
@@ -23350,6 +23928,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &2566803071485184053
 GameObject:
   m_ObjectHideFlags: 0
@@ -23568,6 +24149,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &2740136606222847253
 Transform:
   m_ObjectHideFlags: 0
@@ -23631,6 +24215,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &2761399470070384392
 Transform:
   m_ObjectHideFlags: 0
@@ -23710,6 +24297,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &2816474135669926621
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23797,6 +24387,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &2971395731742235027
 Transform:
   m_ObjectHideFlags: 0
@@ -24209,6 +24802,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &3648260923525440131
 GameObject:
   m_ObjectHideFlags: 0
@@ -24354,6 +24950,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &3784846289220667744
 GameObject:
   m_ObjectHideFlags: 0
@@ -24598,6 +25197,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &4163861512173103665
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24786,6 +25388,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &4256807863799609268
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25022,6 +25627,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &4425196029140439018
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25182,6 +25790,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &4597516651754443738
 Transform:
   m_ObjectHideFlags: 0
@@ -25326,6 +25937,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &4818939069582450617
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25416,6 +26030,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &4910224326561148823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25530,6 +26147,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &5115562670335377585
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25601,6 +26221,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &5248803628615808349
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25672,6 +26295,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &5312623111457310161
 Transform:
   m_ObjectHideFlags: 0
@@ -25757,6 +26383,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &5428306416161416895
 GameObject:
   m_ObjectHideFlags: 0
@@ -26029,6 +26658,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &5635441114497314352
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26127,6 +26759,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &5712108374610568051
 Transform:
   m_ObjectHideFlags: 0
@@ -26445,6 +27080,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &5931271653826482885
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26565,6 +27203,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &6132832169450969803
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26728,6 +27369,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &6339261675387044795
 Transform:
   m_ObjectHideFlags: 0
@@ -26813,6 +27457,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &6422424129179602153
 GameObject:
   m_ObjectHideFlags: 0
@@ -26919,6 +27566,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &6489372712205213390
 Transform:
   m_ObjectHideFlags: 0
@@ -27040,6 +27690,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &6561330345666170828
 GameObject:
   m_ObjectHideFlags: 0
@@ -27089,6 +27742,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!23 &6581936878614509140
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27179,6 +27835,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &6615560720582067183
 GameObject:
   m_ObjectHideFlags: 0
@@ -27228,6 +27887,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &6644634472060120953
 Transform:
   m_ObjectHideFlags: 0
@@ -27514,6 +28176,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &7105187465312188628
 Transform:
   m_ObjectHideFlags: 0
@@ -27659,6 +28324,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &7197482534210386181
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -27730,6 +28398,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 0
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &7287307638919165220
 GameObject:
   m_ObjectHideFlags: 0
@@ -27826,6 +28497,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &7358868108523187295
 Transform:
   m_ObjectHideFlags: 0
@@ -27934,6 +28608,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &7551291401205892774
 Transform:
   m_ObjectHideFlags: 0
@@ -28256,6 +28933,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &7702953461024744124
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28327,6 +29007,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &7773929922022852859
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28384,6 +29067,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &7800381288592219966
 GameObject:
   m_ObjectHideFlags: 0
@@ -28433,6 +29119,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &7823236580745307597
 GameObject:
   m_ObjectHideFlags: 0
@@ -28698,6 +29387,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &7995152367695336912
 GameObject:
   m_ObjectHideFlags: 0
@@ -28747,6 +29439,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &7995250966241210007
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28844,6 +29539,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &8084287394902707121
 GameObject:
   m_ObjectHideFlags: 0
@@ -28946,6 +29644,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &8249101207472526881
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -29011,6 +29712,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &8367364191536542035
 Transform:
   m_ObjectHideFlags: 0
@@ -29123,6 +29827,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &8446861021334490102
 Transform:
   m_ObjectHideFlags: 0
@@ -29186,6 +29893,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &8473372320776217446
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -29354,6 +30064,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &8741281749933163154
 Transform:
   m_ObjectHideFlags: 0
@@ -29433,6 +30146,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!33 &8858550163374048236
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -29504,6 +30220,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &8904925282669528634
 Transform:
   m_ObjectHideFlags: 0
@@ -29582,6 +30301,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!1 &8988564862648534847
 GameObject:
   m_ObjectHideFlags: 0
@@ -29685,6 +30407,9 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 69878e3bafc33a04bad5caf302ce6c0d, type: 2}
   availableMove: 1
   center: {x: 0, y: 0, z: 0}
+  enPassantOnStep: 0
+  enPassantPossible: 0
+  castling: 0
 --- !u!4 &9131057260511860104
 Transform:
   m_ObjectHideFlags: 0
