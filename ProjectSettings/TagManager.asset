@@ -11,9 +11,8 @@ TagManager:
   - InvinitySquare
   - Timers
   - Chess Board
-  - EnPassant Pawn
-  - WhiteStack
-  - BlackStack
+  - LoginInput
+  - PasswordInput
   layers:
   - Default
   - TransparentFX
