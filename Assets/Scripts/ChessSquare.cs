@@ -21,6 +21,14 @@ public class ChessSquare : MonoBehaviour
         hovered = false;
     }
 
+    private void Update()
+    {
+        if(availableMove)
+        {
+            GetComponent<MeshRenderer>().material.color = Color.red;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(hoverMaterial!=null)
@@ -147,8 +155,19 @@ public class ChessSquare : MonoBehaviour
                 obj.pinToPosition(obj.square.GetComponent<MeshRenderer>().bounds.center);
             }
             hovered = false;
+        
+        var boardSquares = GameObject.FindGameObjectsWithTag("Chess Square");
+        foreach (var square in boardSquares)
+        {
+                var sq = square.GetComponent<ChessSquare>();
+               
+                // sq.enPassantPossible = false;
+                sq.availableMove = false;
+               // sq.enPassantOnStep = false;
+                sq.castling = 0;
+                square.GetComponent<MeshRenderer>().material.color = Color.white;
         }
-        GameObject.FindGameObjectWithTag("Chess Board")?.GetComponent<UnityChessBoard>().clearActive();
-
+            //GameObject.FindGameObjectWithTag("Chess Board").GetComponent<UnityChessBoard>().clearActive();
+        }
     }
 }

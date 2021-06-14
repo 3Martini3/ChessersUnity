@@ -30,18 +30,5 @@ public class UnityChessBoard : MonoBehaviour
 
     }
 
-    public void clearActive()
-    {
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                
-               // squares[i,j].GetComponent<ChessSquare>().availableMove = false;
-                squares[i, j].GetComponent<MeshRenderer>().material.color = Color.white;
-            }
-        }
-        //Debug.Log("Cleared");
-    }
     
 }

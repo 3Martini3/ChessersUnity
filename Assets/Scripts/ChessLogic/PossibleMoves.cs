@@ -63,14 +63,13 @@ public class PossibleMoves : MonoBehaviour
                 HighlightSquares(PossibleMovesBishop(new ChessBoard(board), currentPos, didMove), sq); break;
             case Figure.Knight:
                 HighlightSquares(PossibleMovesKnight(new ChessBoard(board), currentPos, didMove), sq); break;
-            default:
-                Debug.Log("Wtf"); break;
-                break;
+
         }
     }
 
     private void HighlightSquares(Position[] positions, GameObject[,] board)
     {
+
         //Debug.Log($"found {positions.Length} moves");
         foreach (var position in positions)
         {
@@ -78,6 +77,10 @@ public class PossibleMoves : MonoBehaviour
             //Debug.Log(board[position.column, position.row].name);
             board[position.column, position.row].GetComponent<MeshRenderer>().material.color = activeColor;
             var sq = board[position.column, position.row].GetComponent<ChessSquare>();
+            if(position.enPassantPossible)
+            {
+                Debug.Log($"Fount it!!!!!!!! {sq.name}");
+            }
             sq.enPassantOnStep = position.enPassantPossible;
             sq.availableMove = true;
             sq.castling = position.castling;
@@ -380,7 +383,7 @@ public class PossibleMoves : MonoBehaviour
         List<Position> listPossibleMoves = new List<Position>();
         ChessPiece piece = board.GetPieceFromPosition(capturingPiecePosition);
 
-       
+
 
         //Position capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1);
 
@@ -407,20 +410,20 @@ public class PossibleMoves : MonoBehaviour
         List<Position> listPossibleMoves = new List<Position>();
         ChessPiece piece = board.GetPieceFromPosition(capturingPiecePosition);
 
-       
+
 
         //Position capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1);
 
 
         Debug.Log($"Position: col{capturingPiecePosition.column}, row{capturingPiecePosition.row}");
 
-        if (capturingPiecePosition.column >0 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1)]?.possibleEnPassant == true)
+        if (capturingPiecePosition.column > 0 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1)]?.possibleEnPassant == true)
         {
             // Debug.Log("There is it");
             // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
             listPossibleMoves.Add(new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column - 1));
         }
-        if (capturingPiecePosition.column <7 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)]?.possibleEnPassant == true)
+        if (capturingPiecePosition.column < 7 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)]?.possibleEnPassant == true)
         {
             //Debug.Log("There is it");
             // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
@@ -437,7 +440,7 @@ public class PossibleMoves : MonoBehaviour
         {
             if (board[new Position(kingPosition.row, 0)]?.didmove == false && board[new Position(kingPosition.row, 1)] == null && board[new Position(kingPosition.row, 2)] == null)
             {
-                listPossibleMoves.Add(new Position(kingPosition.row, 1,castling:-1));
+                listPossibleMoves.Add(new Position(kingPosition.row, 1, castling: -1));
             }
             if (board[new Position(kingPosition.row, 7)]?.didmove == false && board[new Position(kingPosition.row, 6)] == null && board[new Position(kingPosition.row, 5)] == null && board[new Position(kingPosition.row, 4)] == null)
             {
