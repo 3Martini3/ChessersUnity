@@ -12,6 +12,7 @@ public class SettingsScript : MonoBehaviour
     public TMPro.TMP_Dropdown resolutionDropdown;
     public TMPro.TMP_Dropdown qualityDropdown;
     public Slider musicSlider;
+    public Slider SFXSlider;
     public Toggle fullscreenToogle;
 
     void Start()
@@ -70,9 +71,20 @@ public class SettingsScript : MonoBehaviour
             MasterMixer.SetFloat("musicVolume", -40);
             musicSlider.value = -40;
         }
+        //to samo co wy¿ej z efektami specjalnymi
+        if (PlayerPrefs.HasKey("SFXVolume"))
+        {
+            MasterMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
+            musicSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        }
+        else
+        {
+            MasterMixer.SetFloat("SFXVolume", -40);
+            musicSlider.value = -40;
+        }
 
         //ustawiam gre nia widok nie-pe³noekranowy lub zapamiêtany z poprzednich scen / innych sesji
-        if(PlayerPrefs.HasKey("fullscreen"))
+        if (PlayerPrefs.HasKey("fullscreen"))
         {
             Screen.fullScreen = Convert.ToBoolean(PlayerPrefs.GetInt("fullscreen"));
             fullscreenToogle.isOn = Convert.ToBoolean(PlayerPrefs.GetInt("fullscreen"));
@@ -95,6 +107,12 @@ public class SettingsScript : MonoBehaviour
     {
         MasterMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        MasterMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
     }
 
     public void SetQuality(int level)
