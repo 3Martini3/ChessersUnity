@@ -16,6 +16,7 @@ public class UnityChessPiece : MonoBehaviour {
     public Vector3 center;
     public bool didmove;
     public ActivePiece activePiece;
+    public bool beaten;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,17 @@ public class UnityChessPiece : MonoBehaviour {
                 if (hoverSquareName == "Border")
                 {
                     goBackToSquare();
+                    var boardSquares = GameObject.FindGameObjectsWithTag("Chess Square");
+                    foreach (var square in boardSquares)
+                    {
+                        var sq = square.GetComponent<ChessSquare>();
+
+                        // sq.enPassantPossible = false;
+                        sq.availableMove = false;
+                        // sq.enPassantOnStep = false;
+                        sq.castling = 0;
+                        square.GetComponent<MeshRenderer>().material.color = UnityEngine.Color.white;
+                    }
                 }
                 else
                 {
@@ -43,6 +55,17 @@ public class UnityChessPiece : MonoBehaviour {
                     if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(hoverSquare.x, hoverSquare.z)) > 0.5f)
                     {
                         goBackToSquare();
+                        var boardSquares = GameObject.FindGameObjectsWithTag("Chess Square");
+                        foreach (var square in boardSquares)
+                        {
+                            var sq = square.GetComponent<ChessSquare>();
+
+                            // sq.enPassantPossible = false;
+                            sq.availableMove = false;
+                            // sq.enPassantOnStep = false;
+                            sq.castling = 0;
+                            square.GetComponent<MeshRenderer>().material.color = UnityEngine.Color.white;
+                        }
                     }
                     hoverSquareName = "";
                 }
@@ -59,10 +82,14 @@ public class UnityChessPiece : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        if(!activePiece.isPieceDragged)
+        if(!beaten&&GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn==this.color)
         {
-            GetComponent<Renderer>().material.color = UnityEngine.Color.blue;
+            if (!activePiece.isPieceDragged)
+            {
+                GetComponent<Renderer>().material.color = UnityEngine.Color.blue;
+            }
         }
+        
     }
     private void OnMouseExit()
     {
@@ -102,6 +129,7 @@ public class UnityChessPiece : MonoBehaviour {
     public void goBackToSquare()
     {
         pinToPosition(square.center);
+       
     }
 
     public void beat()
@@ -119,6 +147,7 @@ public class UnityChessPiece : MonoBehaviour {
                 stack.isEmpty = false;
                 transform.position = new Vector3(transform.position.x, transform.position.y - 0.1111f, transform.position.z);
                 tag = "Untagged";
+                beaten = true;
                 break;
             }
             

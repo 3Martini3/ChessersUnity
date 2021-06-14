@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class ChessSquare : MonoBehaviour
     public bool enPassantOnStep;
     public bool enPassantPossible;
     public int castling;
+    public bool enPassantBeat;
+    public Turns turn;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +36,7 @@ public class ChessSquare : MonoBehaviour
     {
         if(hoverMaterial!=null)
         {
-            ////Debug.Log("trigger");
+            //Debug.Log($"trigger {name}");
           //  GetComponent<MeshRenderer>().material.color = Color.blue;
             hovered = true;
         }
@@ -49,14 +52,17 @@ public class ChessSquare : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         if (hovered)
         {
             GetComponent<MeshRenderer>().material.color = Color.white;
             var collisionFigure = collision.gameObject.GetComponent<UnityChessPiece>();
             if (availableMove && (figure==null||figure.color != collisionFigure.color))
             {
-                Debug.Log(this.castling);
+
+                turn.SwapTurn();
+                    //Debug.Log(this.castling);
+                
                 if (figure == null)
                 {
                     if (this.castling == 1)
@@ -112,6 +118,26 @@ public class ChessSquare : MonoBehaviour
                             this.castling = 0;
                         }
                     }
+
+                    if(enPassantBeat)
+                    {
+                        if (collisionFigure.color == ChessEnum.Color.White)
+                        {
+                            var sq = GameObject.Find(Convert.ToChar(name[0] - 1) + name[1].ToString()).GetComponent<ChessSquare>();
+                            sq.figure.beat();
+                            sq.figure = null;
+                            enPassantBeat = false;
+                        }
+                        else
+                        {
+
+                            var sq = GameObject.Find(Convert.ToChar(name[0] + 1) + name[1].ToString()).GetComponent<ChessSquare>();
+                            sq.figure.beat();
+                            sq.figure = null;
+                            enPassantBeat = false;
+                        }
+                    }
+
                 }else
                 {
                     figure.beat();

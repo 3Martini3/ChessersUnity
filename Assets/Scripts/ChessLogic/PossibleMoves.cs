@@ -77,9 +77,10 @@ public class PossibleMoves : MonoBehaviour
             //Debug.Log(board[position.column, position.row].name);
             board[position.column, position.row].GetComponent<MeshRenderer>().material.color = activeColor;
             var sq = board[position.column, position.row].GetComponent<ChessSquare>();
-            if(position.enPassantPossible)
+            if(position.enPassantBeat)
             {
-                Debug.Log($"Fount it!!!!!!!! {sq.name}");
+                Debug.Log($"Found it!!!!!!!! {sq.name}");
+                sq.enPassantBeat = true;
             }
             sq.enPassantOnStep = position.enPassantPossible;
             sq.availableMove = true;
@@ -388,19 +389,19 @@ public class PossibleMoves : MonoBehaviour
         //Position capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1);
 
 
-        Debug.Log($"Position: col{capturingPiecePosition.column}, row{capturingPiecePosition.row}");
+        //Debug.Log($"Position: col{capturingPiecePosition.column}, row{capturingPiecePosition.row}");
 
         if (capturingPiecePosition.column < 7 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)]?.possibleEnPassant == true)
         {
             // Debug.Log("There is it");
             // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
-            listPossibleMoves.Add(new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column + 1));
+            listPossibleMoves.Add(new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column + 1, enPassantBeat: true));
         }
         if (capturingPiecePosition.column > 0 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1)]?.possibleEnPassant == true)
         {
             //Debug.Log("There is it");
             // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
-            listPossibleMoves.Add(new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column - 1));
+            listPossibleMoves.Add(new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column - 1,enPassantBeat:true));
         }
         return listPossibleMoves;
 
@@ -415,19 +416,19 @@ public class PossibleMoves : MonoBehaviour
         //Position capturedPiecePosition = new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1);
 
 
-        Debug.Log($"Position: col{capturingPiecePosition.column}, row{capturingPiecePosition.row}");
+        //Debug.Log($"Position: col{capturingPiecePosition.column}, row{capturingPiecePosition.row}");
 
         if (capturingPiecePosition.column > 0 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column - 1)]?.possibleEnPassant == true)
         {
             // Debug.Log("There is it");
             // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
-            listPossibleMoves.Add(new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column - 1));
+            listPossibleMoves.Add(new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column - 1, enPassantBeat: true));
         }
         if (capturingPiecePosition.column < 7 && board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)]?.possibleEnPassant == true)
         {
             //Debug.Log("There is it");
             // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
-            listPossibleMoves.Add(new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column + 1));
+            listPossibleMoves.Add(new Position(capturingPiecePosition.row - 1, capturingPiecePosition.column + 1, enPassantBeat: true));
         }
         return listPossibleMoves;
 

@@ -12,6 +12,7 @@ public class EdgeCollision : MonoBehaviour
         if(collision.gameObject.tag=="Chess Piece")
         {
             collision.gameObject.GetComponent<UnityChessPiece>().goBackToSquare();
+
         }
     }
 
