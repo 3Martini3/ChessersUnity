@@ -103,7 +103,7 @@ public class SettingsScript : MonoBehaviour
         
     }
 
-    public void SetVolume(float volume)
+        public void SetVolume(float volume)
     {
         MasterMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
