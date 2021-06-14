@@ -132,9 +132,24 @@ public class UnityChessPiece : MonoBehaviour {
        
     }
 
-    public void beat()
+    public void tranformPawn(ChessEnum.Figure newFigure)
     {
-        
+        figure = newFigure;
+        GetComponent<PossibleMoves>().figure = newFigure;
+        var anyOtherFigure = GameObject.Find(newFigure.ToString()+" "+color.ToString());
+        var pos = anyOtherFigure.transform;
+        GetComponent<MeshFilter>().mesh = anyOtherFigure.GetComponent<MeshFilter>().mesh;
+        GetComponent<MeshCollider>().sharedMesh = anyOtherFigure.GetComponent<MeshCollider>().sharedMesh;
+        GetComponent<Renderer>().material = anyOtherFigure.GetComponent<Renderer>().material;
+        name = name.Replace("Pawn", newFigure.ToString());
+        transform.position = new Vector3(transform.position.x, pos.position.y ,transform.position.z);
+        transform.rotation = pos.rotation;
+        transform.localScale=pos.localScale;
+       
+    }
+         
+    public void beat()
+    {    
         var beatenStack = GameObject.Find($"Beaten Pieces {color.ToString()}");
         var stacks = beatenStack.GetComponent<Beat>().stacks;
         for (int i=0;i<15;i++)

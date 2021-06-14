@@ -441,11 +441,29 @@ public class PossibleMoves : MonoBehaviour
         {
             if (board[new Position(kingPosition.row, 0)]?.didmove == false && board[new Position(kingPosition.row, 1)] == null && board[new Position(kingPosition.row, 2)] == null)
             {
-                listPossibleMoves.Add(new Position(kingPosition.row, 1, castling: -1));
+                var boardNew = board;
+                boardNew[new Position(kingPosition.row, 1)] = boardNew[new Position(kingPosition.row, 3)];
+                boardNew[new Position(kingPosition.row, 3)] = null;
+                boardNew[new Position(kingPosition.row,2)]= boardNew[new Position(kingPosition.row, 0)];
+                boardNew[new Position(kingPosition.row, 0)] = null;
+
+                if (!DoesCheckExist(boardNew, new Position(kingPosition.row, 1)))
+                {
+                    listPossibleMoves.Add(new Position(kingPosition.row, 1, castling: -1));
+                }
             }
             if (board[new Position(kingPosition.row, 7)]?.didmove == false && board[new Position(kingPosition.row, 6)] == null && board[new Position(kingPosition.row, 5)] == null && board[new Position(kingPosition.row, 4)] == null)
             {
-                listPossibleMoves.Add(new Position(kingPosition.row, 5, castling: 1));
+                var boardNew = board;
+                boardNew[new Position(kingPosition.row, 5)] = boardNew[new Position(kingPosition.row, 3)];
+                boardNew[new Position(kingPosition.row, 3)] = null;
+                boardNew[new Position(kingPosition.row, 4)] = boardNew[new Position(kingPosition.row, 7)];
+                boardNew[new Position(kingPosition.row, 7)] = null;
+
+                if (!DoesCheckExist(boardNew, new Position(kingPosition.row, 5)))
+                {
+                    listPossibleMoves.Add(new Position(kingPosition.row, 5, castling: 1));
+                }
             }
         }
         return listPossibleMoves;

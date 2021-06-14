@@ -424,6 +424,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &13576350
 MeshRenderer:
@@ -1005,6 +1006,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &90871086
 MeshRenderer:
@@ -1122,6 +1124,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &111404129
 MeshRenderer:
@@ -1239,6 +1242,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 2
   turn: {fileID: 201796609}
 --- !u!23 &132216077
 MeshRenderer:
@@ -1622,6 +1626,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &149319680
 MeshRenderer:
@@ -1699,6 +1704,7 @@ Transform:
   m_LocalPosition: {x: 159.55911, y: -17.789232, z: 239.48596}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 457034235}
   - {fileID: 1980707450}
   - {fileID: 1277101425}
   - {fileID: 888443457}
@@ -1772,6 +1778,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 1
   turn: {fileID: 201796609}
 --- !u!23 &180980863
 MeshRenderer:
@@ -2578,6 +2585,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &253473482
 MeshRenderer:
@@ -2880,6 +2888,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &302582622
 MeshRenderer:
@@ -3443,6 +3452,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &355088768
 MeshRenderer:
@@ -3560,6 +3570,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &361235965
 MeshRenderer:
@@ -4317,6 +4328,53 @@ MonoBehaviour:
   activeColor: {r: 0.3254717, g: 0.9450213, b: 1, a: 0}
   didMove: 0
   enPassauntPossible: 0
+--- !u!1 &457034234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 457034235}
+  - component: {fileID: 457034236}
+  m_Layer: 0
+  m_Name: ChessTransformMeshes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &457034235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457034234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 150564933}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &457034236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457034234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec512d487d66a54ba3f903ae30773b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queen: {fileID: 1927467024359600289, guid: 701c55ec310a24b44adf4d9120ba2cf0, type: 3}
+  knight: {fileID: 553887078029834311, guid: 386e9dfb4164d9949a3be2f21044e47c, type: 3}
+  bishop: {fileID: -7718649920641929877, guid: a0ef67b0e2fa773439c71489d52b03e5, type: 3}
+  rook: {fileID: -6194387453348322274, guid: 8f8f820bf25c22448aa208a2c29b824c, type: 3}
 --- !u!1 &457044636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4729,6 +4787,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 2
   turn: {fileID: 201796609}
 --- !u!23 &483229075
 MeshRenderer:
@@ -5072,6 +5131,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &495569333
 MeshRenderer:
@@ -6468,6 +6528,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &596030528
 MeshRenderer:
@@ -6585,6 +6646,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &599761381
 MeshRenderer:
@@ -6775,6 +6837,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &611280810
 MeshRenderer:
@@ -6892,6 +6955,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &633557277
 MeshRenderer:
@@ -7112,6 +7176,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &646480958
 MeshRenderer:
@@ -7229,6 +7294,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &647837284
 MeshRenderer:
@@ -7741,6 +7807,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &671519846
 MeshRenderer:
@@ -7992,6 +8059,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &694269012
 MeshRenderer:
@@ -8219,6 +8287,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &732916090
 MeshRenderer:
@@ -8595,6 +8664,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &771534700
 MeshRenderer:
@@ -8717,6 +8787,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &776940550
 MeshRenderer:
@@ -9034,6 +9105,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 2
   turn: {fileID: 201796609}
 --- !u!23 &830691725
 MeshRenderer:
@@ -9151,6 +9223,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &832071182
 MeshRenderer:
@@ -9356,6 +9429,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &853629629
 MeshRenderer:
@@ -9473,6 +9547,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &869618877
 MeshRenderer:
@@ -9552,7 +9627,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 150564933}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &888443458
 MonoBehaviour:
@@ -9634,6 +9709,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 1
   turn: {fileID: 201796609}
 --- !u!23 &896909812
 MeshRenderer:
@@ -10286,6 +10362,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &944964408
 MeshRenderer:
@@ -10585,6 +10662,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 2
   turn: {fileID: 201796609}
 --- !u!23 &952494408
 MeshRenderer:
@@ -10702,6 +10780,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 1
   turn: {fileID: 201796609}
 --- !u!23 &957165113
 MeshRenderer:
@@ -11036,6 +11115,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 1
   turn: {fileID: 201796609}
 --- !u!23 &983858301
 MeshRenderer:
@@ -11287,6 +11367,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1003780133
 MeshRenderer:
@@ -11404,6 +11485,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1005166190
 MeshRenderer:
@@ -11790,6 +11872,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1030390937
 MeshRenderer:
@@ -12369,6 +12452,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1063628761
 MeshRenderer:
@@ -12486,6 +12570,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 2
   turn: {fileID: 201796609}
 --- !u!23 &1074408178
 MeshRenderer:
@@ -12678,6 +12763,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1083000083
 MeshRenderer:
@@ -12974,6 +13060,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 1
   turn: {fileID: 201796609}
 --- !u!23 &1124698262
 MeshRenderer:
@@ -13604,6 +13691,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1215935047
 MeshRenderer:
@@ -13742,7 +13830,7 @@ Transform:
   - {fileID: 1983981658}
   - {fileID: 186310224}
   m_Father: {fileID: 150564933}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280294885
 GameObject:
@@ -13993,6 +14081,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1289191719
 MeshRenderer:
@@ -15507,6 +15596,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1393357757
 MeshRenderer:
@@ -15668,6 +15758,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1424567668
 MeshRenderer:
@@ -16500,6 +16591,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 1
   turn: {fileID: 201796609}
 --- !u!23 &1489019124
 MeshRenderer:
@@ -16617,6 +16709,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1502993261
 MeshRenderer:
@@ -16734,6 +16827,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1541403635
 MeshRenderer:
@@ -17180,6 +17274,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1633696279
 MeshRenderer:
@@ -17461,6 +17556,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 2
   turn: {fileID: 201796609}
 --- !u!23 &1662674839
 MeshRenderer:
@@ -17938,6 +18034,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1720855687
 MeshRenderer:
@@ -18099,6 +18196,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1726127503
 MeshRenderer:
@@ -18216,6 +18314,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1733803137
 MeshRenderer:
@@ -18374,6 +18473,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1755336407
 MeshRenderer:
@@ -18491,6 +18591,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 2
   turn: {fileID: 201796609}
 --- !u!23 &1755521538
 MeshRenderer:
@@ -18933,6 +19034,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1787865769
 MeshRenderer:
@@ -19633,6 +19735,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1820533297
 MeshRenderer:
@@ -19750,6 +19853,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1837511895
 MeshRenderer:
@@ -19867,6 +19971,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1861802851
 MeshRenderer:
@@ -19984,6 +20089,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 1
   turn: {fileID: 201796609}
 --- !u!23 &1883048354
 MeshRenderer:
@@ -20358,6 +20464,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1901854906
 MeshRenderer:
@@ -20475,6 +20582,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1903905584
 MeshRenderer:
@@ -20592,6 +20700,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &1906715195
 MeshRenderer:
@@ -20854,6 +20963,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 2
   turn: {fileID: 201796609}
 --- !u!23 &1931871837
 MeshRenderer:
@@ -21015,6 +21125,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 1
   turn: {fileID: 201796609}
 --- !u!23 &1932607055
 MeshRenderer:
@@ -21414,7 +21525,7 @@ Transform:
   - {fileID: 1037119034}
   - {fileID: 548130353}
   m_Father: {fileID: 150564933}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983981657
 GameObject:
@@ -22742,6 +22853,7 @@ MonoBehaviour:
   enPassantPossible: 0
   castling: 0
   enPassantBeat: 0
+  isTransform: 0
   turn: {fileID: 201796609}
 --- !u!23 &2118914130
 MeshRenderer:
