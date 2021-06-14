@@ -75,12 +75,12 @@ public class SettingsScript : MonoBehaviour
         if (PlayerPrefs.HasKey("SFXVolume"))
         {
             MasterMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
-            musicSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+            SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
         }
         else
         {
             MasterMixer.SetFloat("SFXVolume", -40);
-            musicSlider.value = -40;
+            SFXSlider.value = -40;
         }
 
         //ustawiam gre nia widok nie-pe³noekranowy lub zapamiêtany z poprzednich scen / innych sesji
@@ -94,7 +94,7 @@ public class SettingsScript : MonoBehaviour
             Screen.fullScreen = false;
             fullscreenToogle.isOn = false;
         }
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        //musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
     }
 
     // Update is called once per frame
@@ -105,14 +105,14 @@ public class SettingsScript : MonoBehaviour
 
         public void SetVolume(float volume)
     {
-        MasterMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
+        MasterMixer.SetFloat("musicVolume", volume);
+        PlayerPrefs.SetFloat("musicVolume", volume);
     }
 
     public void SetSFXVolume(float volume)
     {
-        MasterMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+        MasterMixer.SetFloat("SFXVolume", volume);
+        PlayerPrefs.SetFloat("SFXVolume", volume);
     }
 
     public void SetQuality(int level)
