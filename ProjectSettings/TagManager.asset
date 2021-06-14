@@ -13,6 +13,9 @@ TagManager:
   - Chess Board
   - LoginInput
   - PasswordInput
+  - WhiteStack
+  - BlackStack
+  - Turn Order
   layers:
   - Default
   - TransparentFX

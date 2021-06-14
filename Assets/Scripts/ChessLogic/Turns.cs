@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Turns : MonoBehaviour
 {
-    bool isWhiteTurn;
+    public ChessEnum.Color turn;
 
-    // Start is called before the first frame update
-    void Start()
+    public void SwapTurn()
     {
-        isWhiteTurn = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (turn == ChessEnum.Color.White)
+        {
+            turn = ChessEnum.Color.Black;
+        }
+        else
+        {
+            turn = ChessEnum.Color.White;
+        }
+        GetComponent<TextMeshProUGUI>().text = turn.ToString();
     }
 }

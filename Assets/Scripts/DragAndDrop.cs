@@ -20,20 +20,28 @@ class DragAndDrop : MonoBehaviour
 
     void OnMouseDown()
     {
-        GetComponent<UnityChessPiece>().activePiece.isPieceDragged = true;
-        distance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        transform.position = new Vector3(transform.position.x, transform.position.y + yChange, transform.position.z);
-        dragging = true;
-        boxCollider.enabled = true;
-        GetComponent<PossibleMoves>().FindPossibleMoves();
+        var chessPiece = GetComponent<UnityChessPiece>();
+        if (!chessPiece.beaten&&GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn == chessPiece.color)
+        {
+            GetComponent<UnityChessPiece>().activePiece.isPieceDragged = true;
+            distance = Vector3.Distance(transform.position, Camera.main.transform.position);
+            transform.position = new Vector3(transform.position.x, transform.position.y + yChange, transform.position.z);
+            dragging = true;
+            boxCollider.enabled = true;
+            GetComponent<PossibleMoves>().FindPossibleMoves();
+        }
     }
 
     void OnMouseUp()
     {
-        dragging = false;
-        transform.position = new Vector3(transform.position.x, defaultYPosition, transform.position.z);
-        boxCollider.enabled = false;
-        GetComponent<UnityChessPiece>().activePiece.isPieceDragged = false;
+        if(!GetComponent<UnityChessPiece>().beaten)
+        {
+            dragging = false;
+            transform.position = new Vector3(transform.position.x, defaultYPosition, transform.position.z);
+            boxCollider.enabled = false;
+            GetComponent<UnityChessPiece>().activePiece.isPieceDragged = false;
+        }
+        
     }
 
     void Update()
