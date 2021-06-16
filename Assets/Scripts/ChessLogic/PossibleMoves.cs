@@ -15,6 +15,7 @@ public class PossibleMoves : MonoBehaviour
 
     public void FindPossibleMoves()
     {
+        Debug.Log("Searching");
         ChessPiece[,] board = new ChessPiece[8, 8];
         var sq = unityBoard.gameObject.GetComponent<UnityChessBoard>().squares;
         var currentPiece = GetComponent<UnityChessPiece>();
@@ -69,21 +70,27 @@ public class PossibleMoves : MonoBehaviour
 
     private void HighlightSquares(Position[] positions, GameObject[,] board)
     {
+        Debug.Log($"Highlighting {positions.Length}");
+        if(positions.Length==0)
+        {
+            Debug.Log("No available moves!");
+        }
 
         //Debug.Log($"found {positions.Length} moves");
         foreach (var position in positions)
         {
             //Debug.Log("one");
             //Debug.Log(board[position.column, position.row].name);
-            board[position.column, position.row].GetComponent<MeshRenderer>().material.color = activeColor;
+           // board[position.column, position.row].GetComponent<MeshRenderer>().material.color = activeColor;
+            Debug.Log("HighLighted");
             var sq = board[position.column, position.row].GetComponent<ChessSquare>();
-            if(position.enPassantBeat)
+            sq.availableMove = true;
+            if (position.enPassantBeat)
             {
                 Debug.Log($"Found it!!!!!!!! {sq.name}");
                 sq.enPassantBeat = true;
             }
             sq.enPassantOnStep = position.enPassantPossible;
-            sq.availableMove = true;
             sq.castling = position.castling;
         }
     }

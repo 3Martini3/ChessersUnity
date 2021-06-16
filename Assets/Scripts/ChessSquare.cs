@@ -8,7 +8,7 @@ public class ChessSquare : MonoBehaviour
 
     public UnityChessPiece figure = null;
     public Material hoverMaterial;
-    public bool availableMove = false;
+    public bool availableMove;
     private bool hovered;
     public Vector3 center;
     public bool enPassantOnStep;
@@ -58,7 +58,7 @@ public class ChessSquare : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log(collision.gameObject.name);
+        Debug.Log("Enter");
         if (hovered)
         {
             GetComponent<MeshRenderer>().material.color = Color.white;
@@ -170,6 +170,7 @@ public class ChessSquare : MonoBehaviour
                         {
                             var sq = square.GetComponent<ChessSquare>();
                             sq.enPassantPossible = false;
+                            Debug.Log("DELETE1");
                             sq.availableMove = false;
                             sq.castling = 0;
                         }
@@ -178,6 +179,7 @@ public class ChessSquare : MonoBehaviour
                     figure.square.figure = null;
                     figure.square = this;
                     availableMove = false;
+                    Debug.Log("DELETE2");
                     if (enPassantOnStep)
                     {
                         enPassantPossible = true;
@@ -205,11 +207,12 @@ public class ChessSquare : MonoBehaviour
                
                 // sq.enPassantPossible = false;
                 sq.availableMove = false;
-               // sq.enPassantOnStep = false;
+                Debug.Log("DELETE3");
+                // sq.enPassantOnStep = false;
                 sq.castling = 0;
                 square.GetComponent<MeshRenderer>().material.color = Color.white;
         }
-            //GameObject.FindGameObjectWithTag("Chess Board").GetComponent<UnityChessBoard>().clearActive();
+            //figure.goBackToSquare(); //GameObject.FindGameObjectWithTag("Chess Board").GetComponent<UnityChessBoard>().clearActive();
         }
     }
 }

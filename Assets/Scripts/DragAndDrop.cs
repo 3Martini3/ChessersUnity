@@ -5,7 +5,7 @@ using UnityEngine;
 class DragAndDrop : MonoBehaviour
 {
 
-    private bool dragging = false;
+    public bool dragging;
     private float distance { get; set; }
     private float defaultYPosition { get; set; }
     private BoxCollider boxCollider { get; set; }
@@ -23,12 +23,18 @@ class DragAndDrop : MonoBehaviour
         var chessPiece = GetComponent<UnityChessPiece>();
         if (!chessPiece.beaten&&GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn == chessPiece.color)
         {
-            GetComponent<UnityChessPiece>().activePiece.isPieceDragged = true;
+           
+
+
+            var piece = GetComponent<UnityChessPiece>();
+            piece.activePiece.isPieceDragged = true;
+            piece.checkPositionAvailable = true ;
             distance = Vector3.Distance(transform.position, Camera.main.transform.position);
             transform.position = new Vector3(transform.position.x, transform.position.y + yChange, transform.position.z);
             dragging = true;
             boxCollider.enabled = true;
             GetComponent<PossibleMoves>().FindPossibleMoves();
+            Debug.Log("Drag");
         }
     }
 

@@ -9,11 +9,12 @@ public class EdgeCollision : MonoBehaviour
         //Debug.Log(collision.gameObject.name);
 
 
-        if(collision.gameObject.tag=="Chess Piece")
+       /* if(collision.gameObject.tag=="Chess Piece")
         {
+            Debug.Log("Go Back! Border");
             collision.gameObject.GetComponent<UnityChessPiece>().goBackToSquare();
 
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)

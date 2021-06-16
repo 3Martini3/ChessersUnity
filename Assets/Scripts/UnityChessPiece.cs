@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using static ChessEnum;
 
-public class UnityChessPiece : MonoBehaviour {
+public class UnityChessPiece : MonoBehaviour
+{
 
-   // public MeshRenderer square;
+    // public MeshRenderer square;
     public Material hoverMaterial;
     public ChessSquare square;
     public ChessEnum.Color color;
@@ -17,6 +18,7 @@ public class UnityChessPiece : MonoBehaviour {
     public bool didmove;
     public ActivePiece activePiece;
     public bool beaten;
+    public bool checkPositionAvailable;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,32 +31,19 @@ public class UnityChessPiece : MonoBehaviour {
 
     private void Update()
     {
-        if (hoverSquareName != "")
-            ////Debug.Log($"{hoverSquareName}, {yPosition},{transform.position.y}");
-            if (yPosition == transform.position.y && hoverSquareName != "")
+        
+        if (checkPositionAvailable&&!GetComponent<DragAndDrop>().dragging)
+        {
+            if (hoverSquareName != "")
             {
-                if (hoverSquareName == "Border")
+                ////Debug.Log($"{hoverSquareName}, {yPosition},{transform.position.y}");
+                if (yPosition == transform.position.y && hoverSquareName != "")
                 {
-                    goBackToSquare();
-                    var boardSquares = GameObject.FindGameObjectsWithTag("Chess Square");
-                    foreach (var square in boardSquares)
+                    if (hoverSquareName == "Border")
                     {
-                        var sq = square.GetComponent<ChessSquare>();
-
-                        // sq.enPassantPossible = false;
-                        sq.availableMove = false;
-                        // sq.enPassantOnStep = false;
-                        sq.castling = 0;
-                        square.GetComponent<MeshRenderer>().material.color = UnityEngine.Color.white;
-                    }
-                }
-                else
-                {
-                    // //Debug.Log("Hi");
-                    var hoverSquare = GameObject.Find(hoverSquareName).GetComponent<MeshRenderer>().bounds.center;
-                    if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(hoverSquare.x, hoverSquare.z)) > 0.5f)
-                    {
+                       
                         goBackToSquare();
+                        Debug.Log("Back border2");
                         var boardSquares = GameObject.FindGameObjectsWithTag("Chess Square");
                         foreach (var square in boardSquares)
                         {
@@ -62,19 +51,54 @@ public class UnityChessPiece : MonoBehaviour {
 
                             // sq.enPassantPossible = false;
                             sq.availableMove = false;
+                            Debug.Log("DELETE4");
                             // sq.enPassantOnStep = false;
                             sq.castling = 0;
                             square.GetComponent<MeshRenderer>().material.color = UnityEngine.Color.white;
+                            
+                            
                         }
+                        hoverSquareName = "";
+                        checkPositionAvailable = false;
                     }
-                    hoverSquareName = "";
+                    else
+                    {
+                        // //Debug.Log("Hi");
+                        var hoverSquare = GameObject.Find(hoverSquareName).GetComponent<MeshRenderer>().bounds.center;
+                        if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(hoverSquare.x, hoverSquare.z)) > 0.5f)
+                        {
+                            Debug.Log("Go back! no position");
+                            goBackToSquare();
+                            Debug.Log("Back3");
+                            var boardSquares = GameObject.FindGameObjectsWithTag("Chess Square");
+                            foreach (var square in boardSquares)
+                            {
+                                var sq = square.GetComponent<ChessSquare>();
+
+                                // sq.enPassantPossible = false;
+                                Debug.Log("DELETE5");
+                                sq.availableMove = false;
+                                // sq.enPassantOnStep = false;
+                                sq.castling = 0;
+                                square.GetComponent<MeshRenderer>().material.color = UnityEngine.Color.white;
+                            }
+                        }
+                        hoverSquareName = "";
+                        checkPositionAvailable = false;
+                    }
                 }
+            } else
+            {
+                goBackToSquare();
+                Debug.Log("Back2");
+                checkPositionAvailable = false;
             }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-       if(other.tag=="Chess Square")
+        if (other.tag == "Chess Square")
         {
             hoverSquareName = other.name;
         }
@@ -82,14 +106,14 @@ public class UnityChessPiece : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        if(!beaten&&GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn==this.color)
+        if (!beaten && GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn == this.color)
         {
             if (!activePiece.isPieceDragged)
             {
                 GetComponent<Renderer>().material.color = UnityEngine.Color.blue;
             }
         }
-        
+
     }
     private void OnMouseExit()
     {
@@ -123,36 +147,50 @@ public class UnityChessPiece : MonoBehaviour {
         yPosition = transform.position.y;
         transform.position = new Vector3(position3.x/*square.bounds.center.x*/, yPosition, /*square.bounds.center.z*/position3.z);
         center = GetComponent<MeshRenderer>().bounds.center;
-       
+
     }
 
     public void goBackToSquare()
     {
+         var boardSquares = GameObject.FindGameObjectsWithTag("Chess Square");
+         foreach (var square in boardSquares)
+         {
+             var sq = square.GetComponent<ChessSquare>();
+             // sq.enPassantPossible = false;
+             sq.availableMove = false;
+             Debug.Log("DELETE5");
+             // sq.enPassantOnStep = false;
+             sq.castling = 0;
+             square.GetComponent<MeshRenderer>().material.color = UnityEngine.Color.white;
+         }
+        Debug.Log("GO BACK!");
         pinToPosition(square.center);
-       
+        
+
+
     }
 
     public void tranformPawn(ChessEnum.Figure newFigure)
     {
         figure = newFigure;
         GetComponent<PossibleMoves>().figure = newFigure;
-        var anyOtherFigure = GameObject.Find(newFigure.ToString()+" "+color.ToString());
+        var anyOtherFigure = GameObject.Find(newFigure.ToString() + " " + color.ToString());
         var pos = anyOtherFigure.transform;
         GetComponent<MeshFilter>().mesh = anyOtherFigure.GetComponent<MeshFilter>().mesh;
         GetComponent<MeshCollider>().sharedMesh = anyOtherFigure.GetComponent<MeshCollider>().sharedMesh;
         GetComponent<Renderer>().material = anyOtherFigure.GetComponent<Renderer>().material;
         name = name.Replace("Pawn", newFigure.ToString());
-        transform.position = new Vector3(transform.position.x, pos.position.y ,transform.position.z);
+        transform.position = new Vector3(transform.position.x, pos.position.y, transform.position.z);
         transform.rotation = pos.rotation;
-        transform.localScale=pos.localScale;
-       
+        transform.localScale = pos.localScale;
+
     }
-         
+
     public void beat()
-    {    
+    {
         var beatenStack = GameObject.Find($"Beaten Pieces {color.ToString()}");
         var stacks = beatenStack.GetComponent<Beat>().stacks;
-        for (int i=0;i<15;i++)
+        for (int i = 0; i < 15; i++)
         {
             var stack = stacks[i];
             if (stack.isEmpty)
@@ -165,7 +203,7 @@ public class UnityChessPiece : MonoBehaviour {
                 beaten = true;
                 break;
             }
-            
+
         }
         Debug.Log("Beat boi!");
     }
