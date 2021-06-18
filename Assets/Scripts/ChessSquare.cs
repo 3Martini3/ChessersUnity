@@ -22,6 +22,7 @@ public class ChessSquare : MonoBehaviour
     /// </summary>
     public int isTransform;
     public Turns turn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,13 +68,16 @@ public class ChessSquare : MonoBehaviour
             {
 
                 turn.SwapTurn();
-                if(isTransform==1&&collisionFigure.figure==ChessEnum.Figure.Pawn&& collisionFigure.color==ChessEnum.Color.White)
+                if((isTransform==1 || isTransform ==2) 
+                    && collisionFigure.figure==ChessEnum.Figure.Pawn)
                 {
-                    collisionFigure.tranformPawn(ChessEnum.Figure.Rook);
-                }else if(isTransform == 2 && collisionFigure.figure == ChessEnum.Figure.Pawn && collisionFigure.color == ChessEnum.Color.Black)
-                {
-                    collisionFigure.tranformPawn(ChessEnum.Figure.Knight);
+
+                    GameObject promotionMenu = GameObject.FindGameObjectWithTag("PromotionRadialMenu");
+                    collisionFigure.tag = "Promoted";
+                    //Debug.Log(collisionFigure.tag);
+                    promotionMenu.GetComponent<Canvas>().enabled = (!promotionMenu.GetComponent<Canvas>().enabled); //turn menu on
                 }
+
                 
                 if (figure == null)
                 {
@@ -170,7 +174,7 @@ public class ChessSquare : MonoBehaviour
                         {
                             var sq = square.GetComponent<ChessSquare>();
                             sq.enPassantPossible = false;
-                            Debug.Log("DELETE1");
+                            //Debug.Log("DELETE1");
                             sq.availableMove = false;
                             sq.castling = 0;
                         }
@@ -179,7 +183,7 @@ public class ChessSquare : MonoBehaviour
                     figure.square.figure = null;
                     figure.square = this;
                     availableMove = false;
-                    Debug.Log("DELETE2");
+                    //Debug.Log("DELETE2");
                     if (enPassantOnStep)
                     {
                         enPassantPossible = true;
@@ -207,7 +211,7 @@ public class ChessSquare : MonoBehaviour
                
                 // sq.enPassantPossible = false;
                 sq.availableMove = false;
-                Debug.Log("DELETE3");
+                //Debug.Log("DELETE3");
                 // sq.enPassantOnStep = false;
                 sq.castling = 0;
                 square.GetComponent<MeshRenderer>().material.color = Color.white;
