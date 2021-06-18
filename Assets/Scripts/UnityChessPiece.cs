@@ -19,6 +19,10 @@ public class UnityChessPiece : MonoBehaviour
     public ActivePiece activePiece;
     public bool beaten;
     public bool checkPositionAvailable;
+
+    public GameObject pauseMenu;
+    public GameObject settingsMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +31,17 @@ public class UnityChessPiece : MonoBehaviour
         square = FindClosestSquare().GetComponent<ChessSquare>();
         pinToPosition(square.GetComponent<MeshRenderer>().bounds.center);
         square.figure = this;
+
+        pauseMenu = GameObject.Find("PauseMenu");
+        settingsMenu = GameObject.Find("Settings");
     }
 
     private void Update()
     {
-        
+
+        pauseMenu = GameObject.Find("PauseMenu");
+        settingsMenu = GameObject.Find("Settings");
+
         if (checkPositionAvailable&&!GetComponent<DragAndDrop>().dragging)
         {
             if (hoverSquareName != "")
@@ -106,6 +116,7 @@ public class UnityChessPiece : MonoBehaviour
 
     private void OnMouseOver()
     {
+        if (settingsMenu != null || pauseMenu != null) return;
         if (!beaten && GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn == this.color)
         {
             if (!activePiece.isPieceDragged)
