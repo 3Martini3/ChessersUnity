@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChessScene/GameScene.unity
     guid: 275a29409308e634aa2aae331e6db8ba
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CheckersScene/GameSceneCheckers.unity
     guid: a9a9846e225c9bf40bd034b262ad9736
   m_configObjects: {}
