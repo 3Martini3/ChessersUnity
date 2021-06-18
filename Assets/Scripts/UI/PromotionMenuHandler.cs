@@ -7,10 +7,9 @@ public class PromotionMenuHandler : MonoBehaviour
 {
     public GameObject theMenu;
     public Vector2 moveInput;
-
     public int selectedOption;
-
     public GameObject highlightSegment;
+
     public UnityChessPiece collisionFigure;
 
     // Start is called before the first frame update
@@ -51,6 +50,7 @@ public class PromotionMenuHandler : MonoBehaviour
                         //apply mask on selected segment
                         selectedOption = i;
 
+
                         highlightSegment.transform.rotation = Quaternion.Euler(0, 0, i * 90);
                         //highlightSegment.transform.rotation = 
                         //Debug.Log(i);
@@ -58,25 +58,28 @@ public class PromotionMenuHandler : MonoBehaviour
                 }
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && theMenu.GetComponent<Canvas>().enabled)
             {
+                collisionFigure = GameObject.FindGameObjectWithTag("Promoted").GetComponent<UnityChessPiece>();
                 switch (selectedOption)
                 {
                     //transform Pawn option
                     case 0: //rook
-
+                        collisionFigure?.tranformPawn(ChessEnum.Figure.Rook);
                         break;
                     case 1: //queen
-
+                        collisionFigure?.tranformPawn(ChessEnum.Figure.Queen);
                         break;
                     case 2: //bishop
-
+                        collisionFigure?.tranformPawn(ChessEnum.Figure.Bishop);
                         break;
                     case 3: //knight
-
+                        collisionFigure?.tranformPawn(ChessEnum.Figure.Knight);
                         break;
                 }
 
+
+                collisionFigure.tag = "Chess Piece";
                 theMenu.GetComponent<Canvas>().enabled = false;
             }
         }

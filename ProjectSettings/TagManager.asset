@@ -16,6 +16,8 @@ TagManager:
   - WhiteStack
   - BlackStack
   - Turn Order
+  - PromotionRadialMenu
+  - Promoted
   layers:
   - Default
   - TransparentFX

@@ -74,7 +74,9 @@ public class ChessSquare : MonoBehaviour
                 {
                     //collisionFigure.tranformPawn(ChessEnum.Figure.Rook);
                     GameObject promotionMenu = GameObject.FindGameObjectWithTag("PromotionRadialMenu");
-                    promotionMenu.GetComponent<Canvas>().enabled = (!promotionMenu.GetComponent<Canvas>().enabled);
+                    collisionFigure.tag = "Promoted";
+                    //Debug.Log(collisionFigure.tag);
+                    promotionMenu.GetComponent<Canvas>().enabled = (!promotionMenu.GetComponent<Canvas>().enabled); //turn menu on
                 }
                 //else if(isTransform == 2 && collisionFigure.figure == ChessEnum.Figure.Pawn && collisionFigure.color == ChessEnum.Color.Black)
                 //{
@@ -176,7 +178,7 @@ public class ChessSquare : MonoBehaviour
                         {
                             var sq = square.GetComponent<ChessSquare>();
                             sq.enPassantPossible = false;
-                            Debug.Log("DELETE1");
+                            //Debug.Log("DELETE1");
                             sq.availableMove = false;
                             sq.castling = 0;
                         }
@@ -185,7 +187,7 @@ public class ChessSquare : MonoBehaviour
                     figure.square.figure = null;
                     figure.square = this;
                     availableMove = false;
-                    Debug.Log("DELETE2");
+                    //Debug.Log("DELETE2");
                     if (enPassantOnStep)
                     {
                         enPassantPossible = true;
@@ -213,7 +215,7 @@ public class ChessSquare : MonoBehaviour
                
                 // sq.enPassantPossible = false;
                 sq.availableMove = false;
-                Debug.Log("DELETE3");
+                //Debug.Log("DELETE3");
                 // sq.enPassantOnStep = false;
                 sq.castling = 0;
                 square.GetComponent<MeshRenderer>().material.color = Color.white;
