@@ -22,6 +22,7 @@ public class ChessSquare : MonoBehaviour
     /// </summary>
     public int isTransform;
     public Turns turn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,13 +68,18 @@ public class ChessSquare : MonoBehaviour
             {
 
                 turn.SwapTurn();
-                if(isTransform==1&&collisionFigure.figure==ChessEnum.Figure.Pawn&& collisionFigure.color==ChessEnum.Color.White)
+                if((isTransform==1 || isTransform ==2) 
+                    && collisionFigure.figure==ChessEnum.Figure.Pawn
+                    /*&& collisionFigure.color==ChessEnum.Color.White*/)
                 {
-                    collisionFigure.tranformPawn(ChessEnum.Figure.Rook);
-                }else if(isTransform == 2 && collisionFigure.figure == ChessEnum.Figure.Pawn && collisionFigure.color == ChessEnum.Color.Black)
-                {
-                    collisionFigure.tranformPawn(ChessEnum.Figure.Knight);
+                    //collisionFigure.tranformPawn(ChessEnum.Figure.Rook);
+                    GameObject promotionMenu = GameObject.FindGameObjectWithTag("PromotionRadialMenu");
+                    promotionMenu.GetComponent<Canvas>().enabled = (!promotionMenu.GetComponent<Canvas>().enabled);
                 }
+                //else if(isTransform == 2 && collisionFigure.figure == ChessEnum.Figure.Pawn && collisionFigure.color == ChessEnum.Color.Black)
+                //{
+                //    collisionFigure.tranformPawn(ChessEnum.Figure.Knight);
+                //}
                 
                 if (figure == null)
                 {
