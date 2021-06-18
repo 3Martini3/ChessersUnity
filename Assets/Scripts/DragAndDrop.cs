@@ -10,16 +10,21 @@ class DragAndDrop : MonoBehaviour
     private float defaultYPosition { get; set; }
     private BoxCollider boxCollider { get; set; }
     public float yChange;
+    public GameObject pauseMenu;
+    public GameObject settingsMenu;
 
     void Start()
     {
         defaultYPosition=transform.position.y;
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
+        pauseMenu = GameObject.Find("PauseMenu");
+        settingsMenu = GameObject.Find("Settings");
     }
 
     void OnMouseDown()
     {
+        if (settingsMenu != null || pauseMenu != null) return;
         var chessPiece = GetComponent<UnityChessPiece>();
         if (!chessPiece.beaten&&GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn == chessPiece.color)
         {
@@ -40,7 +45,7 @@ class DragAndDrop : MonoBehaviour
 
     void OnMouseUp()
     {
-        if(!GetComponent<UnityChessPiece>().beaten)
+        if (!GetComponent<UnityChessPiece>().beaten)
         {
             dragging = false;
             transform.position = new Vector3(transform.position.x, defaultYPosition, transform.position.z);
@@ -52,6 +57,8 @@ class DragAndDrop : MonoBehaviour
 
     void Update()
     {
+        pauseMenu = GameObject.Find("PauseMenu");
+        settingsMenu = GameObject.Find("Settings");
         if (dragging)
         {
             distance = Vector3.Distance(new Vector3(transform.position.x, transform.position.y + yChange, transform.position.z), Camera.main.transform.position);
