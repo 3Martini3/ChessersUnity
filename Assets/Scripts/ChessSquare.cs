@@ -71,13 +71,11 @@ public class ChessSquare : MonoBehaviour
                 if((isTransform==1 || isTransform ==2) 
                     && collisionFigure.figure==ChessEnum.Figure.Pawn)
                 {
-                    GameObject promotionMenu = GameObject.FindGameObjectWithTag("PromotionRadialMenu");
-                    string primaryTag = collisionFigure.tag; //we're going to change it, so we need to store the original one
 
+                    GameObject promotionMenu = GameObject.FindGameObjectWithTag("PromotionRadialMenu");
                     collisionFigure.tag = "Promoted";
                     //Debug.Log(collisionFigure.tag);
                     promotionMenu.GetComponent<Canvas>().enabled = (!promotionMenu.GetComponent<Canvas>().enabled); //turn menu on
-                    collisionFigure.tag = primaryTag;
                 }
 
                 

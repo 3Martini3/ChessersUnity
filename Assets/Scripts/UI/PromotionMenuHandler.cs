@@ -74,7 +74,9 @@ public class PromotionMenuHandler : MonoBehaviour
                         break;
                 }
 
-                theMenu.GetComponent<Canvas>().enabled = false; //close the menu
+
+                collisionFigure.tag = "Chess Piece";
+                theMenu.GetComponent<Canvas>().enabled = false;
             }
         }
     }
