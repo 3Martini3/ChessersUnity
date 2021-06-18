@@ -69,19 +69,15 @@ public class ChessSquare : MonoBehaviour
 
                 turn.SwapTurn();
                 if((isTransform==1 || isTransform ==2) 
-                    && collisionFigure.figure==ChessEnum.Figure.Pawn
-                    /*&& collisionFigure.color==ChessEnum.Color.White*/)
+                    && collisionFigure.figure==ChessEnum.Figure.Pawn)
                 {
-                    //collisionFigure.tranformPawn(ChessEnum.Figure.Rook);
+
                     GameObject promotionMenu = GameObject.FindGameObjectWithTag("PromotionRadialMenu");
                     collisionFigure.tag = "Promoted";
                     //Debug.Log(collisionFigure.tag);
                     promotionMenu.GetComponent<Canvas>().enabled = (!promotionMenu.GetComponent<Canvas>().enabled); //turn menu on
                 }
-                //else if(isTransform == 2 && collisionFigure.figure == ChessEnum.Figure.Pawn && collisionFigure.color == ChessEnum.Color.Black)
-                //{
-                //    collisionFigure.tranformPawn(ChessEnum.Figure.Knight);
-                //}
+
                 
                 if (figure == null)
                 {

@@ -46,14 +46,10 @@ public class PromotionMenuHandler : MonoBehaviour
                 {
                     if (angle > i * 90 && angle < (i + 1) * 90)
                     {
-                        //Debug.Log("seg " + i);
-                        //apply mask on selected segment
+
                         selectedOption = i;
-
-
                         highlightSegment.transform.rotation = Quaternion.Euler(0, 0, i * 90);
-                        //highlightSegment.transform.rotation = 
-                        //Debug.Log(i);
+
                     }
                 }
             }
