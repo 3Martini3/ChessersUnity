@@ -611,7 +611,7 @@ public class PossibleMoves : MonoBehaviour
             positionsOfPieces.Add(new Position(currentSquare[0] - 'A', currentSquare[1] - '1'));
         }
         Position[] positions = positionsOfPieces.ToArray();
-
+        List<Position> defMoves = new List<Position>();
         //1. is check
         //2. does any figure of checked color have movement possibility?
         //3. YES/NO -> ok, game persists/GG
@@ -626,28 +626,29 @@ public class PossibleMoves : MonoBehaviour
                     switch (figures[i].figure)
                     {
                         case Figure.Pawn:
-                            positions = PossibleMovesPawn(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesPawn(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                         case Figure.Knight:
-                            positions = PossibleMovesKnight(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesKnight(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                         case Figure.Bishop:
-                            positions = PossibleMovesBishop(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesBishop(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                         case Figure.Rook:
-                            positions = PossibleMovesRook(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesRook(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                         case Figure.Queen:
-                            positions = PossibleMovesQueen(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesQueen(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                         case Figure.King:
-                            positions = PossibleMovesKing(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesKing(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                     }
-                    if (positions.Length > 0)
+                    if (defMoves.Count > 0)
                     {
                         return 0;
                     }
+                    defMoves.Clear();
                 }
 
             }
@@ -663,28 +664,29 @@ public class PossibleMoves : MonoBehaviour
                     switch (figures[i].figure)
                     {
                         case Figure.Pawn:
-                            positions = PossibleMovesPawn(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesPawn(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                         case Figure.Knight:
-                            positions = PossibleMovesKnight(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesKnight(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                         case Figure.Bishop:
-                            positions = PossibleMovesBishop(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesBishop(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                         case Figure.Rook:
-                            positions = PossibleMovesRook(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesRook(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                         case Figure.Queen:
-                            positions = PossibleMovesQueen(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesQueen(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                         case Figure.King:
-                            positions = PossibleMovesKing(chessBoard, positions[i], didMove);
+                            defMoves = PossibleMovesKing(chessBoard, positions[i], didMove).ToList<Position>();
                             break;
                     }
-                    if (positions.Length > 0)
+                    if (defMoves.Count > 0)
                     {
                         return 0;
                     }
+                    defMoves.Clear();
                 }
 
             }
