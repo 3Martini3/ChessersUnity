@@ -29,7 +29,30 @@ public class ClientHandle : MonoBehaviour
     public static void RegisterCallback(Packet _packet)
     {
         string _msg = _packet.ReadString();
-        int _myId = _packet.ReadInt();
         Debug.Log($"Registration msg: {_msg}");
+    }
+
+    public static void LoginCallback(Packet _packet)
+    {
+        string _msg = _packet.ReadString();
+        
+        if (_msg=="Login failed")
+        {
+            Debug.Log($"{_msg}");
+        }else
+        {
+            var splittedMsg = _msg.Split(':');
+            if(splittedMsg.Length==2&&splittedMsg[0]=="Login succed")
+            {
+                Debug.Log("Login succed");
+                Client.instance.playerId = splittedMsg[1];
+                GameObject.Find("UIManager").GetComponent<Login>().SaveLogin();
+                
+            }else
+            {
+                Debug.Log("Login sent wrong data attepmt!!!");
+            }
+        }
+        
     }
 }
