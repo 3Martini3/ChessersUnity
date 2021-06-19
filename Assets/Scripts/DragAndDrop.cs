@@ -29,8 +29,6 @@ class DragAndDrop : MonoBehaviour
         if (!chessPiece.beaten&&GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn == chessPiece.color)
         {
            
-
-
             var piece = GetComponent<UnityChessPiece>();
             piece.activePiece.isPieceDragged = true;
             piece.checkPositionAvailable = true ;
@@ -38,8 +36,11 @@ class DragAndDrop : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y + yChange, transform.position.z);
             dragging = true;
             boxCollider.enabled = true;
+
+            Debug.Log(GetComponent<PossibleMoves>().DoesCheckMateExist());
+
             GetComponent<PossibleMoves>().FindPossibleMoves();
-            Debug.Log("Drag");
+            //Debug.Log("Drag");
         }
     }
 

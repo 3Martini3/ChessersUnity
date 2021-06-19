@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -15,7 +14,7 @@ public class PossibleMoves : MonoBehaviour
 
     public void FindPossibleMoves()
     {
-        Debug.Log("Searching");
+        //Debug.Log("Searching");
         ChessPiece[,] board = new ChessPiece[8, 8];
         var sq = unityBoard.gameObject.GetComponent<UnityChessBoard>().squares;
         var currentPiece = GetComponent<UnityChessPiece>();
@@ -70,8 +69,8 @@ public class PossibleMoves : MonoBehaviour
 
     private void HighlightSquares(Position[] positions, GameObject[,] board)
     {
-        Debug.Log($"Highlighting {positions.Length}");
-        if(positions.Length==0)
+        //Debug.Log($"Highlighting {positions.Length}");
+        if (positions.Length == 0)
         {
             Debug.Log("No available moves!");
         }
@@ -81,8 +80,8 @@ public class PossibleMoves : MonoBehaviour
         {
             //Debug.Log("one");
             //Debug.Log(board[position.column, position.row].name);
-           // board[position.column, position.row].GetComponent<MeshRenderer>().material.color = activeColor;
-            Debug.Log("HighLighted");
+            // board[position.column, position.row].GetComponent<MeshRenderer>().material.color = activeColor;
+            //Debug.Log("HighLighted");
             var sq = board[position.column, position.row].GetComponent<ChessSquare>();
             sq.availableMove = true;
             if (position.enPassantBeat)
@@ -408,7 +407,7 @@ public class PossibleMoves : MonoBehaviour
         {
             //Debug.Log("There is it");
             // Debug.Log($"{board[new Position(capturingPiecePosition.row, capturingPiecePosition.column + 1)].possibleEnPassant}");
-            listPossibleMoves.Add(new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column - 1,enPassantBeat:true));
+            listPossibleMoves.Add(new Position(capturingPiecePosition.row + 1, capturingPiecePosition.column - 1, enPassantBeat: true));
         }
         return listPossibleMoves;
 
@@ -451,7 +450,7 @@ public class PossibleMoves : MonoBehaviour
                 var boardNew = board;
                 boardNew[new Position(kingPosition.row, 1)] = boardNew[new Position(kingPosition.row, 3)];
                 boardNew[new Position(kingPosition.row, 3)] = null;
-                boardNew[new Position(kingPosition.row,2)]= boardNew[new Position(kingPosition.row, 0)];
+                boardNew[new Position(kingPosition.row, 2)] = boardNew[new Position(kingPosition.row, 0)];
                 boardNew[new Position(kingPosition.row, 0)] = null;
 
                 if (!DoesCheckExist(boardNew, new Position(kingPosition.row, 1)))
@@ -559,7 +558,146 @@ public class PossibleMoves : MonoBehaviour
         }
         return null;
     }
+    /// <summary>
+    /// searches for check mate with current board state
+    /// </summary>
+    /// <returns>0 there is no checkmate, 1 black are under checkmate, 2 white are under checkmate</returns>
+    public int DoesCheckMateExist()
+    {
+        //converting actual chessboard to chessboard type:
+        Debug.Log("Searching for CheckMate");
+        ChessPiece[,] board = new ChessPiece[8, 8];
+        var sq = unityBoard.gameObject.GetComponent<UnityChessBoard>().squares;
+        var currentPiece = GetComponent<UnityChessPiece>();
+        var currentSquare = currentPiece.square.name;
+        didMove = currentPiece.didmove;
+        var currentPos = new Position(currentSquare[0] - 'A', currentSquare[1] - '1');
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                var localSquare = sq[i, j].GetComponent<ChessSquare>();
+                var localFigure = localSquare.figure;
+                if (localFigure != null)
+                {
+
+                    var color = ChessEnum.Color.Black;
+                    ////Debug.Log($"name is {localFigure.name}");
+                    if (localFigure.name.Contains("White"))
+                    {
+                        color = ChessEnum.Color.White;
+                    }
+                    board[i, j] = new ChessPiece(localFigure.figure, color, localFigure.didmove, localSquare.enPassantPossible);
+                    // //Debug.Log($"({i},{j})={board[i, j].figure},{color}");
+                }
+                else
+                {
+                    board[i, j] = null;
+                    ////Debug.Log($"({i},{j})=null");
+                }
+            }
+        }
+
+        ChessBoard chessBoard = new ChessBoard(board);
+
+        //arranging array of pieces on board and corresponding positions
+        GameObject[] pieces = GameObject.FindGameObjectsWithTag("Chess Piece");
+        List<Position> positionsOfPieces = new List<Position>();
+        UnityChessPiece[] figures = new UnityChessPiece[pieces.Length];
+        for(int i = 0; i < pieces.Length; i++)
+        {
+            figures[i] = pieces[i].GetComponent<UnityChessPiece>();
+            currentSquare = figures[i].square.name;
+            positionsOfPieces.Add(new Position(currentSquare[0] - 'A', currentSquare[1] - '1'));
+        }
+        Position[] positions = positionsOfPieces.ToArray();
+
+        //1. is check
+        //2. does any figure of checked color have movement possibility?
+        //3. YES/NO -> ok, game persists/GG
+
+        if (DoesCheckExist(chessBoard, FindKing(chessBoard, ChessEnum.Color.White))) //we;re looking for checkmate for white
+        {
+            for (int i = 0; i < figures.Length; i++)
+            {
+                UnityChessPiece piece = figures[i].GetComponent<UnityChessPiece>();
+                if(piece.color == ChessEnum.Color.White)
+                {
+                    switch (figures[i].figure)
+                    {
+                        case Figure.Pawn:
+                            positions = PossibleMovesPawn(chessBoard, positions[i], didMove);
+                            break;
+                        case Figure.Knight:
+                            positions = PossibleMovesKnight(chessBoard, positions[i], didMove);
+                            break;
+                        case Figure.Bishop:
+                            positions = PossibleMovesBishop(chessBoard, positions[i], didMove);
+                            break;
+                        case Figure.Rook:
+                            positions = PossibleMovesRook(chessBoard, positions[i], didMove);
+                            break;
+                        case Figure.Queen:
+                            positions = PossibleMovesQueen(chessBoard, positions[i], didMove);
+                            break;
+                        case Figure.King:
+                            positions = PossibleMovesKing(chessBoard, positions[i], didMove);
+                            break;
+                    }
+                    if (positions.Length > 0)
+                    {
+                        return 0;
+                    }
+                }
+
+            }
+            return 2; //white under checkmate
+
+        }
+        else if (DoesCheckExist(chessBoard, FindKing(chessBoard, ChessEnum.Color.Black))) //we;re looking for checkmate for black
+        {
+            for (int i = 0; i < figures.Length; i++)
+            {
+                if (figures[i].color == ChessEnum.Color.Black)
+                {
+                    switch (figures[i].figure)
+                    {
+                        case Figure.Pawn:
+                            positions = PossibleMovesPawn(chessBoard, positions[i], didMove);
+                            break;
+                        case Figure.Knight:
+                            positions = PossibleMovesKnight(chessBoard, positions[i], didMove);
+                            break;
+                        case Figure.Bishop:
+                            positions = PossibleMovesBishop(chessBoard, positions[i], didMove);
+                            break;
+                        case Figure.Rook:
+                            positions = PossibleMovesRook(chessBoard, positions[i], didMove);
+                            break;
+                        case Figure.Queen:
+                            positions = PossibleMovesQueen(chessBoard, positions[i], didMove);
+                            break;
+                        case Figure.King:
+                            positions = PossibleMovesKing(chessBoard, positions[i], didMove);
+                            break;
+                    }
+                    if (positions.Length > 0)
+                    {
+                        return 0;
+                    }
+                }
+
+            }
+            return 1; //black under checkmate
+
+        }
+
+        return 0;
+        Debug.Log("no checkmate found!");
+    }
 
 
 }
+
+
 

@@ -216,6 +216,6 @@ public class UnityChessPiece : MonoBehaviour
             }
 
         }
-        Debug.Log("Beat boi!");
+        //Debug.Log("Beat boi!");
     }
 }
