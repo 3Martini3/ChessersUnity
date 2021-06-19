@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 class DragAndDrop : MonoBehaviour
@@ -15,7 +13,7 @@ class DragAndDrop : MonoBehaviour
 
     void Start()
     {
-        defaultYPosition=transform.position.y;
+        defaultYPosition = transform.position.y;
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
         pauseMenu = GameObject.Find("PauseMenu");
@@ -24,14 +22,18 @@ class DragAndDrop : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (settingsMenu != null || pauseMenu != null) return;
-        var chessPiece = GetComponent<UnityChessPiece>();
-        if (!chessPiece.beaten&&GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn == chessPiece.color)
+        if (settingsMenu != null || pauseMenu != null
+            || GameObject.FindGameObjectWithTag("PromotionRadialMenu").GetComponent<Canvas>().enabled)
         {
-           
+            return;
+        }
+        var chessPiece = GetComponent<UnityChessPiece>();
+        if (!chessPiece.beaten && GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn == chessPiece.color)
+        {
+
             var piece = GetComponent<UnityChessPiece>();
             piece.activePiece.isPieceDragged = true;
-            piece.checkPositionAvailable = true ;
+            piece.checkPositionAvailable = true;
             distance = Vector3.Distance(transform.position, Camera.main.transform.position);
             transform.position = new Vector3(transform.position.x, transform.position.y + yChange, transform.position.z);
             dragging = true;
@@ -54,7 +56,7 @@ class DragAndDrop : MonoBehaviour
             boxCollider.enabled = false;
             GetComponent<UnityChessPiece>().activePiece.isPieceDragged = false;
         }
-        
+
     }
 
     void Update()
