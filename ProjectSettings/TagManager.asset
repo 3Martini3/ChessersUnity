@@ -18,6 +18,7 @@ TagManager:
   - Turn Order
   - PromotionRadialMenu
   - Promoted
+  - CheckMateCanvas
   layers:
   - Default
   - TransparentFX
