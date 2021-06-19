@@ -42,7 +42,10 @@ public class UIManager : MonoBehaviour
         Debug.Log(Client.instance?.tcp?.socket?.Connected);
         if (Client.instance?.tcp?.socket?.Connected==false)
         {
-            connection.text = "Disconnected";
+                if(connection!=null)
+                {
+                    connection.text = "Disconnected";
+                }
             Client.instance.ConnectToServer();
         }
 

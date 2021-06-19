@@ -3722,18 +3722,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1841002177}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1707587271}
         m_TargetAssemblyTypeName: Register, Assembly-CSharp
         m_MethodName: RegisterUser
@@ -5595,7 +5583,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Zarejestruj
+  m_text: 'Zaloguj
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7299,22 +7289,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1841002177}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1707587272}
+        m_TargetAssemblyTypeName: Login, Assembly-CSharp
+        m_MethodName: LoginUser
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11562,6 +11540,7 @@ GameObject:
   - component: {fileID: 1707587270}
   - component: {fileID: 1707587269}
   - component: {fileID: 1707587271}
+  - component: {fileID: 1707587272}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -11612,6 +11591,20 @@ MonoBehaviour:
   login: {fileID: 1893558395}
   password: {fileID: 870772971}
   passwordRepeat: {fileID: 1415554487}
+--- !u!114 &1707587272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707587268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2215f986063fffb419bcf5886d0dbaae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  login: {fileID: 2048846743}
+  password: {fileID: 23651322}
 --- !u!1 &1722137378
 GameObject:
   m_ObjectHideFlags: 0
@@ -12184,7 +12177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1841002178
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12395,7 +12388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1871497752
 RectTransform:
   m_ObjectHideFlags: 0

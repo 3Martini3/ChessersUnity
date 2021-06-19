@@ -56,6 +56,26 @@ public class ClientSend : MonoBehaviour
         }
     }
 
+    public static void SendLoginMessage(string usernameInput, string passwordInput)
+    {
+        using (Packet _packet = new Packet((int)ClientPackets.messageSent))
+        {
+            _packet.Write(Client.instance.myId);
+
+            var login = new RegisterMessage
+            {
+                type = "Login",
+                username = usernameInput,
+                password = passwordInput
+            };
+            var json = JsonUtility.ToJson(login);
+            _packet.Write(json);
+            Debug.Log("SignIn sent");
+
+            SendTCPData(_packet);
+        }
+    }
+
     public static void SendMessage()
     {
         using (Packet _packet = new Packet((int)ClientPackets.messageSent))
