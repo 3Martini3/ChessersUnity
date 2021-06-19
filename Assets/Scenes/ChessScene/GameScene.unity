@@ -18200,9 +18200,10 @@ GameObject:
   - component: {fileID: 1677470052}
   - component: {fileID: 1677470051}
   - component: {fileID: 1677470050}
+  - component: {fileID: 1677470055}
   m_Layer: 0
   m_Name: CheckMateScreen
-  m_TagString: Untagged
+  m_TagString: CheckMateCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18329,6 +18330,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1677470055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677470048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ffd913bfe9b8b7408cbc52c8f0e974e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkMateCanvas: {fileID: 1677470048}
 --- !u!1 &1706370115
 GameObject:
   m_ObjectHideFlags: 0
