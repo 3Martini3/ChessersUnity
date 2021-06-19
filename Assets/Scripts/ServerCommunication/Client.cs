@@ -13,6 +13,7 @@ public class Client : MonoBehaviour
     public string ip = "127.0.0.1";
     public int port = 26950;
     public int myId = 0;
+    public string playerId = "";
     public TCP tcp;
     public bool connected = false;
 
@@ -42,12 +43,6 @@ public class Client : MonoBehaviour
         InitializeClientData();
 
         tcp.Connect();
-    }
-
-
-    public void CheckConnection()
-    {
-        
     }
 
     public class TCP
@@ -178,7 +173,8 @@ public class Client : MonoBehaviour
         {
             { (int)ServerPackets.welcome, ClientHandle.Welcome },
             { (int)ServerPackets.connectionCallback,ClientHandle.ConnectionEstablished },
-            { (int)ServerPackets.registrationResult,ClientHandle.RegisterCallback }
+            { (int)ServerPackets.registrationResult,ClientHandle.RegisterCallback },
+            { (int)ServerPackets.loginResult,ClientHandle.LoginCallback }
         };
         //Debug.Log("Initialized packets.");
     }
