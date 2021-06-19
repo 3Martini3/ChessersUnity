@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,22 +8,10 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    public GameObject startMenu;
-    public InputField usernameField;
-    public Text connectionText;
+    public TextMeshProUGUI connection;
     public bool connectionCalled = false;
 
-    private void Update()
-    {
-        if (!connectionCalled)
-        {
-            connectionCalled = true;
-            connectionText.text = "Disconnected";
-            ConnectToServer();
-            //Debug.Log("Connection called");
-            
-        }
-    }
+  
 
     private void Awake()
     {
@@ -36,12 +25,32 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ConnectToServer()
+    public void Start()
     {
-        //startMenu.SetActive(false);
-      //  usernameField.interactable = false;
-        Client.instance.ConnectToServer();
+        InvokeRepeating("HoldConnection", 1f, 5f);
     }
+
+    public void HoldConnection()
+    {
+        if(connectionCalled==false)
+        {
+            Client.instance.ConnectToServer();
+            connectionCalled = true;
+        }else
+        {
+
+        Debug.Log(Client.instance?.tcp?.socket?.Connected);
+        if (Client.instance?.tcp?.socket?.Connected==false)
+        {
+            connection.text = "Disconnected";
+            Client.instance.ConnectToServer();
+        }
+
+        }
+
+    }
+
+
 
     public void SendToServer()
     {

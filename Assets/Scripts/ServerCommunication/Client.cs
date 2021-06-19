@@ -14,6 +14,7 @@ public class Client : MonoBehaviour
     public int port = 26950;
     public int myId = 0;
     public TCP tcp;
+    public bool connected = false;
 
     private delegate void PacketHandler(Packet _packet);
     private static Dictionary<int, PacketHandler> packetHandlers;
@@ -41,6 +42,12 @@ public class Client : MonoBehaviour
         InitializeClientData();
 
         tcp.Connect();
+    }
+
+
+    public void CheckConnection()
+    {
+        
     }
 
     public class TCP
@@ -91,7 +98,7 @@ public class Client : MonoBehaviour
             }
             catch (Exception _ex)
             {
-                //Debug.Log($"Error sending data to server via TCP: {_ex}");
+                Debug.Log($"Error sending data to server via TCP: {_ex}");
             }
         }
 
@@ -169,7 +176,9 @@ public class Client : MonoBehaviour
     {
         packetHandlers = new Dictionary<int, PacketHandler>()
         {
-            { (int)ServerPackets.welcome, ClientHandle.Welcome }
+            { (int)ServerPackets.welcome, ClientHandle.Welcome },
+            { (int)ServerPackets.connectionCallback,ClientHandle.ConnectionEstablished },
+            { (int)ServerPackets.registrationResult,ClientHandle.RegisterCallback }
         };
         //Debug.Log("Initialized packets.");
     }

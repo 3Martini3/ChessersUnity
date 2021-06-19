@@ -73,7 +73,8 @@ public class ChessSquare : MonoBehaviour
                 {
 
                     GameObject promotionMenu = GameObject.FindGameObjectWithTag("PromotionRadialMenu");
-                    collisionFigure.tag = "Promoted";
+                    //collisionFigure.tag = "Promoted";
+                    promotionMenu.GetComponent<PromotionMenuHandler>().collisionFigure = collisionFigure;
                     //Debug.Log(collisionFigure.tag);
                     promotionMenu.GetComponent<Canvas>().enabled = (!promotionMenu.GetComponent<Canvas>().enabled); //turn menu on
                 }

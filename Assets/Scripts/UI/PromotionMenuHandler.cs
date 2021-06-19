@@ -56,7 +56,7 @@ public class PromotionMenuHandler : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && theMenu.GetComponent<Canvas>().enabled)
             {
-                collisionFigure = GameObject.FindGameObjectWithTag("Promoted").GetComponent<UnityChessPiece>();
+               // collisionFigure = GameObject.FindGameObjectWithTag("Promoted").GetComponent<UnityChessPiece>();
                 switch (selectedOption)
                 {
                     //transform Pawn option
@@ -75,7 +75,7 @@ public class PromotionMenuHandler : MonoBehaviour
                 }
 
 
-                collisionFigure.tag = "Chess Piece";
+                //collisionFigure.tag = "Chess Piece";
                 theMenu.GetComponent<Canvas>().enabled = false;
             }
         }

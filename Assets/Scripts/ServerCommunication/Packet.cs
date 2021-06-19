@@ -5,9 +5,13 @@ using System.Text;
 using UnityEngine;
 
 /// <summary>Sent from server to client.</summary>
+
 public enum ServerPackets
 {
-    welcome = 1
+    welcome = 1,
+    connectionCallback = 2,
+    registrationResult = 3
+
 }
 
 /// <summary>Sent from client to server.</summary>

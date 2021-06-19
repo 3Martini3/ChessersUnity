@@ -739,6 +739,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &54751883
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -776,6 +778,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &54751885
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1376,6 +1380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &141717776
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1413,6 +1419,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &141717778
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2060,6 +2068,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!114 &186310229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2083,6 +2093,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &186310230
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3181,6 +3193,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!114 &326039900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3195,6 +3209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &326039901
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4235,6 +4251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &430884711
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4272,6 +4290,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &430884713
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4982,6 +5002,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &495509810
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5010,6 +5032,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &495509812
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5602,6 +5626,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &542707102
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5639,6 +5665,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &542707104
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5884,6 +5912,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!114 &548130358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5898,6 +5928,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &548130359
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6089,6 +6121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &549504855
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6126,6 +6160,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &549504857
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7514,6 +7550,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!65 &659953806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7571,6 +7609,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &659953810
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8342,6 +8382,7 @@ GameObject:
   - component: {fileID: 702686662}
   - component: {fileID: 702686661}
   - component: {fileID: 702686660}
+  - component: {fileID: 702686663}
   m_Layer: 0
   m_Name: PromotionRadialMenuCanvas
   m_TagString: PromotionRadialMenu
@@ -8431,6 +8472,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &702686663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702686658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1fa8d5db0e1f544a7befefcede708b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theMenu: {fileID: 702686658}
+  moveInput: {x: 0, y: 0}
+  selectedOption: 0
+  highlightSegment: {fileID: 1176221952}
+  collisionFigure: {fileID: 0}
 --- !u!1 &709713875
 GameObject:
   m_ObjectHideFlags: 0
@@ -10174,7 +10232,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 912355243}
-  - component: {fileID: 912355244}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -10198,23 +10255,6 @@ Transform:
   m_Father: {fileID: 1345363657}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &912355244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912355242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e1fa8d5db0e1f544a7befefcede708b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theMenu: {fileID: 702686658}
-  moveInput: {x: 0, y: 0}
-  selectedOption: 0
-  highlightSegment: {fileID: 1176221952}
-  collisionFigure: {fileID: 0}
 --- !u!1 &912948789
 GameObject:
   m_ObjectHideFlags: 0
@@ -10517,6 +10557,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &925765168
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10554,6 +10596,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &925765170
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10876,6 +10920,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &947069355
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10913,6 +10959,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &947069357
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12001,6 +12049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1027661026
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12038,6 +12088,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1027661028
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12404,6 +12456,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!114 &1037119039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12427,6 +12481,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1037119040
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13580,6 +13636,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1124755498
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13617,6 +13675,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1124755500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13764,6 +13824,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1136735087
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13801,6 +13863,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1136735089
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14341,6 +14405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1280294890
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14378,6 +14444,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1280294892
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14797,6 +14865,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1293709478
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14825,6 +14895,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1293709480
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14972,6 +15044,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1300999596
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15009,6 +15083,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1300999598
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15409,6 +15485,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1340109720
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15446,6 +15524,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1340109722
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15626,6 +15706,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1355224278
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15663,6 +15745,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1355224280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16328,6 +16412,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1429457849
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16365,6 +16451,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1429457851
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17569,6 +17657,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!114 &1599535275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17583,6 +17673,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1599535276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18308,6 +18400,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1719261115
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18345,6 +18439,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1719261117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19167,6 +19263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1758282033
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19204,6 +19302,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1758282035
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19720,6 +19820,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1793818511
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19757,6 +19859,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1793818513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19979,6 +20083,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &1810991512
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20016,6 +20122,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1810991514
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20769,6 +20877,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!114 &1899329767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20783,6 +20893,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1899329768
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22074,6 +22186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!114 &1983981663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22097,6 +22211,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &1983981664
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22701,6 +22817,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &2103035336
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22738,6 +22856,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &2103035338
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23097,6 +23217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!64 &2115593511
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23134,6 +23256,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!23 &2115593513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24023,6 +24147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragging: 0
   yChange: 0.05
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!65 &919132149120250902
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24075,6 +24201,8 @@ MonoBehaviour:
   activePiece: {fileID: 888443458}
   beaten: 0
   checkPositionAvailable: 0
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!114 &919132149120250905
 MonoBehaviour:
   m_ObjectHideFlags: 0
