@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manages in game UI connections 
+/// </summary>
 public class InGameUIManager : MonoBehaviour
 {
     UIManager instance;
     public TextMeshProUGUI connection;
     public bool connectionCalled = false;
 
+    /// <summary>
+    /// Sett starting crossScene dta
+    /// </summary>
     public void Start()
     {
         if(CrossSceneInfo.onlineGame)
@@ -24,7 +30,9 @@ public class InGameUIManager : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Holds connection, control connection state 
+    /// </summary>
 public void HoldConnection()
 {
     if (connectionCalled == false)
