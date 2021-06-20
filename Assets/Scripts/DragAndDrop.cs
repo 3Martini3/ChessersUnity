@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// Control piece movement, piece draging and mouse-piece interaction 
+/// </summary>
 class DragAndDrop : MonoBehaviour
 {
 
@@ -11,6 +13,9 @@ class DragAndDrop : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject settingsMenu;
 
+    /// <summary>
+    /// Set basic values, connect hidden menus
+    /// </summary>
     void Start()
     {
         defaultYPosition = transform.position.y;
@@ -20,6 +25,9 @@ class DragAndDrop : MonoBehaviour
         settingsMenu = GameObject.Find("Settings");
     }
 
+    /// <summary>
+    /// start piece holding on click, contol movement, after checking if no menus are enabled
+    /// </summary>
     void OnMouseDown()
     {
         if (settingsMenu != null || pauseMenu != null
@@ -46,6 +54,9 @@ class DragAndDrop : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// stops dragging, disables piece movement 
+    /// </summary>
     void OnMouseUp()
     {
         if (!GetComponent<UnityChessPiece>().beaten)
@@ -57,7 +68,9 @@ class DragAndDrop : MonoBehaviour
         }
 
     }
-
+    /// <summary>
+    /// Uptades per frame, control piece movement mid dragging
+    /// </summary>
     void Update()
     {
         pauseMenu = GameObject.Find("PauseMenu");
