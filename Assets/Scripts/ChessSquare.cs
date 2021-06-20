@@ -8,7 +8,8 @@ using UnityEngine;
 /// </summary>
 public class ChessSquare : MonoBehaviour
 {
-
+    public AudioSource moveSound;
+    public AudioSource beatSound;
     public UnityChessPiece figure = null;
     public Material hoverMaterial;
     public bool availableMove;
@@ -91,6 +92,7 @@ public class ChessSquare : MonoBehaviour
             {
 
                 turn.SwapTurn();
+                
                 if((isTransform==1 || isTransform ==2) 
                     && collisionFigure.figure==ChessEnum.Figure.Pawn)
                 {
@@ -105,6 +107,7 @@ public class ChessSquare : MonoBehaviour
                 
                 if (figure == null)
                 {
+                    moveSound.Play();
                     if (this.castling == 1)
                     {
                         if (collision.gameObject.name.Contains("White"))
@@ -185,6 +188,7 @@ public class ChessSquare : MonoBehaviour
                 }else
                 {
                     figure.beat();
+                    beatSound.Play();
                 }
 
 

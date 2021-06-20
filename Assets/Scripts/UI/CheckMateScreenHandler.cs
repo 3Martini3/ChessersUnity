@@ -9,6 +9,8 @@ using UnityEngine.UI;
 /// </summary>
 public class CheckMateScreenHandler : MonoBehaviour
 {
+
+    public AudioSource endSound;
     public GameObject checkMateCanvas;
 
 
@@ -18,18 +20,22 @@ public class CheckMateScreenHandler : MonoBehaviour
     /// <param name="checkMateType"></param>
     public void ShowEndScreen(int checkMateType)
     {
+        
         if(checkMateType == 1)
         {
+            endSound.Play();
             checkMateCanvas.GetComponent<Text>().text = "White Won!";
             checkMateCanvas.GetComponent<Canvas>().enabled = true;
         }
         if (checkMateType == 2)
         {
+            endSound.Play();
             checkMateCanvas.GetComponent<Text>().text = "Black Won!";
             checkMateCanvas.GetComponent<Canvas>().enabled = true;
         }
         if(checkMateType == 3)
         {
+            endSound.Play();
             checkMateCanvas.GetComponent<Text>().text = "Tie!";
             checkMateCanvas.GetComponent<Canvas>().enabled = true;
         }

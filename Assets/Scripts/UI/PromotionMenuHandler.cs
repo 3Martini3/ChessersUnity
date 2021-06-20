@@ -8,6 +8,8 @@ using UnityEngine.UI;
 /// </summary>
 public class PromotionMenuHandler : MonoBehaviour
 {
+
+    public AudioSource levelUpSound;
     public GameObject theMenu;
     public Vector2 moveInput;
     public int selectedOption;
@@ -58,7 +60,8 @@ public class PromotionMenuHandler : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && theMenu.GetComponent<Canvas>().enabled)
             {
-               // collisionFigure = GameObject.FindGameObjectWithTag("Promoted").GetComponent<UnityChessPiece>();
+                // collisionFigure = GameObject.FindGameObjectWithTag("Promoted").GetComponent<UnityChessPiece>();
+                levelUpSound.Play();
                 switch (selectedOption)
                 {
                     //transform Pawn option
