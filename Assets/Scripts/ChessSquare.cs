@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Class containing script that controll what happens on chess square
+/// Most of game control (things on board happens on square, not with pieces)
+/// </summary>
 public class ChessSquare : MonoBehaviour
 {
 
@@ -24,13 +27,18 @@ public class ChessSquare : MonoBehaviour
     public Turns turn;
 
     // Start is called before the first frame update
+    /// <summary>
+    /// Centers pieces on squares
+    /// </summary>
     void Start()
     {
         castling = 0;
         center = GetComponent<MeshRenderer>().bounds.center;
         hovered = false;
     }
-
+    /// <summary>
+    /// Colors fields with avaible moves
+    /// </summary>
     private void Update()
     {
         if(availableMove)
@@ -39,6 +47,10 @@ public class ChessSquare : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///  marks element as hovered using trigger entry
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if(hoverMaterial!=null)
@@ -49,6 +61,10 @@ public class ChessSquare : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// unmarks element as hovered using trigger entry
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {  
         //GetComponent<MeshRenderer>().material.color=Color.white;
@@ -56,7 +72,14 @@ public class ChessSquare : MonoBehaviour
     }
     
   
-
+    /// <summary>
+    /// Check and manages all mechanics that happen on field: 
+    /// Controls turn by checking if figure moved 
+    /// Check if figure should be changed (pawn promotion)
+    /// Places figures on squares
+    /// Manages Castling an En passant beating 
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         //Debug.Log("Enter");

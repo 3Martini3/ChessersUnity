@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Initialize game board 
+/// </summary>
 public class UnityChessBoard : MonoBehaviour
 {
     public GameObject[,] squares;
+    /// <summary>
+    /// CInitialize game board as game object two dimensional table, assign names to squares
+    /// </summary>
     void Start()
     {
         squares = new GameObject[8, 8];

@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+/// <summary>
+/// Manages player registration
+/// </summary>
 public class Register : MonoBehaviour
 {
     public TMP_InputField login;
     public TMP_InputField password;
     public TMP_InputField passwordRepeat;
 
-
+    /// <summary>
+    /// check if registration data is valid
+    /// </summary>
     public void RegisterUser()
     {
         //startMenu.SetActive(false);

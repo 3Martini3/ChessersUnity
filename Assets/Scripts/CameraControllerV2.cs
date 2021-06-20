@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// Alows camera control, manages position and movement 
+/// </summary>
 public class CameraControllerV2 : MonoBehaviour
 {
     public float moveSpeed;
@@ -13,6 +15,9 @@ public class CameraControllerV2 : MonoBehaviour
 
 
     // Start is called before the first frame update
+    /// <summary>
+    /// Set starting positon camera vlues
+    /// </summary>
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -23,6 +28,9 @@ public class CameraControllerV2 : MonoBehaviour
 }
 
     // Update is called once per frame
+    /// <summary>
+    /// Updates camera poziotion (chceck every frame for input)
+    /// </summary>
     void Update()
     {
         RotateHorizontal();
@@ -30,7 +38,9 @@ public class CameraControllerV2 : MonoBehaviour
         RotateVertical();
         ForwardAxisMove();
     }
-
+    /// <summary>
+    /// Check input and rotate in horizontal axis if required
+    /// </summary>
     void RotateHorizontal()
     {
 
@@ -44,7 +54,9 @@ public class CameraControllerV2 : MonoBehaviour
         }
 
     }
-
+    /// <summary>
+    /// Check input and rotate in vertical axis if required 
+    /// </summary>
     void RotateVertical()
     {
         if (Input.GetKey(KeyCode.W) &&
@@ -60,6 +72,9 @@ public class CameraControllerV2 : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Check input and zoom/ unzoom camera if required
+    /// </summary>
     void ForwardAxisMove()
     {
        if(Input.GetAxis("Mouse ScrollWheel") > 0 &&
@@ -79,6 +94,9 @@ public class CameraControllerV2 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Set starting cameta position
+    /// </summary>
     void SetStartingCameraPosition()
     {
         transform.rotation = GameObject.FindWithTag("Center").transform.rotation;
