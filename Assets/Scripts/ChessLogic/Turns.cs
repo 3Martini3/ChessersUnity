@@ -25,5 +25,6 @@ public class Turns : MonoBehaviour
         GetComponent<TextMeshProUGUI>().text = turn.ToString();
         GameObject.FindGameObjectWithTag("Timers").GetComponent<TimerCanvas>().turn = turn; //timer turn swap
         
+        
     }
 }

@@ -14,6 +14,13 @@ public class PossibleMoves : MonoBehaviour
     public bool didMove;
     public bool enPassauntPossible;
 
+    public ChessEnum.Color turn;
+
+    private void Start()
+    {
+        turn = ChessEnum.Color.Black;
+    }
+
     /// <summary>
     /// Convert chess board to two dimensional table for game logic, then sends to function checking for 
     /// figure which moves need to be chcecked 
@@ -889,7 +896,10 @@ public class PossibleMoves : MonoBehaviour
         List<Position> defMoves = new List<Position>();
         #endregion
 
-        if (!DoesCheckExist(chessBoard, FindKing(chessBoard, ChessEnum.Color.White)))
+
+        turn = GameObject.FindGameObjectWithTag("Turn Order").GetComponent<Turns>().turn;
+        Debug.Log(turn);
+        if (!DoesCheckExist(chessBoard, FindKing(chessBoard, ChessEnum.Color.White)) && turn== ChessEnum.Color.White )
         {
             for (int i = 0; i < figures.Length; i++)
             {
@@ -929,7 +939,7 @@ public class PossibleMoves : MonoBehaviour
             return true; //a tie, no check and white cannot move
 
         }
-        else if (!DoesCheckExist(chessBoard, FindKing(chessBoard, ChessEnum.Color.Black)))
+        else if (!DoesCheckExist(chessBoard, FindKing(chessBoard, ChessEnum.Color.Black)) && turn == ChessEnum.Color.Black)
         {
             for (int i = 0; i < figures.Length; i++)
             {

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Takes care of visual representation of match outcome 
+/// </summary>
 public class CheckMateScreenHandler : MonoBehaviour
 {
     public GameObject checkMateCanvas;

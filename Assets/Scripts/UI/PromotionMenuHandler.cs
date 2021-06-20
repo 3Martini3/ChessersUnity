@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Control UI that shows when pawn is promoted to other figure
+/// </summary>
 public class PromotionMenuHandler : MonoBehaviour
 {
     public GameObject theMenu;
@@ -12,13 +15,12 @@ public class PromotionMenuHandler : MonoBehaviour
 
     public UnityChessPiece collisionFigure;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
+    /// <summary>
+    /// Check for update (state of pawn). 
+    /// If pawn in correct postion calls change menu 
+    /// and changes pawn to slected figure
+    /// </summary>
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.Tab))
