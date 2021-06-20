@@ -6,31 +6,54 @@ using UnityEngine.UI;
 
 public class TimerCanvas : MonoBehaviour
 {
-    public float timeRemaining;
+    public float timeRemainingWhite;
+    public float timeRemainingBlack;
     private bool timerIsRunning;
     private string timeText;
+    public ChessEnum.Color turn;
 
     private void Start()
     {
         // Starts the timer automatically
         timerIsRunning = true;
+        turn = ChessEnum.Color.White;
     }
 
     void Update()
     {
         if (timerIsRunning)
         {
-            if (timeRemaining > 0)
+            if(turn == ChessEnum.Color.White)
             {
-                timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
+                if (timeRemainingWhite > 0)
+                {
+                    timeRemainingWhite -= Time.deltaTime;
+                    DisplayTime(timeRemainingWhite);
+                }
+                else
+                {
+                    //Debug.Log("Time has run out! white lost");
+                    GameObject.FindGameObjectWithTag("CheckMateCanvas").GetComponent<CheckMateScreenHandler>().ShowEndScreen(2);
+                    timeRemainingWhite = 0;
+                    timerIsRunning = false;
+                }
             }
-            else
+            else if(turn == ChessEnum.Color.Black)
             {
-                //Debug.Log("Time has run out!");
-                timeRemaining = 0;
-                timerIsRunning = false;
+                if (timeRemainingBlack > 0)
+                {
+                    timeRemainingBlack -= Time.deltaTime;
+                    DisplayTime(timeRemainingBlack);
+                }
+                else
+                {
+                    //Debug.Log("Time has run out! black lost");
+                    GameObject.FindGameObjectWithTag("CheckMateCanvas").GetComponent<CheckMateScreenHandler>().ShowEndScreen(1);
+                    timeRemainingBlack = 0;
+                    timerIsRunning = false;
+                }
             }
+            
         }
     }
 
