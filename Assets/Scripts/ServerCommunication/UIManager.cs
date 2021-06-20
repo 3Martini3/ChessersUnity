@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI connection;
     public bool connectionCalled = false;
 
-  
 
     private void Awake()
     {
