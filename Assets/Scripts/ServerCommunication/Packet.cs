@@ -10,8 +10,9 @@ public enum ServerPackets
 {
     welcome = 1,
     connectionCallback = 2,
-    registrationResult = 3,
-    loginResult = 4
+    registrationFailure = 3,
+    registrationSuccess = 4,
+    loginResult = 5
 }
 
 /// <summary>Sent from client to server.</summary>

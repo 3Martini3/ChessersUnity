@@ -197,6 +197,8 @@ public class ChessSquare : MonoBehaviour
                     }
                 }
                 figure.pinToPosition(center);
+                int checkMateType = collisionFigure.GetComponent<PossibleMoves>().DoesCheckMateExist();
+                GameObject.FindGameObjectWithTag("CheckMateCanvas").GetComponent<CheckMateScreenHandler>().ShowEndScreen(checkMateType);
             }
             else
             {

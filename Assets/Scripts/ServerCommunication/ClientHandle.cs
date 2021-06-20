@@ -26,7 +26,12 @@ public class ClientHandle : MonoBehaviour
         GameObject.Find("ConnectionView").GetComponent<TextMeshProUGUI>().text = "Connected";
     }
 
-    public static void RegisterCallback(Packet _packet)
+    public static void RegisterCallbackSuccess(Packet _packet)
+    {
+        string _msg = _packet.ReadString();
+        Debug.Log($"Registration msg: {_msg}");
+    }
+    public static void RegisterCallbackFailure(Packet _packet)
     {
         string _msg = _packet.ReadString();
         Debug.Log($"Registration msg: {_msg}");

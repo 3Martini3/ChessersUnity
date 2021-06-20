@@ -18,5 +18,6 @@ public class Turns : MonoBehaviour
             turn = ChessEnum.Color.White;
         }
         GetComponent<TextMeshProUGUI>().text = turn.ToString();
+        
     }
 }

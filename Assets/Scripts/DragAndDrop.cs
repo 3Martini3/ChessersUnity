@@ -37,8 +37,7 @@ class DragAndDrop : MonoBehaviour
             dragging = true;
             boxCollider.enabled = true;
 
-            int checkMateType = GetComponent<PossibleMoves>().DoesCheckMateExist();
-            GameObject.FindGameObjectWithTag("CheckMateCanvas").GetComponent<CheckMateScreenHandler>().ShowEndScreen(checkMateType);
+           
 
             GetComponent<PossibleMoves>().FindPossibleMoves();
             //Debug.Log("Drag");
