@@ -12,7 +12,8 @@ public enum ServerPackets
     connectionCallback = 2,
     registrationFailure = 3,
     registrationSuccess = 4,
-    loginResult = 5
+    loginResultSuccess = 5,
+    loginResultFailure = 6
 }
 
 /// <summary>Sent from client to server.</summary>

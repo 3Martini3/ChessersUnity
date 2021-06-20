@@ -14,6 +14,7 @@ public class Login : MonoBehaviour
 
     public void SaveLogin()
     {
+        Debug.Log($"Setting to {savedLogin}");
         GameObject.Find("UserView").GetComponent<TextMeshProUGUI>().text = savedLogin;
         loginWindow.SetActive(false);
         mainMenuWindow.SetActive(true);

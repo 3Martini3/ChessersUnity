@@ -175,7 +175,8 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.connectionCallback,ClientHandle.ConnectionEstablished },
             { (int)ServerPackets.registrationSuccess,ClientHandle.RegisterCallbackSuccess },
             { (int)ServerPackets.registrationFailure,ClientHandle.RegisterCallbackFailure },
-            { (int)ServerPackets.loginResult,ClientHandle.LoginCallback }
+            { (int)ServerPackets.loginResultSuccess,ClientHandle.LoginCallbackSuccess },
+            { (int)ServerPackets.loginResultFailure,ClientHandle.LoginCallbackFailure }
         };
         //Debug.Log("Initialized packets.");
     }
