@@ -8,6 +8,7 @@ public class Login : MonoBehaviour
     public TMP_InputField login;
     public TMP_InputField password;
     private string savedLogin;
+    public bool loggedIn;
     public GameObject loginWindow;
     public GameObject mainMenuWindow;
 
@@ -16,6 +17,7 @@ public class Login : MonoBehaviour
     {
         Debug.Log($"Setting to {savedLogin}");
         GameObject.Find("UserView").GetComponent<TextMeshProUGUI>().text = savedLogin;
+        loggedIn = true;
         loginWindow.SetActive(false);
         mainMenuWindow.SetActive(true);
     }
