@@ -19,6 +19,11 @@ public class CheckMateScreenHandler : MonoBehaviour
             checkMateCanvas.GetComponent<Text>().text = "Black Won!";
             checkMateCanvas.GetComponent<Canvas>().enabled = true;
         }
+        if(checkMateType == 3)
+        {
+            checkMateCanvas.GetComponent<Text>().text = "Tie!";
+            checkMateCanvas.GetComponent<Canvas>().enabled = true;
+        }
     }
 
 

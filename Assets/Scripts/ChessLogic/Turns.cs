@@ -18,6 +18,7 @@ public class Turns : MonoBehaviour
             turn = ChessEnum.Color.White;
         }
         GetComponent<TextMeshProUGUI>().text = turn.ToString();
+        GameObject.FindGameObjectWithTag("Timers").GetComponent<TimerCanvas>().turn = turn; //timer turn swap
         
     }
 }
