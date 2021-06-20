@@ -23,7 +23,7 @@ public enum ClientPackets
     messageSent = 2
 }
 /// <summary>
-/// Packet managing class
+/// Packets managing class
 /// </summary>
 public class Packet : IDisposable
 {
