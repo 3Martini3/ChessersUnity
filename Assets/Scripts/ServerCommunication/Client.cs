@@ -14,6 +14,7 @@ public class Client : MonoBehaviour
     public int port = 26950;
     public int myId = 0;
     public string playerId = "";
+    public string socketId = "";
     public TCP tcp;
     public bool connected = false;
 
@@ -63,11 +64,11 @@ public class Client : MonoBehaviour
 
             receiveBuffer = new byte[dataBufferSize];
             socket.BeginConnect(instance.ip, instance.port, ConnectCallback, socket);
+            
         }
 
         private void ConnectCallback(IAsyncResult _result)
         {
-            //Debug.Log(_result);
             socket.EndConnect(_result);
 
             if (!socket.Connected)
@@ -176,7 +177,9 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.registrationSuccess,ClientHandle.RegisterCallbackSuccess },
             { (int)ServerPackets.registrationFailure,ClientHandle.RegisterCallbackFailure },
             { (int)ServerPackets.loginResultSuccess,ClientHandle.LoginCallbackSuccess },
-            { (int)ServerPackets.loginResultFailure,ClientHandle.LoginCallbackFailure }
+            { (int)ServerPackets.loginResultFailure,ClientHandle.LoginCallbackFailure },
+            { (int)ServerPackets.reconnected,ClientHandle.Reconnected },
+            { (int)ServerPackets.notReconnected,ClientHandle.NotReconnected }
         };
         //Debug.Log("Initialized packets.");
     }

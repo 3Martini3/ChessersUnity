@@ -17,7 +17,8 @@ public class UIManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-        }else if (instance != this)
+        }
+        else if (instance != this)
         {
             //Debug.Log("Instance already exists, destroing object!");
             Destroy(this);
@@ -31,33 +32,32 @@ public class UIManager : MonoBehaviour
 
     public void HoldConnection()
     {
-        if(connectionCalled==false)
+        if (connectionCalled == false)
         {
             Client.instance.ConnectToServer();
             connectionCalled = true;
-        }else
+        }
+        else
         {
 
-        Debug.Log(Client.instance?.tcp?.socket?.Connected);
-        if (Client.instance?.tcp?.socket?.Connected==false)
-        {
-                if(connection!=null)
+            Debug.Log(Client.instance?.tcp?.socket?.Connected);
+            if (Client.instance?.tcp?.socket?.Connected == false)
+            {
+                if (connection != null)
                 {
                     connection.text = "Disconnected";
                 }
-            Client.instance.ConnectToServer();
-        }
+                Client.instance.ConnectToServer();
+            }
+            else
+            {
+                if (Client.instance.myId == 0)
+                {
+                    Client.instance.tcp.socket.Dispose();
+                }
+            }
 
         }
 
     }
-
-
-
-    public void SendToServer()
-    {
-        ClientSend.SendMessage();
-    }
-
-
 }

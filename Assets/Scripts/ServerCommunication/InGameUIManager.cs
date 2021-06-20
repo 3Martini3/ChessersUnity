@@ -11,7 +11,7 @@ public class InGameUIManager : MonoBehaviour
 
     public void Start()
     {
-        if(CrossSceneInfo.onlineGame)
+        if (CrossSceneInfo.onlineGame)
         {
             Client.instance.playerId = CrossSceneInfo.playerId;
             Client.instance.ip = CrossSceneInfo.IP;
@@ -20,32 +20,40 @@ public class InGameUIManager : MonoBehaviour
             Debug.Log($"Online game start for player {Client.instance.playerId}");
             InvokeRepeating("HoldConnection", 1f, 5f);
             connection.text = "Disconnected";
+            Debug.Log(PlayerPrefs.GetString("socketId"));
         }
     }
 
 
 
-public void HoldConnection()
-{
-    if (connectionCalled == false)
+    public void HoldConnection()
     {
-        Client.instance.ConnectToServer();
-        connectionCalled = true;
-    }
-    else
-    {
-
-        Debug.Log(Client.instance?.tcp?.socket?.Connected);
-        if (Client.instance?.tcp?.socket?.Connected == false)
+        if (connectionCalled == false)
         {
-            if (connection != null)
-            {
-                connection.text = "Disconnected";
-            }
             Client.instance.ConnectToServer();
+            connectionCalled = true;
+        }
+        else
+        {
+
+            Debug.Log(Client.instance?.tcp?.socket?.Connected);
+            if (Client.instance?.tcp?.socket?.Connected == false)
+            {
+                if (connection != null)
+                {
+                    connection.text = "Disconnected";
+                }
+                Client.instance.ConnectToServer();
+            }
+            else
+            {
+                if (Client.instance.myId == 0)
+                {
+                    Client.instance.tcp.socket.Dispose();
+                }
+            }
+
         }
 
     }
-
-}
 }
