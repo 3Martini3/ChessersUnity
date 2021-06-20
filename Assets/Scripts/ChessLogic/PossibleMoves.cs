@@ -695,7 +695,7 @@ public class PossibleMoves : MonoBehaviour
         }
 
         return 0;
-        Debug.Log("no checkmate found!");
+        //Debug.Log("no checkmate found!");
     }
 
 
