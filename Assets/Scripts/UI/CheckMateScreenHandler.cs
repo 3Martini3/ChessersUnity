@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -31,6 +32,15 @@ public class CheckMateScreenHandler : MonoBehaviour
         {
             checkMateCanvas.GetComponent<Text>().text = "Tie!";
             checkMateCanvas.GetComponent<Canvas>().enabled = true;
+        }
+        checkMateCanvas.GetComponent<Text>().text += "\n press [esc] to return to main menu";
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && checkMateCanvas.GetComponent<Canvas>().enabled)
+        {
+            SceneManager.LoadScene("Menu");
         }
     }
 
