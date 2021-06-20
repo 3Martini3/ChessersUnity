@@ -4548,6 +4548,7 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 1752098496}
   qualityDropdown: {fileID: 1968257261}
   musicSlider: {fileID: 1292613185}
+  SFXSlider: {fileID: 0}
   fullscreenToogle: {fileID: 1167535076}
 --- !u!1 &1738458180
 GameObject:
