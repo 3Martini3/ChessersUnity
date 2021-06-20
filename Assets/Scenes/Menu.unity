@@ -269,7 +269,6 @@ GameObject:
   - component: {fileID: 23651324}
   - component: {fileID: 23651323}
   - component: {fileID: 23651322}
-  - component: {fileID: 23651321}
   m_Layer: 5
   m_Name: Password Input
   m_TagString: Untagged
@@ -297,18 +296,6 @@ RectTransform:
   m_AnchoredPosition: {x: 117.300026, y: -43.500004}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &23651321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23651319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a18953440716848ad9f6b197de8703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &23651322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,19 +375,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 23651321}
-        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: OnTextChange
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 771220993}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1736,6 +1711,7 @@ MonoBehaviour:
   port: 26950
   myId: 0
   playerId: 
+  socketId: 
   connected: 0
 --- !u!4 &252589381
 Transform:
@@ -5351,7 +5327,6 @@ GameObject:
   - component: {fileID: 870772973}
   - component: {fileID: 870772972}
   - component: {fileID: 870772971}
-  - component: {fileID: 870772970}
   m_Layer: 5
   m_Name: PasswordInput
   m_TagString: Untagged
@@ -5379,18 +5354,6 @@ RectTransform:
   m_AnchoredPosition: {x: 116.9, y: -43.5}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &870772970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870772968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a18953440716848ad9f6b197de8703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &870772971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5470,19 +5433,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 870772970}
-        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: OnTextChange
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 711467802}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9562,7 +9513,6 @@ GameObject:
   - component: {fileID: 1415554489}
   - component: {fileID: 1415554488}
   - component: {fileID: 1415554487}
-  - component: {fileID: 1415554486}
   m_Layer: 5
   m_Name: PasswordInputRepeat
   m_TagString: Untagged
@@ -9590,18 +9540,6 @@ RectTransform:
   m_AnchoredPosition: {x: 116.9, y: -95}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1415554486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415554484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a18953440716848ad9f6b197de8703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1415554487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9681,19 +9619,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1415554486}
-        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: OnTextChange
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 696234205}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -12732,7 +12658,6 @@ GameObject:
   - component: {fileID: 1893558397}
   - component: {fileID: 1893558396}
   - component: {fileID: 1893558395}
-  - component: {fileID: 1893558394}
   m_Layer: 5
   m_Name: LoginInput
   m_TagString: Untagged
@@ -12760,18 +12685,6 @@ RectTransform:
   m_AnchoredPosition: {x: 116.9, y: 10.9}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1893558394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893558392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a18953440716848ad9f6b197de8703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1893558395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12851,19 +12764,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1893558394}
-        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: OnTextChange
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 78192901}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13780,7 +13681,6 @@ GameObject:
   - component: {fileID: 2048846745}
   - component: {fileID: 2048846744}
   - component: {fileID: 2048846743}
-  - component: {fileID: 2048846742}
   m_Layer: 5
   m_Name: LoginInput
   m_TagString: Untagged
@@ -13808,18 +13708,6 @@ RectTransform:
   m_AnchoredPosition: {x: 117.300026, y: 10.899995}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2048846742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048846740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a18953440716848ad9f6b197de8703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2048846743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13899,19 +13787,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2048846742}
-        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: OnTextChange
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1174209331}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []

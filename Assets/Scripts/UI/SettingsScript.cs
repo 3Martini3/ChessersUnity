@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-
+/// <summary>
+/// Settings menu, contains methods to control resolution, audio and full screen option
+/// </summary>
 public class SettingsScript : MonoBehaviour
 {
     public AudioMixer MasterMixer;
@@ -15,6 +17,9 @@ public class SettingsScript : MonoBehaviour
     public Slider SFXSlider;
     public Toggle fullscreenToogle;
 
+    /// <summary>
+    /// Sets starting resolution to user screen resoluton/set saved settings 
+    /// </summary>
     void Start()
     {
         resolutions = Screen.resolutions;
@@ -97,24 +102,29 @@ public class SettingsScript : MonoBehaviour
         //musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+   /// <summary>
+   /// Sets volume of music
+   /// </summary>
+   /// <param name="volume"></param>
         public void SetVolume(float volume)
-    {
+    { 
         MasterMixer.SetFloat("musicVolume", volume);
         PlayerPrefs.SetFloat("musicVolume", volume);
     }
-
+    /// <summary>
+    /// Sets volume of SFX
+    /// </summary>
+    /// <param name="volume"></param>
     public void SetSFXVolume(float volume)
     {
         MasterMixer.SetFloat("SFXVolume", volume);
         PlayerPrefs.SetFloat("SFXVolume", volume);
     }
 
+    /// <summary>
+    /// Sets quality 
+    /// </summary>
+    /// <param name="level"></param>
     public void SetQuality(int level)
     {
         // 0 - high
@@ -123,14 +133,20 @@ public class SettingsScript : MonoBehaviour
         QualitySettings.SetQualityLevel(2 - level);
         PlayerPrefs.SetInt("quality", level);
     }
-
+    /// <summary>
+    /// Eneables/disables full screen
+    /// </summary>
+    /// <param name="toggleState"></param>
     public void SetFullscreen(bool toggleState)
     {
         Screen.fullScreen = toggleState;
         int toggleStateInt = toggleState ? 1 : 0;
         PlayerPrefs.SetInt("fullscreen", toggleStateInt);
     }
-
+    /// <summary>
+    /// sets resolution
+    /// </summary>
+    /// <param name="resolutionIndex"></param>
     public void SetResolution(int resolutionIndex)
     {
         Resolution chosenResolution = resolutions[resolutionIndex];

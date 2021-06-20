@@ -13,16 +13,21 @@ public enum ServerPackets
     registrationFailure = 3,
     registrationSuccess = 4,
     loginResultSuccess = 5,
-    loginResultFailure = 6
+    loginResultFailure = 6,
+    reconnected = 7,
+    notReconnected = 8
 }
 
 /// <summary>Sent from client to server.</summary>
 public enum ClientPackets
 {
     welcomeReceived = 1,
-    messageSent = 2
+    messageSent = 2,
+    reconnect = 3
 }
-
+/// <summary>
+/// Packets managing class
+/// </summary>
 public class Packet : IDisposable
 {
     private List<byte> buffer;
@@ -30,6 +35,7 @@ public class Packet : IDisposable
     private int readPos;
 
     /// <summary>Creates a new empty packet (without an ID).</summary>
+    
     public Packet()
     {
         buffer = new List<byte>(); // Intitialize buffer

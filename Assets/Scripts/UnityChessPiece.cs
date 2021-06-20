@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static ChessEnum;
-
+/// <summary>
+///  Control,store piece and piece data
+/// </summary>
 public class UnityChessPiece : MonoBehaviour
 {
 
@@ -24,6 +26,9 @@ public class UnityChessPiece : MonoBehaviour
     public GameObject settingsMenu;
 
     // Start is called before the first frame update
+    /// <summary>
+    /// Initialize basic piece values, center them
+    /// </summary>
     void Start()
     {
         hoverSquareName = "";
@@ -35,7 +40,9 @@ public class UnityChessPiece : MonoBehaviour
         pauseMenu = GameObject.Find("PauseMenu");
         settingsMenu = GameObject.Find("Settings");
     }
-
+    /// <summary>
+    /// private
+    /// </summary>
     private void Update()
     {
 
@@ -105,6 +112,10 @@ public class UnityChessPiece : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// private
+    /// </summary>
+    /// <param name="other"></param>
 
     private void OnTriggerEnter(Collider other)
     {
@@ -113,7 +124,9 @@ public class UnityChessPiece : MonoBehaviour
             hoverSquareName = other.name;
         }
     }
-
+    /// <summary>
+    /// private
+    /// </summary>
     private void OnMouseOver()
     {
         if (settingsMenu != null || pauseMenu != null) return;
@@ -126,11 +139,17 @@ public class UnityChessPiece : MonoBehaviour
         }
 
     }
+    /// <summary>
+    /// private
+    /// </summary>
     private void OnMouseExit()
     {
         GetComponent<Renderer>().material.color = UnityEngine.Color.white;
     }
-
+    /// <summary>
+    /// private
+    /// </summary>
+    /// <returns></returns>
     private GameObject FindClosestSquare()
     {
         GameObject[] gos;
@@ -152,7 +171,10 @@ public class UnityChessPiece : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// set piece on position 
+    /// </summary>
+    /// <param name="position3"></param>
     public void pinToPosition(Vector3 position3)
     {
         yPosition = transform.position.y;
@@ -160,7 +182,9 @@ public class UnityChessPiece : MonoBehaviour
         center = GetComponent<MeshRenderer>().bounds.center;
 
     }
-
+    /// <summary>
+    /// set piece back to square from which it wanted to move
+    /// </summary>
     public void goBackToSquare()
     {
          var boardSquares = GameObject.FindGameObjectsWithTag("Chess Square");
@@ -180,7 +204,10 @@ public class UnityChessPiece : MonoBehaviour
 
 
     }
-
+    /// <summary>
+    /// transform pawn, changes  data and mesh
+    /// </summary>
+    /// <param name="newFigure"></param>
     public void tranformPawn(ChessEnum.Figure newFigure)
     {
         figure = newFigure;
@@ -196,7 +223,9 @@ public class UnityChessPiece : MonoBehaviour
         transform.localScale = pos.localScale;
 
     }
-
+    /// <summary>
+    /// manages beating, send piece status to beaten 
+    /// </summary>
     public void beat()
     {
         var beatenStack = GameObject.Find($"Beaten Pieces {color.ToString()}");

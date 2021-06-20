@@ -5,6 +5,9 @@ using System.Net;
 using System.Net.Sockets;
 using System;
 
+/// <summary>
+/// class responsible for client side of conection
+/// </summary>
 public class Client : MonoBehaviour
 {
     public static Client instance;
@@ -14,6 +17,7 @@ public class Client : MonoBehaviour
     public int port = 26950;
     public int myId = 0;
     public string playerId = "";
+    public string socketId = "";
     public TCP tcp;
     public bool connected = false;
 
@@ -37,14 +41,18 @@ public class Client : MonoBehaviour
     {
         tcp = new TCP();
     }
-
+    /// <summary>
+    /// connects client to server, manages data 
+    /// </summary>
     public void ConnectToServer()
     {
         InitializeClientData();
 
         tcp.Connect();
     }
-
+    /// <summary>
+    /// Transmission control protocoll
+    /// </summary>
     public class TCP
     {
         public TcpClient socket;
@@ -52,7 +60,9 @@ public class Client : MonoBehaviour
         private NetworkStream stream;
         private Packet receivedData;
         private byte[] receiveBuffer;
-
+        /// <summary>
+        /// connect client to sever
+        /// </summary>
         public void Connect()
         {
             socket = new TcpClient
@@ -63,11 +73,11 @@ public class Client : MonoBehaviour
 
             receiveBuffer = new byte[dataBufferSize];
             socket.BeginConnect(instance.ip, instance.port, ConnectCallback, socket);
+            
         }
-
+       
         private void ConnectCallback(IAsyncResult _result)
         {
-            //Debug.Log(_result);
             socket.EndConnect(_result);
 
             if (!socket.Connected)
@@ -81,7 +91,10 @@ public class Client : MonoBehaviour
 
             stream.BeginRead(receiveBuffer, 0, dataBufferSize, ReceiveCallback, null);
         }
-
+        /// <summary>
+        /// sends data to server
+        /// </summary>
+        /// <param name="_packet"></param>
         public void SendData(Packet _packet)
         {
             try
@@ -96,7 +109,7 @@ public class Client : MonoBehaviour
                 Debug.Log($"Error sending data to server via TCP: {_ex}");
             }
         }
-
+       
         private void ReceiveCallback(IAsyncResult _result)
         {
             try
@@ -176,7 +189,9 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.registrationSuccess,ClientHandle.RegisterCallbackSuccess },
             { (int)ServerPackets.registrationFailure,ClientHandle.RegisterCallbackFailure },
             { (int)ServerPackets.loginResultSuccess,ClientHandle.LoginCallbackSuccess },
-            { (int)ServerPackets.loginResultFailure,ClientHandle.LoginCallbackFailure }
+            { (int)ServerPackets.loginResultFailure,ClientHandle.LoginCallbackFailure },
+            { (int)ServerPackets.reconnected,ClientHandle.Reconnected },
+            { (int)ServerPackets.notReconnected,ClientHandle.NotReconnected }
         };
         //Debug.Log("Initialized packets.");
     }

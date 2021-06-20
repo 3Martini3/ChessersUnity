@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Check if elements are coliding with game board border 
+/// </summary>
 public class EdgeCollision : MonoBehaviour
 {
     private void OnCollisionStay(Collision collision)
