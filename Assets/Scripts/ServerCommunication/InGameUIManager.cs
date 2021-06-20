@@ -8,9 +8,37 @@ using UnityEngine;
 /// </summary>
 public class InGameUIManager : MonoBehaviour
 {
-    UIManager instance;
-    public TextMeshProUGUI connection;
+    public static InGameUIManager instance;
     public bool connectionCalled = false;
+
+    public GameObject connectionimg;
+    public GameObject noConnection;
+    /// <summary>
+    /// Sets connection icon to true or false
+    /// </summary>
+    /// <param name="isConnected"></param>
+    public bool Connection(bool isConnected)
+    {
+        if (noConnection != null && connectionimg != null)
+        {
+            noConnection?.SetActive(!isConnected);
+            connectionimg?.SetActive(isConnected);
+            return true;
+        }
+        return false;
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        { 
+            Destroy(this);
+        }
+    }
 
     /// <summary>
     /// Sett starting crossScene dta
@@ -25,8 +53,11 @@ public class InGameUIManager : MonoBehaviour
             Client.instance.myId = CrossSceneInfo.myId;
             Debug.Log($"Online game start for player {Client.instance.playerId}");
             InvokeRepeating("HoldConnection", 1f, 5f);
-            connection.text = "Disconnected";
             Debug.Log(PlayerPrefs.GetString("socketId"));
+            
+        }else
+        {
+            noConnection.SetActive(false);
         }
     }
 
@@ -54,10 +85,7 @@ public class InGameUIManager : MonoBehaviour
                 Debug.Log(Client.instance?.tcp?.socket?.Connected);
                 if (Client.instance?.tcp?.socket?.Connected == false)
                 {
-                    if (connection != null)
-                    {
-                        connection.text = "Disconnected";
-                    }
+                    Connection(false);
                     Client.instance.ConnectToServer();
                 }
                 else

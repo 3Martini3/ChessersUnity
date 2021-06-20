@@ -10,9 +10,25 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    public TextMeshProUGUI connection;
+    public GameObject connection;
+    public GameObject noConnection;
     public bool connectionCalled = false;
 
+
+    /// <summary>
+    /// Sets connection icon to true or false
+    /// </summary>
+    /// <param name="isConnected"></param>
+    public bool Connection(bool isConnected)
+    {
+        if (noConnection != null && connection != null)
+        {
+            noConnection?.SetActive(!isConnected);
+            connection?.SetActive(isConnected);
+            return true;
+        }
+        return false;
+    }
    
     private void Awake()
     {
@@ -21,15 +37,14 @@ public class UIManager : MonoBehaviour
             instance = this;
         }
         else if (instance != this)
-        {
-            //Debug.Log("Instance already exists, destroing object!");
+        {            //Debug.Log("Instance already exists, destroing object!");
             Destroy(this);
         }
     }
 
     public void Start()
     {
-        InvokeRepeating("HoldConnection", 1f, 5f);
+        InvokeRepeating("HoldConnection", 1f, 1f);
     }
     /// <summary>
     /// Manages connection holding
@@ -47,10 +62,7 @@ public class UIManager : MonoBehaviour
             Debug.Log(Client.instance?.tcp?.socket?.Connected);
             if (Client.instance?.tcp?.socket?.Connected == false)
             {
-                if (connection != null)
-                {
-                    connection.text = "Disconnected";
-                }
+                Connection(false);
                 Client.instance.ConnectToServer();
             }
             else

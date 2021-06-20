@@ -7,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public class ClientHandle : MonoBehaviour
 {
+    public GameObject connection;
+    public GameObject noConnection;
+
     /// <summary>
     /// semds welcome info and tata
     /// </summary>
@@ -41,8 +44,11 @@ public class ClientHandle : MonoBehaviour
         Client.instance.myId = _myId;
         Client.instance.socketId = _msg;
         Client.instance.connected = true;
-        GameObject.Find("ConnectionView").GetComponent<TextMeshProUGUI>().text = "Connected";
-        if(!string.IsNullOrEmpty(socketId))
+        if(UIManager.instance?.Connection(true)==false)
+        {
+            InGameUIManager.instance.Connection(true);
+        }
+        if (!string.IsNullOrEmpty(socketId))
         {
             ClientSend.Reconnect();
         }
