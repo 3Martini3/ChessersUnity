@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class CheckMateScreenHandler : MonoBehaviour
 
     public AudioSource endSound;
     public GameObject checkMateCanvas;
+    public TextMeshProUGUI text;
+    public TimerCanvas timer;
 
 
     /// <summary>
@@ -24,22 +27,25 @@ public class CheckMateScreenHandler : MonoBehaviour
         if(checkMateType == 1)
         {
             endSound.Play();
-            checkMateCanvas.GetComponent<Text>().text = "White Won!";
+            text.text = "Bia³e wygra³y!";
             checkMateCanvas.GetComponent<Canvas>().enabled = true;
+            timer.timerIsRunning = false;
         }
         if (checkMateType == 2)
         {
             endSound.Play();
-            checkMateCanvas.GetComponent<Text>().text = "Black Won!";
+            text.text = "Czarne wygra³y!";
             checkMateCanvas.GetComponent<Canvas>().enabled = true;
+            timer.timerIsRunning = false;
         }
         if(checkMateType == 3)
         {
             endSound.Play();
-            checkMateCanvas.GetComponent<Text>().text = "Tie!";
+            text.text = "Remis!";
             checkMateCanvas.GetComponent<Canvas>().enabled = true;
+            timer.timerIsRunning = false;
         }
-        checkMateCanvas.GetComponent<Text>().text += "\n press [esc] to return to main menu";
+        text.text += "\n wciœnij [ESC] by powróciæ do menu g³ównego";
     }
 
     private void Update()

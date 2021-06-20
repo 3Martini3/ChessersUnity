@@ -12,6 +12,7 @@ public class UnityChessPiece : MonoBehaviour
     public Material hoverMaterial;
     public ChessSquare square;
     public ChessEnum.Color color;
+    public UnityEngine.Color hoverColor;
     public string hoverSquareName;
     public Figure figure;
     public float yPosition;
@@ -134,7 +135,7 @@ public class UnityChessPiece : MonoBehaviour
         {
             if (!activePiece.isPieceDragged)
             {
-                GetComponent<Renderer>().material.color = UnityEngine.Color.blue;
+                GetComponent<Renderer>().material.color = hoverColor;
             }
         }
 

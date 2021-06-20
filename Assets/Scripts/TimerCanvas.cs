@@ -10,7 +10,7 @@ public class TimerCanvas : MonoBehaviour
 {
     public float timeRemainingWhite;
     public float timeRemainingBlack;
-    private bool timerIsRunning;
+    public bool timerIsRunning;
     private string timeText;
     public ChessEnum.Color turn;
 
