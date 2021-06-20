@@ -32,7 +32,8 @@ public class TimerCanvas : MonoBehaviour
                 }
                 else
                 {
-                    //Debug.Log("Time has run out!");
+                    //Debug.Log("Time has run out! white lost");
+                    GameObject.FindGameObjectWithTag("CheckMateCanvas").GetComponent<CheckMateScreenHandler>().ShowEndScreen(2);
                     timeRemainingWhite = 0;
                     timerIsRunning = false;
                 }
@@ -46,7 +47,8 @@ public class TimerCanvas : MonoBehaviour
                 }
                 else
                 {
-                    //Debug.Log("Time has run out!");
+                    //Debug.Log("Time has run out! black lost");
+                    GameObject.FindGameObjectWithTag("CheckMateCanvas").GetComponent<CheckMateScreenHandler>().ShowEndScreen(1);
                     timeRemainingBlack = 0;
                     timerIsRunning = false;
                 }

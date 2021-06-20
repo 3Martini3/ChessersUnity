@@ -3,6 +3,9 @@ using System.Linq;
 using UnityEngine;
 using static ChessEnum;
 
+/// <summary>
+/// Class responsible for all form od checking possible moves and functions contected with move
+/// </summary>
 public class PossibleMoves : MonoBehaviour
 {
     public Figure figure;
@@ -11,7 +14,10 @@ public class PossibleMoves : MonoBehaviour
     public bool didMove;
     public bool enPassauntPossible;
 
-
+    /// <summary>
+    /// Convert chess board to two dimensional table for game logic, then sends to function checking for 
+    /// figure which moves need to be chcecked 
+    /// </summary>
     public void FindPossibleMoves()
     {
         //Debug.Log("Searching");
@@ -67,6 +73,11 @@ public class PossibleMoves : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Highlight in game sqares at which piece can move 
+    /// </summary>
+    /// <param name="positions"></param>
+    /// <param name="board"></param>
     private void HighlightSquares(Position[] positions, GameObject[,] board)
     {
         //Debug.Log($"Highlighting {positions.Length}");
@@ -93,7 +104,13 @@ public class PossibleMoves : MonoBehaviour
             sq.castling = position.castling;
         }
     }
-
+    /// <summary>
+    /// Add moves possible for Pawn to list 
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <param name="didMove"></param>
+    /// <returns> List of possible moves </returns>
     private static Position[] PossibleMovesPawn(ChessBoard board, Position pos, bool didMove)
     {
         //Debug.Log($"current position -{pos.column},{pos.row}");
@@ -115,6 +132,13 @@ public class PossibleMoves : MonoBehaviour
 
 
     }
+    /// <summary>
+    /// Add moves possible for King to list, and removes moves that lead chceck on own king 
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <param name="didMove"></param>
+    /// <returns> List of possible moves </returns>
     private static Position[] PossibleMovesKing(ChessBoard board, Position pos, bool didMove)
     {
         List<Position> listPossiblePos;
@@ -128,6 +152,13 @@ public class PossibleMoves : MonoBehaviour
 
 
     }
+    /// <summary>
+    ///  Add moves possible for Queen to list, and removes moves that lead chceck on own king 
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <param name="didMove"></param>
+    ///<returns> List of possible moves </returns>
     private static Position[] PossibleMovesQueen(ChessBoard board, Position pos, bool didMove)
     {
         List<Position> listPossiblePos;
@@ -138,6 +169,13 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossiblePos.ToArray();
     }
+    /// <summary>
+    ///  Add moves possible for Rook to list, and removes moves that lead chceck on own king  
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <param name="didMove"></param>
+    ///<returns> List of possible moves </returns>
     private static Position[] PossibleMovesRook(ChessBoard board, Position pos, bool didMove)
     {
         List<Position> listPossiblePos;
@@ -148,6 +186,13 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossiblePos.ToArray();
     }
+    /// <summary>
+    ///  Add moves possible for Bishop to list, and removes moves that lead chceck on own king  
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <param name="didMove"></param>
+    ///<returns> List of possible moves </returns>
     private static Position[] PossibleMovesBishop(ChessBoard board, Position pos, bool didMove)
     {
         List<Position> listPossiblePos;
@@ -159,6 +204,13 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossiblePos.ToArray();
     }
+    /// <summary>
+    ///  Add moves possible for Knight to list, and removes moves that lead chceck on own king  
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <param name="didMove"></param>
+    ///<returns> List of possible moves </returns>
     private static Position[] PossibleMovesKnight(ChessBoard board, Position pos, bool didMove)
     {
         List<Position> listPossiblePos;
@@ -169,6 +221,12 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossiblePos.ToArray();
     }
+    /// <summary>
+    /// Define direction, check for squares on which move or beat is possible for white pawn 
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <returns>list of posiblle moves </returns>
     private static List<Position> ExploreWhitePawn(ChessBoard board, Position pos)
     {
         List<Position> listpossibleMoves = new List<Position>();
@@ -200,6 +258,12 @@ public class PossibleMoves : MonoBehaviour
 
         return listpossibleMoves;
     }
+    /// <summary>
+    /// Define direction, check for squares on which move or beat is possible for blac pawn 
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <returns>list of posiblle moves </returns>
     private static List<Position> ExploreBlackPawn(ChessBoard board, Position pos)
     {
         List<Position> listpossibleMoves = new List<Position>();
@@ -228,6 +292,12 @@ public class PossibleMoves : MonoBehaviour
 
         return listpossibleMoves;
     }
+    /// <summary>
+    /// Define direction, check for squares on which move or beat is possible for King
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <returns>list of posiblle moves </returns>
     private static List<Position> ExploreKing(ChessBoard board, Position pos)
     {
         List<Position> listPossibleMoves = new List<Position>();
@@ -256,6 +326,12 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossibleMoves;
     }
+    /// <summary>
+    /// Define direction, check for squares on which move or beat is possible for Queen 
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <returns>list of posiblle moves </returns>
     private static List<Position> ExploreQueen(ChessBoard board, Position pos)
     {
         List<Position> listPossibleMoves = new List<Position>();
@@ -264,6 +340,12 @@ public class PossibleMoves : MonoBehaviour
         return listPossibleMoves.Concat(ExploreRook(board, pos)).ToList();
 
     }
+    /// <summary>
+    /// Define direction, check for squares on which move or beat is possible for Rook
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <returns>list of posiblle moves </returns>
     private static List<Position> ExploreRook(ChessBoard board, Position pos)
     {
         List<Position> listPossibleMoves = new List<Position>();
@@ -311,6 +393,12 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossibleMoves;
     }
+    /// <summary>
+    /// Define direction, check for squares on which move or beat is possible for Bishop
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <returns>list of posiblle moves </returns>
     private static List<Position> ExploreBishop(ChessBoard board, Position pos)
     {
         List<Position> listPossibleMoves = new List<Position>();
@@ -358,6 +446,12 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossibleMoves;
     }
+    /// <summary>
+    /// Define direction, check for squares on which move or beat is possible for Knight
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="pos"></param>
+    /// <returns>list of posiblle moves </returns>
     private static List<Position> ExploreKnight(ChessBoard board, Position pos)
     {
         List<Position> listPossibleMoves = new List<Position>();
@@ -385,6 +479,12 @@ public class PossibleMoves : MonoBehaviour
 
         return listPossibleMoves;
     }
+    /// <summary>
+    /// Check if EnPassant move is possible for white pawn 
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="capturingPiecePosition"></param>
+    /// <returns>list of possible moves </returns>
     private static List<Position> EnPassantWhite(ChessBoard board, Position capturingPiecePosition)
     {
         List<Position> listPossibleMoves = new List<Position>();
@@ -412,6 +512,12 @@ public class PossibleMoves : MonoBehaviour
         return listPossibleMoves;
 
     }
+    /// <summary>
+    /// Check if EnPassant move is possible for black pawn 
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="capturingPiecePosition"></param>
+    /// <returns>list of possible moves </returns>
     private static List<Position> EnPassantBlack(ChessBoard board, Position capturingPiecePosition)
     {
         List<Position> listPossibleMoves = new List<Position>();
@@ -439,6 +545,13 @@ public class PossibleMoves : MonoBehaviour
         return listPossibleMoves;
 
     }
+    /// <summary>
+    /// Check if castling move is possible 
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="kingPosition"></param>
+    /// <param name="didMove"></param>
+    /// <returns>list of possible moves </returns>
     private static List<Position> Castling(ChessBoard board, Position kingPosition, bool didMove)
     {
         List<Position> listPossibleMoves = new List<Position>();
@@ -474,6 +587,12 @@ public class PossibleMoves : MonoBehaviour
         }
         return listPossibleMoves;
     }
+    /// <summary>
+    ///  Check for and delete move which lead to self check - opening way to own king etc
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="capturingPiecePosition"></param>
+    /// <returns>list of possible moves </returns>
     private static List<Position> DeleteMoveWhenCheckExistAfterMove(ChessBoard board, Position piecePosition, List<Position> possibleMoves)
     {
         ChessPiece piece = board.GetPieceFromPosition(piecePosition);
@@ -506,6 +625,12 @@ public class PossibleMoves : MonoBehaviour
         board.SetPieceOnPosition(piecePosition, piece);
         return listpossibleMoves;
     }
+    /// <summary>
+    /// Check if in situation given in input exists check 
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="kingPosition"></param>
+    /// <returns>boolean state of check </returns>
     private static bool DoesCheckExist(ChessBoard board, Position kingPosition)
     {
         Position pos;
@@ -543,6 +668,12 @@ public class PossibleMoves : MonoBehaviour
 
         return false;
     }
+    /// <summary>
+    /// Localize and return poosition of king on board
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="kingColor"></param>
+    /// <returns>position of king</returns>
     private static Position FindKing(ChessBoard board, ChessEnum.Color kingColor)
     {
         Position pos;
@@ -561,7 +692,7 @@ public class PossibleMoves : MonoBehaviour
     /// <summary>
     /// searches for check mate with current board state
     /// </summary>
-    /// <returns>0 there is no checkmate, 1 black are under checkmate, 2 white are under checkmate</returns>
+    /// <returns>0 there is no checkmate, 1 black are under checkmate, 2 white are under checkmate, 3 a tie</returns>
     public int DoesCheckMateExist()
     {
         //converting actual chessboard to chessboard type:
@@ -693,9 +824,155 @@ public class PossibleMoves : MonoBehaviour
             return 1; //black under checkmate
 
         }
-
+        else if (DoesTieExist())
+        {
+            return 3;
+        }
         return 0;
         //Debug.Log("no checkmate found!");
+    }
+    /// <summary>
+    /// searches for a tie on the basis of non-existing check and number of available moves
+    /// </summary>
+    /// <returns>true, when there is no check and one side has no possible moves,
+    /// false in every other situation </returns>
+    private bool DoesTieExist()
+    {
+        //converting actual chessboard to chessboard type:
+        #region conversion
+        Debug.Log("Searching for CheckMate");
+        ChessPiece[,] board = new ChessPiece[8, 8];
+        var sq = unityBoard.gameObject.GetComponent<UnityChessBoard>().squares;
+        var currentPiece = GetComponent<UnityChessPiece>();
+        var currentSquare = currentPiece.square.name;
+        didMove = currentPiece.didmove;
+        var currentPos = new Position(currentSquare[0] - 'A', currentSquare[1] - '1');
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                var localSquare = sq[i, j].GetComponent<ChessSquare>();
+                var localFigure = localSquare.figure;
+                if (localFigure != null)
+                {
+
+                    var color = ChessEnum.Color.Black;
+                    ////Debug.Log($"name is {localFigure.name}");
+                    if (localFigure.name.Contains("White"))
+                    {
+                        color = ChessEnum.Color.White;
+                    }
+                    board[i, j] = new ChessPiece(localFigure.figure, color, localFigure.didmove, localSquare.enPassantPossible);
+                    // //Debug.Log($"({i},{j})={board[i, j].figure},{color}");
+                }
+                else
+                {
+                    board[i, j] = null;
+                    ////Debug.Log($"({i},{j})=null");
+                }
+            }
+        }
+
+        ChessBoard chessBoard = new ChessBoard(board);
+
+        //arranging array of pieces on board and corresponding positions
+        GameObject[] pieces = GameObject.FindGameObjectsWithTag("Chess Piece");
+        List<Position> positionsOfPieces = new List<Position>();
+        UnityChessPiece[] figures = new UnityChessPiece[pieces.Length];
+        for (int i = 0; i < pieces.Length; i++)
+        {
+            figures[i] = pieces[i].GetComponent<UnityChessPiece>();
+            currentSquare = figures[i].square.name;
+            positionsOfPieces.Add(new Position(currentSquare[0] - 'A', currentSquare[1] - '1'));
+        }
+        Position[] positions = positionsOfPieces.ToArray();
+        List<Position> defMoves = new List<Position>();
+        #endregion
+
+        if (!DoesCheckExist(chessBoard, FindKing(chessBoard, ChessEnum.Color.White)))
+        {
+            for (int i = 0; i < figures.Length; i++)
+            {
+                UnityChessPiece piece = figures[i].GetComponent<UnityChessPiece>();
+                if (piece.color == ChessEnum.Color.White)
+                {
+                    switch (figures[i].figure)
+                    {
+                        case Figure.Pawn:
+                            defMoves = PossibleMovesPawn(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Knight:
+                            defMoves = PossibleMovesKnight(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Bishop:
+                            defMoves = PossibleMovesBishop(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Rook:
+                            defMoves = PossibleMovesRook(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Queen:
+                            defMoves = PossibleMovesQueen(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.King:
+                            defMoves = PossibleMovesKing(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                    }
+                    if (defMoves.Count > 0)
+                    {
+                        return false;
+                    }
+                    defMoves.Clear();
+                }
+
+            }
+            Debug.Log("white cannot move");
+            return true; //a tie, no check and white cannot move
+
+        }
+        else if (!DoesCheckExist(chessBoard, FindKing(chessBoard, ChessEnum.Color.Black)))
+        {
+            for (int i = 0; i < figures.Length; i++)
+            {
+                if (figures[i].color == ChessEnum.Color.Black)
+                {
+                    switch (figures[i].figure)
+                    {
+                        case Figure.Pawn:
+                            defMoves = PossibleMovesPawn(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Knight:
+                            defMoves = PossibleMovesKnight(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Bishop:
+                            defMoves = PossibleMovesBishop(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Rook:
+                            defMoves = PossibleMovesRook(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Queen:
+                            defMoves = PossibleMovesQueen(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.King:
+                            defMoves = PossibleMovesKing(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                    }
+                    if (defMoves.Count > 0)
+                    {
+                        return false;
+                    }
+                    defMoves.Clear();
+                }
+
+            }
+
+            Debug.Log("black cannot move");
+            return true; //a tie, (no check and black cant move)
+        }
+        else
+        {
+            return false; //will never be reached
+        }
+
     }
 
 
