@@ -7162,7 +7162,6 @@ GameObject:
   - component: {fileID: 646344183}
   - component: {fileID: 646344182}
   - component: {fileID: 646344185}
-  - component: {fileID: 646344186}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -7254,15 +7253,6 @@ MonoBehaviour:
   maxZoomOut: 40
   maxZoomIn: 0
   currentZoomValue: 0
---- !u!45 &646344186
-Skybox:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 646344181}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 39d27e80110a983468075fd1868610d7, type: 2}
 --- !u!1 &646480954
 GameObject:
   m_ObjectHideFlags: 0
@@ -22515,7 +22505,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
