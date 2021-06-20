@@ -8,6 +8,8 @@ using UnityEngine;
 public class Turns : MonoBehaviour
 {
     public ChessEnum.Color turn;
+    public GameObject whiteTurnImg;
+    public GameObject blackTurnImg;
 
     /// <summary>
     /// Swaps turn to the next player (color) and sendt text info
@@ -17,12 +19,15 @@ public class Turns : MonoBehaviour
         if (turn == ChessEnum.Color.White)
         {
             turn = ChessEnum.Color.Black;
+            whiteTurnImg.SetActive(false);
+            blackTurnImg.SetActive(true);
         }
         else
         {
             turn = ChessEnum.Color.White;
+            whiteTurnImg.SetActive(true);
+            blackTurnImg.SetActive(false);
         }
-        GetComponent<TextMeshProUGUI>().text = turn.ToString();
         GameObject.FindGameObjectWithTag("Timers").GetComponent<TimerCanvas>().turn = turn; //timer turn swap
         
         
