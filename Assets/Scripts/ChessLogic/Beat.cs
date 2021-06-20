@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class containing method conected with placing beated pieces 
+/// </summary>
 public class Beat : MonoBehaviour
 {
     public bool isWhiteStack;
     public Stack[] stacks;
     // Start is called before the first frame update
+    /// <summary>
+    /// Initializes places for white and black beated pieces 
+    /// </summary>
     void Start()
     {
         stacks = new Stack[15];
