@@ -4,6 +4,9 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manages client side  data sending
+/// </summary>
 public class ClientSend : MonoBehaviour
 {
     private static void SendTCPData(Packet _packet)
@@ -13,6 +16,9 @@ public class ClientSend : MonoBehaviour
     }
 
     #region Packets
+    /// <summary>
+    /// sends packets connected with recived data
+    /// </summary>
     public static void WelcomeReceived()
     {
         using (Packet _packet = new Packet((int)ClientPackets.welcomeReceived))
@@ -49,6 +55,11 @@ public class ClientSend : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Create and  send message with reguster data 
+    /// </summary>
+    /// <param name="usernameInput"></param>
+    /// <param name="passwordInput"></param>
     public static void SendRegisterMessage(string usernameInput,string passwordInput)
     {
         using (Packet _packet = new Packet((int)ClientPackets.messageSent))
@@ -68,7 +79,11 @@ public class ClientSend : MonoBehaviour
             SendTCPData(_packet);
         }
     }
-
+    /// <summary>
+    /// Create and  send message with login data 
+    /// </summary>
+    /// <param name="usernameInput"></param>
+    /// <param name="passwordInput"></param>
     public static void SendLoginMessage(string usernameInput, string passwordInput)
     {
         using (Packet _packet = new Packet((int)ClientPackets.messageSent))
@@ -89,7 +104,10 @@ public class ClientSend : MonoBehaviour
         }
     }
     #endregion
-
+    /// <summary>
+    /// Creates message with data 
+    /// </summary>
+    /// <returns>string with builded mesage</returns>
     public static string BuildMessage()
     {
         StringBuilder sb = new StringBuilder();

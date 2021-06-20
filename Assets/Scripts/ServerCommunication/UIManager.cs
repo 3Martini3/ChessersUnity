@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// Control UI conection data
+/// </summary>
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
@@ -11,7 +13,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI connection;
     public bool connectionCalled = false;
 
-
+   
     private void Awake()
     {
         if (instance == null)
@@ -29,7 +31,9 @@ public class UIManager : MonoBehaviour
     {
         InvokeRepeating("HoldConnection", 1f, 5f);
     }
-
+    /// <summary>
+    /// Manages connection holding
+    /// </summary>
     public void HoldConnection()
     {
         if (connectionCalled == false)

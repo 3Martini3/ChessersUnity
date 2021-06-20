@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manages in game user login and his login data
+/// </summary>
 public class Login : MonoBehaviour
 {
     public TMP_InputField login;
@@ -12,7 +15,9 @@ public class Login : MonoBehaviour
     public GameObject loginWindow;
     public GameObject mainMenuWindow;
 
-
+    /// <summary>
+    /// Set user as logged, save login
+    /// </summary>
     public void SaveLogin()
     {
         Debug.Log($"Setting to {savedLogin}");
@@ -22,6 +27,9 @@ public class Login : MonoBehaviour
         mainMenuWindow.SetActive(true);
     }
 
+    /// <summary>
+    /// check text and pasword, if correct logs user
+    /// </summary>
     public void LoginUser()
     {
 

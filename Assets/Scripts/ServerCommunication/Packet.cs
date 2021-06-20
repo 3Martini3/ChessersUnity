@@ -25,7 +25,9 @@ public enum ClientPackets
     messageSent = 2,
     reconnect = 3
 }
-
+/// <summary>
+/// Packets managing class
+/// </summary>
 public class Packet : IDisposable
 {
     private List<byte> buffer;
@@ -33,6 +35,7 @@ public class Packet : IDisposable
     private int readPos;
 
     /// <summary>Creates a new empty packet (without an ID).</summary>
+    
     public Packet()
     {
         buffer = new List<byte>(); // Intitialize buffer

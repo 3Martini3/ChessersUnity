@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// stores server info, transfer id betweeen scenes
+/// </summary>
 public static class CrossSceneInfo
 {
     public static bool onlineGame { get; set; }

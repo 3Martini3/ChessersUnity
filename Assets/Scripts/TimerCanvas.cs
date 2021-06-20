@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+/// <summary>
+/// Manages in game timer for player moves
+/// </summary>
 public class TimerCanvas : MonoBehaviour
 {
     public float timeRemainingWhite;
@@ -12,13 +14,19 @@ public class TimerCanvas : MonoBehaviour
     private string timeText;
     public ChessEnum.Color turn;
 
+    /// <summary>
+    /// Start clock ad start of a game 
+    /// </summary>
     private void Start()
     {
         // Starts the timer automatically
         timerIsRunning = true;
         turn = ChessEnum.Color.White;
     }
-
+    /// <summary>
+    /// updates time every game tick
+    /// time is changed depenting which color should move
+    /// </summary>
     void Update()
     {
         if (timerIsRunning)
@@ -56,7 +64,10 @@ public class TimerCanvas : MonoBehaviour
             
         }
     }
-
+    /// <summary>
+    /// Convert time from ticks to minutes and seconds, sends them as text into game
+    /// </summary>
+    /// <param name="timeToDisplay"></param>
     void DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;

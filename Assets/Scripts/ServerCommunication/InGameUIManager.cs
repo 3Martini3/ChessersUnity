@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manages in game UI connections 
+/// </summary>
 public class InGameUIManager : MonoBehaviour
 {
     UIManager instance;
     public TextMeshProUGUI connection;
     public bool connectionCalled = false;
 
+    /// <summary>
+    /// Sett starting crossScene dta
+    /// </summary>
     public void Start()
     {
         if (CrossSceneInfo.onlineGame)
@@ -25,7 +31,9 @@ public class InGameUIManager : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Holds connection, control connection state 
+    /// </summary>
     public void HoldConnection()
     {
         if (connectionCalled == false)
@@ -35,25 +43,33 @@ public class InGameUIManager : MonoBehaviour
         }
         else
         {
-
-            Debug.Log(Client.instance?.tcp?.socket?.Connected);
-            if (Client.instance?.tcp?.socket?.Connected == false)
+            if (connectionCalled == false)
             {
-                if (connection != null)
-                {
-                    connection.text = "Disconnected";
-                }
                 Client.instance.ConnectToServer();
+                connectionCalled = true;
             }
             else
             {
-                if (Client.instance.myId == 0)
+
+                Debug.Log(Client.instance?.tcp?.socket?.Connected);
+                if (Client.instance?.tcp?.socket?.Connected == false)
                 {
-                    Client.instance.tcp.socket.Dispose();
+                    if (connection != null)
+                    {
+                        connection.text = "Disconnected";
+                    }
+                    Client.instance.ConnectToServer();
                 }
+                else
+                {
+                    if (Client.instance.myId == 0)
+                    {
+                        Client.instance.tcp.socket.Dispose();
+                    }
+                }
+
             }
 
         }
-
     }
 }
