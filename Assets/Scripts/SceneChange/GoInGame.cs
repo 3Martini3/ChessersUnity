@@ -15,23 +15,27 @@ public class GoInGame : MonoBehaviour
 
     public void GoToGameScene()
     {
-        if(localgame)
+        if (localgame)
         {
-            CrossSceneInfo.localGame = true;
+            CrossSceneInfo.onlineGame = false;
             SceneManager.LoadScene("Scenes/ChessScene/GameScene");
-        }else
+        }
+        else
         {
             if (Client.instance.tcp.socket.Connected && GetComponent<Login>().loggedIn)
             {
-                CrossSceneInfo.localGame = false;
-                CrossSceneInfo.client = Client.instance;
-
+                CrossSceneInfo.onlineGame = true;
+                CrossSceneInfo.playerId = Client.instance.playerId;
+                CrossSceneInfo.IP = Client.instance.ip;
+                CrossSceneInfo.Port = Client.instance.port;
+                CrossSceneInfo.myId = Client.instance.myId;
+                SceneManager.LoadScene("Scenes/ChessScene/GameScene");
             }
             else
             {
                 Debug.Log("Cannot Log into game!");
             }
         }
-       
+
     }
 }
