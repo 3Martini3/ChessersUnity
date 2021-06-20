@@ -692,7 +692,7 @@ public class PossibleMoves : MonoBehaviour
     /// <summary>
     /// searches for check mate with current board state
     /// </summary>
-    /// <returns>0 there is no checkmate, 1 black are under checkmate, 2 white are under checkmate</returns>
+    /// <returns>0 there is no checkmate, 1 black are under checkmate, 2 white are under checkmate, 3 a tie</returns>
     public int DoesCheckMateExist()
     {
         //converting actual chessboard to chessboard type:
@@ -824,9 +824,155 @@ public class PossibleMoves : MonoBehaviour
             return 1; //black under checkmate
 
         }
-
+        else if (DoesTieExist())
+        {
+            return 3;
+        }
         return 0;
         //Debug.Log("no checkmate found!");
+    }
+    /// <summary>
+    /// searches for a tie on the basis of non-existing check and number of available moves
+    /// </summary>
+    /// <returns>true, when there is no check and one side has no possible moves,
+    /// false in every other situation </returns>
+    private bool DoesTieExist()
+    {
+        //converting actual chessboard to chessboard type:
+        #region conversion
+        Debug.Log("Searching for CheckMate");
+        ChessPiece[,] board = new ChessPiece[8, 8];
+        var sq = unityBoard.gameObject.GetComponent<UnityChessBoard>().squares;
+        var currentPiece = GetComponent<UnityChessPiece>();
+        var currentSquare = currentPiece.square.name;
+        didMove = currentPiece.didmove;
+        var currentPos = new Position(currentSquare[0] - 'A', currentSquare[1] - '1');
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                var localSquare = sq[i, j].GetComponent<ChessSquare>();
+                var localFigure = localSquare.figure;
+                if (localFigure != null)
+                {
+
+                    var color = ChessEnum.Color.Black;
+                    ////Debug.Log($"name is {localFigure.name}");
+                    if (localFigure.name.Contains("White"))
+                    {
+                        color = ChessEnum.Color.White;
+                    }
+                    board[i, j] = new ChessPiece(localFigure.figure, color, localFigure.didmove, localSquare.enPassantPossible);
+                    // //Debug.Log($"({i},{j})={board[i, j].figure},{color}");
+                }
+                else
+                {
+                    board[i, j] = null;
+                    ////Debug.Log($"({i},{j})=null");
+                }
+            }
+        }
+
+        ChessBoard chessBoard = new ChessBoard(board);
+
+        //arranging array of pieces on board and corresponding positions
+        GameObject[] pieces = GameObject.FindGameObjectsWithTag("Chess Piece");
+        List<Position> positionsOfPieces = new List<Position>();
+        UnityChessPiece[] figures = new UnityChessPiece[pieces.Length];
+        for (int i = 0; i < pieces.Length; i++)
+        {
+            figures[i] = pieces[i].GetComponent<UnityChessPiece>();
+            currentSquare = figures[i].square.name;
+            positionsOfPieces.Add(new Position(currentSquare[0] - 'A', currentSquare[1] - '1'));
+        }
+        Position[] positions = positionsOfPieces.ToArray();
+        List<Position> defMoves = new List<Position>();
+        #endregion
+
+        if (!DoesCheckExist(chessBoard, FindKing(chessBoard, ChessEnum.Color.White)))
+        {
+            for (int i = 0; i < figures.Length; i++)
+            {
+                UnityChessPiece piece = figures[i].GetComponent<UnityChessPiece>();
+                if (piece.color == ChessEnum.Color.White)
+                {
+                    switch (figures[i].figure)
+                    {
+                        case Figure.Pawn:
+                            defMoves = PossibleMovesPawn(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Knight:
+                            defMoves = PossibleMovesKnight(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Bishop:
+                            defMoves = PossibleMovesBishop(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Rook:
+                            defMoves = PossibleMovesRook(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Queen:
+                            defMoves = PossibleMovesQueen(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.King:
+                            defMoves = PossibleMovesKing(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                    }
+                    if (defMoves.Count > 0)
+                    {
+                        return false;
+                    }
+                    defMoves.Clear();
+                }
+
+            }
+            Debug.Log("white cannot move");
+            return true; //a tie, no check and white cannot move
+
+        }
+        else if (!DoesCheckExist(chessBoard, FindKing(chessBoard, ChessEnum.Color.Black)))
+        {
+            for (int i = 0; i < figures.Length; i++)
+            {
+                if (figures[i].color == ChessEnum.Color.Black)
+                {
+                    switch (figures[i].figure)
+                    {
+                        case Figure.Pawn:
+                            defMoves = PossibleMovesPawn(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Knight:
+                            defMoves = PossibleMovesKnight(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Bishop:
+                            defMoves = PossibleMovesBishop(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Rook:
+                            defMoves = PossibleMovesRook(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.Queen:
+                            defMoves = PossibleMovesQueen(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                        case Figure.King:
+                            defMoves = PossibleMovesKing(chessBoard, positions[i], didMove).ToList<Position>();
+                            break;
+                    }
+                    if (defMoves.Count > 0)
+                    {
+                        return false;
+                    }
+                    defMoves.Clear();
+                }
+
+            }
+
+            Debug.Log("black cannot move");
+            return true; //a tie, (no check and black cant move)
+        }
+        else
+        {
+            return false; //will never be reached
+        }
+
     }
 
 
