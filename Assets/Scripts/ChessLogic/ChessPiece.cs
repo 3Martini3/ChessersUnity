@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using static ChessEnum;
-
+/// <summary>
+/// Contains parameters of fiqure
+/// </summary>
 public class ChessPiece
 {
 
@@ -17,6 +19,13 @@ public class ChessPiece
     public bool didmove;
     public bool possibleEnPassant;
 
+    /// <summary>
+    /// Constructor, sets basic values of parameters
+    /// </summary>
+    /// <param name="figure"></param>
+    /// <param name="color"></param>
+    /// <param name="didmove"></param>
+    /// <param name="possibleEnPassant"></param>
     public ChessPiece(Figure figure, Color color, bool didmove, bool possibleEnPassant=false)
     {
         this.figure = figure;
